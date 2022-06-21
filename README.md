@@ -1,2 +1,1 @@
-# ace-csharp-extensions
-C# extensions
+# C# extensions
