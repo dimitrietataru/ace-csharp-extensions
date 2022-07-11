@@ -18,4 +18,5 @@ internal static class Cultures
     public const string RoRO = "ro-RO";
     public const string EnUS = "en-US";
     public const string EnGB = "en-GB";
+    public const string TrTR = "tr-TR";
 }
