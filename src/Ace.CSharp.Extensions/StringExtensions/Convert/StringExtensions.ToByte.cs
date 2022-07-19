@@ -2,12 +2,12 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static byte ConvertToByte(this string? value, IFormatProvider? provider)
+    public static byte ToByte(this string? value, IFormatProvider? provider)
     {
         return Convert.ToByte(value, provider);
     }
 
-    public static byte ConvertToByteOrDefault(this string? value, IFormatProvider provider, byte defaultValue = default)
+    public static byte ToByteOrDefault(this string? value, IFormatProvider? provider, byte defaultValue = default)
     {
         bool isByte = TryConvertToByte(value, provider, out byte result);
 
@@ -15,17 +15,6 @@ public static partial class StringExtensions
         {
             true => result,
             false => defaultValue
-        };
-    }
-
-    public static byte SafeConvertToByte(this string? value, IFormatProvider provider)
-    {
-        bool isByte = TryConvertToByte(value, provider, out byte result);
-
-        return isByte switch
-        {
-            true => result,
-            false => default
         };
     }
 

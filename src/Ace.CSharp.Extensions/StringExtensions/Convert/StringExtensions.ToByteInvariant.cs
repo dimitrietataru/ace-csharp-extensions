@@ -2,46 +2,18 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static byte ConvertToByteInvariant(this string? value)
+    public static byte ToByteInvariant(this string? value)
     {
-        return Convert.ToByte(value, CultureInfo.InvariantCulture);
+        return ToByte(value, CultureInfo.InvariantCulture);
     }
 
-    public static byte ConvertToByteOrDefaultInvariant(this string? value, byte defaultValue = default)
+    public static byte ToByteOrDefaultInvariant(this string? value, byte defaultValue = default)
     {
-        bool isByte = TryConvertToByteInvariant(value, out byte result);
-
-        return isByte switch
-        {
-            true => result,
-            false => defaultValue
-        };
-    }
-
-    public static byte SafeConvertToByteInvariant(this string? value)
-    {
-        bool isByte = TryConvertToByteInvariant(value, out byte result);
-
-        return isByte switch
-        {
-            true => result,
-            false => default
-        };
+        return ToByteOrDefault(value, CultureInfo.InvariantCulture, defaultValue);
     }
 
     public static bool TryConvertToByteInvariant(this string? value, out byte result)
     {
-        try
-        {
-            result = Convert.ToByte(value, CultureInfo.InvariantCulture);
-
-            return true;
-        }
-        catch (FormatException)
-        {
-            result = default;
-
-            return false;
-        }
+        return TryConvertToByte(value, CultureInfo.InvariantCulture, out result);
     }
 }
