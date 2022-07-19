@@ -2,12 +2,12 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static char ConvertToChar(this string value, IFormatProvider? provider)
+    public static char ToChar(this string value, IFormatProvider? provider)
     {
         return Convert.ToChar(value, provider);
     }
 
-    public static char ConvertToCharOrDefault(this string value, IFormatProvider provider, char defaultValue = default)
+    public static char ToCharOrDefault(this string value, IFormatProvider? provider, char defaultValue = default)
     {
         bool isChar = TryConvertToChar(value, provider, out char result);
 
@@ -15,17 +15,6 @@ public static partial class StringExtensions
         {
             true => result,
             false => defaultValue
-        };
-    }
-
-    public static char SafeConvertToChar(this string value, IFormatProvider provider)
-    {
-        bool isChar = TryConvertToChar(value, provider, out char result);
-
-        return isChar switch
-        {
-            true => result,
-            false => default
         };
     }
 
