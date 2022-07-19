@@ -2,12 +2,12 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static bool ConvertToBoolean(this string? value, IFormatProvider? provider)
+    public static bool ToBoolean(this string? value, IFormatProvider? provider)
     {
         return Convert.ToBoolean(value, provider);
     }
 
-    public static bool ConvertToBooleanOrDefault(this string? value, IFormatProvider provider, bool defaultValue = default)
+    public static bool ToBooleanOrDefault(this string? value, IFormatProvider? provider, bool defaultValue = default)
     {
         bool isBoolean = TryConvertToBoolean(value, provider, out bool result);
 
@@ -15,17 +15,6 @@ public static partial class StringExtensions
         {
             true => result,
             false => defaultValue
-        };
-    }
-
-    public static bool SafeConvertToBoolean(this string? value, IFormatProvider provider)
-    {
-        bool isBoolean = TryConvertToBoolean(value, provider, out bool result);
-
-        return isBoolean switch
-        {
-            true => result,
-            false => default
         };
     }
 

@@ -2,46 +2,18 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static bool ConvertToBooleanLocal(this string? value)
+    public static bool ToBooleanLocal(this string? value)
     {
-        return Convert.ToBoolean(value, CultureInfo.CurrentCulture);
+        return ToBoolean(value, CultureInfo.CurrentCulture);
     }
 
-    public static bool ConvertToBooleanOrDefaultLocal(this string? value, bool defaultValue = default)
+    public static bool ToBooleanOrDefaultLocal(this string? value, bool defaultValue = default)
     {
-        bool isBoolean = TryConvertToBooleanLocal(value, out bool result);
-
-        return isBoolean switch
-        {
-            true => result,
-            false => defaultValue
-        };
-    }
-
-    public static bool SafeConvertToBooleanLocal(this string? value)
-    {
-        bool isBoolean = TryConvertToBooleanLocal(value, out bool result);
-
-        return isBoolean switch
-        {
-            true => result,
-            false => default
-        };
+        return ToBooleanOrDefault(value, CultureInfo.CurrentCulture, defaultValue);
     }
 
     public static bool TryConvertToBooleanLocal(this string? value, out bool result)
     {
-        try
-        {
-            result = Convert.ToBoolean(value, CultureInfo.CurrentCulture);
-
-            return true;
-        }
-        catch (FormatException)
-        {
-            result = default;
-
-            return false;
-        }
+        return TryConvertToBoolean(value, CultureInfo.CurrentCulture, out result);
     }
 }
