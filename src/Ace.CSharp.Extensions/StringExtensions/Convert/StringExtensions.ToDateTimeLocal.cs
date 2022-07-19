@@ -2,46 +2,18 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static DateTime ConvertToDateTimeLocal(this string? value)
+    public static DateTime ToDateTimeLocal(this string? value)
     {
-        return Convert.ToDateTime(value, CultureInfo.CurrentCulture);
+        return ToDateTime(value, CultureInfo.CurrentCulture);
     }
 
-    public static DateTime ConvertToDateTimeOrDefaultLocal(this string? value, DateTime defaultValue = default)
+    public static DateTime ToDateTimeOrDefaultLocal(this string? value, DateTime defaultValue = default)
     {
-        bool isDateTime = TryConvertToDateTimeLocal(value, out var result);
-
-        return isDateTime switch
-        {
-            true => result,
-            false => defaultValue
-        };
-    }
-
-    public static DateTime SafeConvertToDateTimeLocal(this string? value)
-    {
-        bool isDateTime = TryConvertToDateTimeLocal(value, out var result);
-
-        return isDateTime switch
-        {
-            true => result,
-            false => default
-        };
+        return ToDateTimeOrDefault(value, CultureInfo.CurrentCulture, defaultValue);
     }
 
     public static bool TryConvertToDateTimeLocal(this string? value, out DateTime result)
     {
-        try
-        {
-            result = Convert.ToDateTime(value, CultureInfo.CurrentCulture);
-
-            return true;
-        }
-        catch (FormatException)
-        {
-            result = default;
-
-            return false;
-        }
+        return TryConvertToDateTime(value, CultureInfo.CurrentCulture, out result);
     }
 }

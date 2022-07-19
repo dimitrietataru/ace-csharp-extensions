@@ -2,12 +2,12 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static DateTime ConvertToDateTime(this string? value, IFormatProvider? provider)
+    public static DateTime ToDateTime(this string? value, IFormatProvider? provider)
     {
         return Convert.ToDateTime(value, provider);
     }
 
-    public static DateTime ConvertToDateTimeOrDefault(this string? value, IFormatProvider provider, DateTime defaultValue = default)
+    public static DateTime ToDateTimeOrDefault(this string? value, IFormatProvider? provider, DateTime defaultValue = default)
     {
         bool isDateTime = TryConvertToDateTime(value, provider, out var result);
 
@@ -15,17 +15,6 @@ public static partial class StringExtensions
         {
             true => result,
             false => defaultValue
-        };
-    }
-
-    public static DateTime SafeConvertToDateTime(this string? value, IFormatProvider provider)
-    {
-        bool isDateTime = TryConvertToDateTime(value, provider, out var result);
-
-        return isDateTime switch
-        {
-            true => result,
-            false => default
         };
     }
 
