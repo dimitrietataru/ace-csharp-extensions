@@ -2,19 +2,14 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static float ConvertToSingleInvariant(this string? value)
+    public static float ToSingleInvariant(this string? value)
     {
-        return ConvertToSingle(value, CultureInfo.InvariantCulture);
+        return ToSingle(value, CultureInfo.InvariantCulture);
     }
 
-    public static float ConvertToSingleOrDefaultInvariant(this string? value, float defaultValue = default)
+    public static float ToSingleOrDefaultInvariant(this string? value, float defaultValue = default)
     {
-        return ConvertToSingleOrDefault(value, CultureInfo.InvariantCulture, defaultValue);
-    }
-
-    public static float SafeConvertToSingleInvariant(this string? value)
-    {
-        return SafeConvertToSingle(value, CultureInfo.InvariantCulture);
+        return ToSingleOrDefault(value, CultureInfo.InvariantCulture, defaultValue);
     }
 
     public static bool TryConvertToSingleInvariant(this string? value, out float result)
@@ -22,19 +17,14 @@ public static partial class StringExtensions
         return TryConvertToSingle(value, CultureInfo.InvariantCulture, out result);
     }
 
-    public static float ConvertToFloatInvariant(this string? value)
+    public static float ToFloatInvariant(this string? value)
     {
-        return ConvertToSingleInvariant(value);
+        return ToSingleInvariant(value);
     }
 
-    public static float ConvertToFloatOrDefaultInvariant(this string? value, float defaultValue = default)
+    public static float ToFloatOrDefaultInvariant(this string? value, float defaultValue = default)
     {
-        return ConvertToSingleOrDefaultInvariant(value, defaultValue);
-    }
-
-    public static float SafeConvertToFloatInvariant(this string? value)
-    {
-        return SafeConvertToSingleInvariant(value);
+        return ToSingleOrDefaultInvariant(value, defaultValue);
     }
 
     public static bool TryConvertToFloatInvariant(this string? value, out float result)

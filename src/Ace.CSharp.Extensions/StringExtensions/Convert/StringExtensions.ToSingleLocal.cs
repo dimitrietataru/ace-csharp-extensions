@@ -2,19 +2,14 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static float ConvertToSingleLocal(this string? value)
+    public static float ToSingleLocal(this string? value)
     {
-        return ConvertToSingle(value, CultureInfo.CurrentCulture);
+        return ToSingle(value, CultureInfo.CurrentCulture);
     }
 
-    public static float ConvertToSingleOrDefaultLocal(this string? value, float defaultValue = default)
+    public static float ToSingleOrDefaultLocal(this string? value, float defaultValue = default)
     {
-        return ConvertToSingleOrDefault(value, CultureInfo.CurrentCulture, defaultValue);
-    }
-
-    public static float SafeConvertToSingleLocal(this string? value)
-    {
-        return SafeConvertToSingle(value, CultureInfo.CurrentCulture);
+        return ToSingleOrDefault(value, CultureInfo.CurrentCulture, defaultValue);
     }
 
     public static bool TryConvertToSingleLocal(this string? value, out float result)
@@ -22,19 +17,14 @@ public static partial class StringExtensions
         return TryConvertToSingle(value, CultureInfo.CurrentCulture, out result);
     }
 
-    public static float ConvertToFloatLocal(this string? value)
+    public static float ToFloatLocal(this string? value)
     {
-        return ConvertToSingleLocal(value);
+        return ToSingleLocal(value);
     }
 
-    public static float ConvertToFloatOrDefaultLocal(this string? value, float defaultValue = default)
+    public static float ToFloatOrDefaultLocal(this string? value, float defaultValue = default)
     {
-        return ConvertToSingleOrDefaultLocal(value, defaultValue);
-    }
-
-    public static float SafeConvertToFloatLocal(this string? value)
-    {
-        return SafeConvertToSingleLocal(value);
+        return ToSingleOrDefaultLocal(value, defaultValue);
     }
 
     public static bool TryConvertToFloatLocal(this string? value, out float result)
