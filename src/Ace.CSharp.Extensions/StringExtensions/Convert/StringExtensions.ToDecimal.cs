@@ -2,12 +2,12 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static decimal ConvertToDecimal(this string? value, IFormatProvider? provider)
+    public static decimal ToDecimal(this string? value, IFormatProvider? provider)
     {
         return Convert.ToDecimal(value, provider);
     }
 
-    public static decimal ConvertToDecimalOrDefault(this string? value, IFormatProvider provider, decimal defaultValue = default)
+    public static decimal ToDecimalOrDefault(this string? value, IFormatProvider? provider, decimal defaultValue = default)
     {
         bool isDecimal = TryConvertToDecimal(value, provider, out decimal result);
 
@@ -15,17 +15,6 @@ public static partial class StringExtensions
         {
             true => result,
             false => defaultValue
-        };
-    }
-
-    public static decimal SafeConvertToDecimal(this string? value, IFormatProvider provider)
-    {
-        bool isDecimal = TryConvertToDecimal(value, provider, out decimal result);
-
-        return isDecimal switch
-        {
-            true => result,
-            false => default
         };
     }
 
