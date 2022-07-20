@@ -2,62 +2,29 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static int ConvertToInt32Invariant(this string? value)
+    public static int ToInt32Invariant(this string? value)
     {
-        return Convert.ToInt32(value, CultureInfo.InvariantCulture);
+        return ToInt32(value, CultureInfo.InvariantCulture);
     }
 
-    public static int ConvertToInt32OrDefaultInvariant(this string? value, int defaultValue = default)
+    public static int ToInt32OrDefaultInvariant(this string? value, int defaultValue = default)
     {
-        bool isInt32 = TryConvertToInt32Invariant(value, out int result);
-
-        return isInt32 switch
-        {
-            true => result,
-            false => defaultValue
-        };
-    }
-
-    public static int SafeConvertToInt32Invariant(this string? value)
-    {
-        bool isInt32 = TryConvertToInt32Invariant(value, out int result);
-
-        return isInt32 switch
-        {
-            true => result,
-            false => default
-        };
+        return ToInt32OrDefault(value, CultureInfo.InvariantCulture, defaultValue);
     }
 
     public static bool TryConvertToInt32Invariant(this string? value, out int result)
     {
-        try
-        {
-            result = Convert.ToInt32(value, CultureInfo.InvariantCulture);
-
-            return true;
-        }
-        catch (FormatException)
-        {
-            result = default;
-
-            return false;
-        }
+        return TryConvertToInt32(value, CultureInfo.InvariantCulture, out result);
     }
 
-    public static int ConvertToIntInvariant(this string? value)
+    public static int ToIntInvariant(this string? value)
     {
-        return ConvertToInt32Invariant(value);
+        return ToInt32Invariant(value);
     }
 
-    public static int ConvertToIntOrDefaultInvariant(this string? value, int defaultValue = default)
+    public static int ToIntOrDefaultInvariant(this string? value, int defaultValue = default)
     {
-        return ConvertToInt32OrDefaultInvariant(value, defaultValue);
-    }
-
-    public static int SafeConvertToIntInvariant(this string? value)
-    {
-        return SafeConvertToInt32Invariant(value);
+        return ToInt32OrDefaultInvariant(value, defaultValue);
     }
 
     public static bool TryConvertToIntInvariant(this string? value, out int result)

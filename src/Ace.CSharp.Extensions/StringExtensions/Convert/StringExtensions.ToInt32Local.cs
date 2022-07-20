@@ -2,62 +2,29 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static int ConvertToInt32Local(this string? value)
+    public static int ToInt32Local(this string? value)
     {
-        return Convert.ToInt32(value, CultureInfo.CurrentCulture);
+        return ToInt32(value, CultureInfo.CurrentCulture);
     }
 
-    public static int ConvertToInt32OrDefaultLocal(this string? value, int defaultValue = default)
+    public static int ToInt32OrDefaultLocal(this string? value, int defaultValue = default)
     {
-        bool isInt32 = TryConvertToInt32Local(value, out int result);
-
-        return isInt32 switch
-        {
-            true => result,
-            false => defaultValue
-        };
-    }
-
-    public static int SafeConvertToInt32Local(this string? value)
-    {
-        bool isInt32 = TryConvertToInt32Local(value, out int result);
-
-        return isInt32 switch
-        {
-            true => result,
-            false => default
-        };
+        return ToInt32OrDefault(value, CultureInfo.CurrentCulture, defaultValue);
     }
 
     public static bool TryConvertToInt32Local(this string? value, out int result)
     {
-        try
-        {
-            result = Convert.ToInt32(value, CultureInfo.CurrentCulture);
-
-            return true;
-        }
-        catch (FormatException)
-        {
-            result = default;
-
-            return false;
-        }
+        return TryConvertToInt32(value, CultureInfo.CurrentCulture, out result);
     }
 
-    public static int ConvertToIntLocal(this string? value)
+    public static int ToIntLocal(this string? value)
     {
-        return ConvertToInt32Local(value);
+        return ToInt32Local(value);
     }
 
-    public static int ConvertToIntOrDefaultLocal(this string? value, int defaultValue = default)
+    public static int ToIntOrDefaultLocal(this string? value, int defaultValue = default)
     {
-        return ConvertToInt32OrDefaultLocal(value, defaultValue);
-    }
-
-    public static int SafeConvertToIntLocal(this string? value)
-    {
-        return SafeConvertToInt32Local(value);
+        return ToInt32OrDefaultLocal(value, defaultValue);
     }
 
     public static bool TryConvertToIntLocal(this string? value, out int result)
