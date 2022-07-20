@@ -2,19 +2,14 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static ulong ConvertToUInt64Local(this string? value)
+    public static ulong ToUInt64Local(this string? value)
     {
-        return ConvertToUInt64(value, CultureInfo.CurrentCulture);
+        return ToUInt64(value, CultureInfo.CurrentCulture);
     }
 
-    public static ulong ConvertToUInt64OrDefaultLocal(this string? value, ulong defaultValue = default)
+    public static ulong ToUInt64OrDefaultLocal(this string? value, ulong defaultValue = default)
     {
-        return ConvertToUInt64OrDefault(value, CultureInfo.CurrentCulture, defaultValue);
-    }
-
-    public static ulong SafeConvertToUInt64Local(this string? value)
-    {
-        return SafeConvertToUInt64(value, CultureInfo.CurrentCulture);
+        return ToUInt64OrDefault(value, CultureInfo.CurrentCulture, defaultValue);
     }
 
     public static bool TryConvertToUInt64Local(this string? value, out ulong result)
@@ -22,19 +17,14 @@ public static partial class StringExtensions
         return TryConvertToUInt64(value, CultureInfo.CurrentCulture, out result);
     }
 
-    public static ulong ConvertToULongLocal(this string? value)
+    public static ulong ToULongLocal(this string? value)
     {
-        return ConvertToUInt64Local(value);
+        return ToUInt64Local(value);
     }
 
-    public static ulong ConvertToULongOrDefaultLocal(this string? value, ulong defaultValue = default)
+    public static ulong ToULongOrDefaultLocal(this string? value, ulong defaultValue = default)
     {
-        return ConvertToUInt64OrDefaultLocal(value, defaultValue);
-    }
-
-    public static ulong SafeConvertToULongLocal(this string? value)
-    {
-        return SafeConvertToUInt64Local(value);
+        return ToUInt64OrDefaultLocal(value, defaultValue);
     }
 
     public static bool TryConvertToULongLocal(this string? value, out ulong result)

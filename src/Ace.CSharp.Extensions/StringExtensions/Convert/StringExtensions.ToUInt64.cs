@@ -2,12 +2,12 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static ulong ConvertToUInt64(this string? value, IFormatProvider? provider)
+    public static ulong ToUInt64(this string? value, IFormatProvider? provider)
     {
         return Convert.ToUInt64(value, provider);
     }
 
-    public static ulong ConvertToUInt64OrDefault(this string? value, IFormatProvider provider, ulong defaultValue = default)
+    public static ulong ToUInt64OrDefault(this string? value, IFormatProvider? provider, ulong defaultValue = default)
     {
         bool isUInt64 = TryConvertToUInt64(value, provider, out ulong result);
 
@@ -15,17 +15,6 @@ public static partial class StringExtensions
         {
             true => result,
             false => defaultValue
-        };
-    }
-
-    public static ulong SafeConvertToUInt64(this string? value, IFormatProvider provider)
-    {
-        bool isUInt64 = TryConvertToUInt64(value, provider, out ulong result);
-
-        return isUInt64 switch
-        {
-            true => result,
-            false => default
         };
     }
 
@@ -45,19 +34,14 @@ public static partial class StringExtensions
         }
     }
 
-    public static ulong ConvertToULong(this string? value, IFormatProvider? provider)
+    public static ulong ToULong(this string? value, IFormatProvider? provider)
     {
-        return ConvertToUInt64(value, provider);
+        return ToUInt64(value, provider);
     }
 
-    public static ulong ConvertToULongOrDefault(this string? value, IFormatProvider provider, ulong defaultValue = default)
+    public static ulong ToULongOrDefault(this string? value, IFormatProvider? provider, ulong defaultValue = default)
     {
-        return ConvertToUInt64OrDefault(value, provider, defaultValue);
-    }
-
-    public static ulong SafeConvertToULong(this string? value, IFormatProvider provider)
-    {
-        return SafeConvertToUInt64(value, provider);
+        return ToUInt64OrDefault(value, provider, defaultValue);
     }
 
     public static bool TryConvertToULong(this string? value, IFormatProvider? provider, out ulong result)
