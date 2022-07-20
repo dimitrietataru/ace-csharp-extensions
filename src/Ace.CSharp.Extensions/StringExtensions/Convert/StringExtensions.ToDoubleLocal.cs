@@ -2,46 +2,18 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static double ConvertToDoubleLocal(this string? value)
+    public static double ToDoubleLocal(this string? value)
     {
-        return Convert.ToDouble(value, CultureInfo.CurrentCulture);
+        return ToDouble(value, CultureInfo.CurrentCulture);
     }
 
-    public static double ConvertToDoubleOrDefaultLocal(this string? value, double defaultValue = default)
+    public static double ToDoubleOrDefaultLocal(this string? value, double defaultValue = default)
     {
-        bool isDouble = TryConvertToDoubleLocal(value, out double result);
-
-        return isDouble switch
-        {
-            true => result,
-            false => defaultValue
-        };
-    }
-
-    public static double SafeConvertToDoubleLocal(this string? value)
-    {
-        bool isDouble = TryConvertToDoubleLocal(value, out double result);
-
-        return isDouble switch
-        {
-            true => result,
-            false => default
-        };
+        return ToDoubleOrDefault(value, CultureInfo.CurrentCulture, defaultValue);
     }
 
     public static bool TryConvertToDoubleLocal(this string? value, out double result)
     {
-        try
-        {
-            result = Convert.ToDouble(value, CultureInfo.CurrentCulture);
-
-            return true;
-        }
-        catch (FormatException)
-        {
-            result = default;
-
-            return false;
-        }
+        return TryConvertToDouble(value, CultureInfo.CurrentCulture, out result);
     }
 }

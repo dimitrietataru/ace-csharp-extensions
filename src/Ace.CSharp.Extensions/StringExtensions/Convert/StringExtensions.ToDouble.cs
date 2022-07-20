@@ -2,12 +2,12 @@ namespace Ace.CSharp.Extensions;
 
 public static partial class StringExtensions
 {
-    public static double ConvertToDouble(this string? value, IFormatProvider? provider)
+    public static double ToDouble(this string? value, IFormatProvider? provider)
     {
         return Convert.ToDouble(value, provider);
     }
 
-    public static double ConvertToDoubleOrDefault(this string? value, IFormatProvider provider, double defaultValue = default)
+    public static double ToDoubleOrDefault(this string? value, IFormatProvider? provider, double defaultValue = default)
     {
         bool isDouble = TryConvertToDouble(value, provider, out double result);
 
@@ -15,17 +15,6 @@ public static partial class StringExtensions
         {
             true => result,
             false => defaultValue
-        };
-    }
-
-    public static double SafeConvertToDouble(this string? value, IFormatProvider provider)
-    {
-        bool isDouble = TryConvertToDouble(value, provider, out double result);
-
-        return isDouble switch
-        {
-            true => result,
-            false => default
         };
     }
 
