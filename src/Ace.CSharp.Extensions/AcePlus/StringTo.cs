@@ -4,61 +4,61 @@ public static class StringTo
 {
     public static bool Boolean(string? value, IFormatProvider? provider)
     {
-        return value.ToBoolean(provider);
+        return StringExtensions.ToBoolean(value, provider);
     }
 
     public static bool BooleanOrDefault(string? value, IFormatProvider? provider, bool defaultValue = default)
     {
-        return value.ToBooleanOrDefault(provider, defaultValue);
+        return StringExtensions.ToBooleanOrDefault(value, provider, defaultValue);
     }
 
     public static bool BooleanInvariant(string? value)
     {
-        return value.ToBooleanInvariant();
+        return StringExtensions.ToBooleanInvariant(value);
     }
 
     public static bool BooleanOrDefaultInvariant(string? value, bool defaultValue = default)
     {
-        return value.ToBooleanOrDefaultInvariant(defaultValue);
+        return StringExtensions.ToBooleanOrDefaultInvariant(value, defaultValue);
     }
 
     public static bool BooleanLocal(string? value)
     {
-        return value.ToBooleanLocal();
+        return StringExtensions.ToBooleanLocal(value);
     }
 
     public static bool BooleanOrDefaultLocal(string? value, bool defaultValue = default)
     {
-        return value.ToBooleanOrDefaultLocal(defaultValue);
+        return StringExtensions.ToBooleanOrDefaultLocal(value, defaultValue);
     }
 
     public static byte Byte(string? value, IFormatProvider? provider)
     {
-        return value.ToByte(provider);
+        return StringExtensions.ToByte(value, provider);
     }
 
     public static byte ByteOrDefault(string? value, IFormatProvider? provider, byte defaultValue = default)
     {
-        return value.ToByteOrDefault(provider, defaultValue);
+        return StringExtensions.ToByteOrDefault(value, provider, defaultValue);
     }
 
     public static byte ByteInvariant(string? value)
     {
-        return value.ToByteInvariant();
+        return StringExtensions.ToByteInvariant(value);
     }
 
     public static byte ByteOrDefaultInvariant(string? value, byte defaultValue = default)
     {
-        return value.ToByteOrDefaultInvariant(defaultValue);
+        return StringExtensions.ToByteOrDefaultInvariant(value, defaultValue);
     }
 
     public static byte ByteLocal(string? value)
     {
-        return value.ToByteLocal();
+        return StringExtensions.ToByteLocal(value);
     }
 
     public static byte ByteOrDefaultLocal(string? value, byte defaultValue = default)
     {
-        return value.ToByteOrDefaultLocal(defaultValue);
+        return StringExtensions.ToByteOrDefaultLocal(value, defaultValue);
     }
 }
