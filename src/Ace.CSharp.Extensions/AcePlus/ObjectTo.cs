@@ -1,5 +1,6 @@
 namespace Ace.CSharp.Extensions;
 
+#pragma warning disable CA1720 // Identifier contains type name
 public static class ObjectTo
 {
     public static bool Boolean(object? value, IFormatProvider? provider)
@@ -572,3 +573,4 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
     }
 }
+#pragma warning restore CA1720 // Identifier contains type name
