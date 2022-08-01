@@ -181,4 +181,34 @@ public static class StringTo
     {
         return StringExtensions.ToDoubleOrDefaultLocal(value, defaultValue);
     }
+
+    public static short Int16(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToInt16(value, provider);
+    }
+
+    public static short Int16OrDefault(string? value, IFormatProvider? provider, short defaultValue = default)
+    {
+        return StringExtensions.ToInt16OrDefault(value, provider, defaultValue);
+    }
+
+    public static short Int16Invariant(string? value)
+    {
+        return StringExtensions.ToInt16Invariant(value);
+    }
+
+    public static short Int16OrDefaultInvariant(string? value, short defaultValue = default)
+    {
+        return StringExtensions.ToInt16OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static short Int16Local(string? value)
+    {
+        return StringExtensions.ToInt16Local(value);
+    }
+
+    public static short Int16OrDefaultLocal(string? value, short defaultValue = default)
+    {
+        return StringExtensions.ToInt16OrDefaultLocal(value, defaultValue);
+    }
 }
