@@ -151,4 +151,34 @@ public static class ObjectTo
     {
         return ObjectExtensions.ToDecimalOrDefaultLocal(value, defaultValue);
     }
+
+    public static double Double(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToDouble(value, provider);
+    }
+
+    public static double DoubleOrDefault(object? value, IFormatProvider? provider, double defaultValue = default)
+    {
+        return ObjectExtensions.ToDoubleOrDefault(value, provider, defaultValue);
+    }
+
+    public static double DoubleInvariant(object? value)
+    {
+        return ObjectExtensions.ToDoubleInvariant(value);
+    }
+
+    public static double DoubleOrDefaultInvariant(object? value, double defaultValue = default)
+    {
+        return ObjectExtensions.ToDoubleOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static double DoubleLocal(object? value)
+    {
+        return ObjectExtensions.ToDoubleLocal(value);
+    }
+
+    public static double DoubleOrDefaultLocal(object? value, double defaultValue = default)
+    {
+        return ObjectExtensions.ToDoubleOrDefaultLocal(value, defaultValue);
+    }
 }
