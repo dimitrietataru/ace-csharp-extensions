@@ -11,4 +11,14 @@ public static partial class StringExtensions
 
         return value.ToLower(CultureInfo.CurrentCulture);
     }
+
+    public static string ToLowerOrDefaultLocal(this string? value, string defaultValue = "")
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return defaultValue;
+        }
+
+        return value.ToLower(CultureInfo.CurrentCulture);
+    }
 }
