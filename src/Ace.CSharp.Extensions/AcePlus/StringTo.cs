@@ -361,4 +361,64 @@ public static class StringTo
     {
         return StringExtensions.ToSByteOrDefaultLocal(value, defaultValue);
     }
+
+    public static float Single(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToSingle(value, provider);
+    }
+
+    public static float SingleOrDefault(string? value, IFormatProvider? provider, float defaultValue = default)
+    {
+        return StringExtensions.ToSingleOrDefault(value, provider);
+    }
+
+    public static float Float(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToSingle(value, provider);
+    }
+
+    public static float FloatOrDefault(string? value, IFormatProvider? provider, float defaultValue = default)
+    {
+        return StringExtensions.ToSingleOrDefault(value, provider);
+    }
+
+    public static float SingleInvariant(string? value)
+    {
+        return StringExtensions.ToSingleInvariant(value);
+    }
+
+    public static float SingleOrDefaultInvariant(string? value, float defaultValue = default)
+    {
+        return StringExtensions.ToSingleOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static float FloatInvariant(string? value)
+    {
+        return StringExtensions.ToSingleInvariant(value);
+    }
+
+    public static float FloatOrDefaultInvariant(string? value, float defaultValue = default)
+    {
+        return StringExtensions.ToSingleOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static float SingleLocal(string? value)
+    {
+        return StringExtensions.ToSingleLocal(value);
+    }
+
+    public static float SingleOrDefaultLocal(string? value, float defaultValue = default)
+    {
+        return StringExtensions.ToSingleOrDefaultLocal(value, defaultValue);
+    }
+
+    public static float FloatLocal(string? value)
+    {
+        return StringExtensions.ToSingleLocal(value);
+    }
+
+    public static float FloatOrDefaultLocal(string? value, float defaultValue = default)
+    {
+        return StringExtensions.ToSingleOrDefaultLocal(value, defaultValue);
+    }
 }
