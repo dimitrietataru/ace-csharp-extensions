@@ -331,4 +331,34 @@ public static class ObjectTo
     {
         return ObjectExtensions.ToInt64OrDefaultLocal(value, defaultValue);
     }
+
+    public static sbyte SByte(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToSByte(value, provider);
+    }
+
+    public static sbyte SByteOrDefault(object? value, IFormatProvider? provider, sbyte defaultValue = default)
+    {
+        return ObjectExtensions.ToSByteOrDefault(value, provider, defaultValue);
+    }
+
+    public static sbyte SByteInvariant(object? value)
+    {
+        return ObjectExtensions.ToSByteInvariant(value);
+    }
+
+    public static sbyte SByteOrDefaultInvariant(object? value, sbyte defaultValue = default)
+    {
+        return ObjectExtensions.ToSByteOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static sbyte SByteLocal(object? value)
+    {
+        return ObjectExtensions.ToSByteLocal(value);
+    }
+
+    public static sbyte SByteOrDefaultLocal(object? value, sbyte defaultValue = default)
+    {
+        return ObjectExtensions.ToSByteOrDefaultLocal(value, defaultValue);
+    }
 }
