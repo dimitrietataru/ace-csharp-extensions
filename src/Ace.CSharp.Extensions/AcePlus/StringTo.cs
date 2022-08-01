@@ -91,4 +91,34 @@ public static class StringTo
     {
         return StringExtensions.ToCharOrDefaultLocal(value, defaultValue);
     }
+
+    public static DateTime DateTime(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToDateTime(value, provider);
+    }
+
+    public static DateTime DateTimeOrDefault(string? value, IFormatProvider? provider, DateTime defaultValue = default)
+    {
+        return StringExtensions.ToDateTimeOrDefault(value, provider, defaultValue);
+    }
+
+    public static DateTime DateTimeInvariant(string? value)
+    {
+        return StringExtensions.ToDateTimeInvariant(value);
+    }
+
+    public static DateTime DateTimeOrDefaultInvariant(string? value, DateTime defaultValue = default)
+    {
+        return StringExtensions.ToDateTimeOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static DateTime DateTimeLocal(string? value)
+    {
+        return StringExtensions.ToDateTimeLocal(value);
+    }
+
+    public static DateTime DateTimeOrDefaultLocal(string? value, DateTime defaultValue = default)
+    {
+        return StringExtensions.ToDateTimeOrDefaultLocal(value, defaultValue);
+    }
 }
