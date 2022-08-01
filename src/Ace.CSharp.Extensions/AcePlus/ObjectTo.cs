@@ -511,4 +511,64 @@ public static class ObjectTo
     {
         return ObjectExtensions.ToUInt32OrDefaultLocal(value, defaultValue);
     }
+
+    public static ulong UInt64(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToUInt64(value, provider);
+    }
+
+    public static ulong UInt64OrDefault(object? value, IFormatProvider? provider, ulong defaultValue = default)
+    {
+        return ObjectExtensions.ToUInt64OrDefault(value, provider, defaultValue);
+    }
+
+    public static ulong ULong(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToUInt64(value, provider);
+    }
+
+    public static ulong ULongOrDefault(object? value, IFormatProvider? provider, ulong defaultValue = default)
+    {
+        return ObjectExtensions.ToUInt64OrDefault(value, provider, defaultValue);
+    }
+
+    public static ulong UInt64Invariant(object? value)
+    {
+        return ObjectExtensions.ToUInt64Invariant(value);
+    }
+
+    public static ulong UInt64OrDefaultInvariant(object? value, ulong defaultValue = default)
+    {
+        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static ulong ULongInvariant(object? value)
+    {
+        return ObjectExtensions.ToUInt64Invariant(value);
+    }
+
+    public static ulong ULongOrDefaultInvariant(object? value, ulong defaultValue = default)
+    {
+        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static ulong UInt64Local(object? value)
+    {
+        return ObjectExtensions.ToUInt64Local(value);
+    }
+
+    public static ulong UInt64OrDefaultLocal(object? value, ulong defaultValue = default)
+    {
+        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static ulong ULongLocal(object? value)
+    {
+        return ObjectExtensions.ToUInt64Local(value);
+    }
+
+    public static ulong ULongOrDefaultLocal(object? value, ulong defaultValue = default)
+    {
+        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+    }
 }
