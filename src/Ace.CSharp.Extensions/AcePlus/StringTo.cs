@@ -32,32 +32,32 @@ public static class StringTo
         return value.ToBooleanOrDefaultLocal(defaultValue);
     }
 
-    public static byte ToByte(string? value, IFormatProvider? provider)
+    public static byte Byte(string? value, IFormatProvider? provider)
     {
         return value.ToByte(provider);
     }
 
-    public static byte ToByteOrDefault(string? value, IFormatProvider? provider, byte defaultValue = default)
+    public static byte ByteOrDefault(string? value, IFormatProvider? provider, byte defaultValue = default)
     {
         return value.ToByteOrDefault(provider, defaultValue);
     }
 
-    public static byte ToByteInvariant(string? value)
+    public static byte ByteInvariant(string? value)
     {
         return value.ToByteInvariant();
     }
 
-    public static byte ToByteOrDefaultInvariant(string? value, byte defaultValue = default)
+    public static byte ByteOrDefaultInvariant(string? value, byte defaultValue = default)
     {
         return value.ToByteOrDefaultInvariant(defaultValue);
     }
 
-    public static byte ToByteLocal(string? value)
+    public static byte ByteLocal(string? value)
     {
         return value.ToByteLocal();
     }
 
-    public static byte ToByteOrDefaultLocal(string? value, byte defaultValue = default)
+    public static byte ByteOrDefaultLocal(string? value, byte defaultValue = default)
     {
         return value.ToByteOrDefaultLocal(defaultValue);
     }
