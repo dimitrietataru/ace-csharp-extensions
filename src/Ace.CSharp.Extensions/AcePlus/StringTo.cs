@@ -151,4 +151,34 @@ public static class StringTo
     {
         return StringExtensions.ToDecimalOrDefaultLocal(value, defaultValue);
     }
+
+    public static double Double(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToDouble(value, provider);
+    }
+
+    public static double DoubleOrDefault(string? value, IFormatProvider? provider, double defaultValue = default)
+    {
+        return StringExtensions.ToDoubleOrDefault(value, provider, defaultValue);
+    }
+
+    public static double DoubleInvariant(string? value)
+    {
+        return StringExtensions.ToDoubleInvariant(value);
+    }
+
+    public static double DoubleOrDefaultInvariant(string? value, double defaultValue = default)
+    {
+        return StringExtensions.ToDoubleOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static double DoubleLocal(string? value)
+    {
+        return StringExtensions.ToDoubleLocal(value);
+    }
+
+    public static double DoubleOrDefaultLocal(string? value, double defaultValue = default)
+    {
+        return StringExtensions.ToDoubleOrDefaultLocal(value, defaultValue);
+    }
 }
