@@ -121,4 +121,34 @@ public static class ObjectTo
     {
         return ObjectExtensions.ToDateTimeOrDefaultLocal(value, defaultValue);
     }
+
+    public static decimal Decimal(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToDecimal(value, provider);
+    }
+
+    public static decimal DecimalOrDefault(object? value, IFormatProvider? provider, decimal defaultValue = default)
+    {
+        return ObjectExtensions.ToDecimalOrDefault(value, provider, defaultValue);
+    }
+
+    public static decimal DecimalInvariant(object? value)
+    {
+        return ObjectExtensions.ToDecimalInvariant(value);
+    }
+
+    public static decimal DecimalOrDefaultInvariant(object? value, decimal defaultValue = default)
+    {
+        return ObjectExtensions.ToDecimalOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static decimal DecimalLocal(object? value)
+    {
+        return ObjectExtensions.ToDecimalLocal(value);
+    }
+
+    public static decimal DecimalOrDefaultLocal(object? value, decimal defaultValue = default)
+    {
+        return ObjectExtensions.ToDecimalOrDefaultLocal(value, defaultValue);
+    }
 }
