@@ -421,4 +421,34 @@ public static class ObjectTo
     {
         return ObjectExtensions.ToSingleOrDefaultLocal(value, defaultValue);
     }
+
+    public static ushort UInt16(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToUInt16(value, provider);
+    }
+
+    public static ushort UInt16OrDefault(object? value, IFormatProvider? provider, ushort defaultValue = default)
+    {
+        return ObjectExtensions.ToUInt16OrDefault(value, provider, defaultValue);
+    }
+
+    public static ushort UInt16Invariant(object? value)
+    {
+        return ObjectExtensions.ToUInt16Invariant(value);
+    }
+
+    public static ushort UInt16OrDefaultInvariant(object? value, ushort defaultValue = default)
+    {
+        return ObjectExtensions.ToUInt16OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static ushort UInt16Local(object? value)
+    {
+        return ObjectExtensions.ToUInt16Local(value);
+    }
+
+    public static ushort UInt16OrDefaultLocal(object? value, ushort defaultValue = default)
+    {
+        return ObjectExtensions.ToUInt16OrDefaultLocal(value, defaultValue);
+    }
 }
