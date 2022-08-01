@@ -211,4 +211,64 @@ public static class ObjectTo
     {
         return ObjectExtensions.ToInt16OrDefaultLocal(value, defaultValue);
     }
+
+    public static int Int32(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToInt32(value, provider);
+    }
+
+    public static int Int32OrDefault(object? value, IFormatProvider? provider, int defaultValue = default)
+    {
+        return ObjectExtensions.ToInt32OrDefault(value, provider, defaultValue);
+    }
+
+    public static int Int(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToInt32(value, provider);
+    }
+
+    public static int IntOrDefault(object? value, IFormatProvider? provider, int defaultValue = default)
+    {
+        return ObjectExtensions.ToInt32OrDefault(value, provider, defaultValue);
+    }
+
+    public static int Int32Invariant(object? value)
+    {
+        return ObjectExtensions.ToInt32Invariant(value);
+    }
+
+    public static int Int32OrDefaultInvariant(object? value, int defaultValue = default)
+    {
+        return ObjectExtensions.ToInt32OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static int IntInvariant(object? value)
+    {
+        return ObjectExtensions.ToInt32Invariant(value);
+    }
+
+    public static int IntOrDefaultInvariant(object? value, int defaultValue = default)
+    {
+        return ObjectExtensions.ToInt32OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static int Int32Local(object? value)
+    {
+        return ObjectExtensions.ToInt32Local(value);
+    }
+
+    public static int Int32OrDefaultLocal(object? value, int defaultValue = default)
+    {
+        return ObjectExtensions.ToInt32OrDefaultLocal(value, defaultValue);
+    }
+
+    public static int IntLocal(object? value)
+    {
+        return ObjectExtensions.ToInt32Local(value);
+    }
+
+    public static int IntOrDefaultLocal(object? value, int defaultValue = default)
+    {
+        return ObjectExtensions.ToInt32OrDefaultLocal(value, defaultValue);
+    }
 }
