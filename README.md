@@ -15,5 +15,7 @@
   * [StartsWith](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.StartsWith.cs)
   * To
     * [Boolean](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Boolean.cs)
+    * [Byte](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Byte.cs)
+    * [Char](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Char.cs)
   * [ToLower](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.ToLower.cs)
   * [ToUpper](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.ToUpper.cs)

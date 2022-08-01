@@ -61,4 +61,34 @@ public static class StringTo
     {
         return StringExtensions.ToByteOrDefaultLocal(value, defaultValue);
     }
+
+    public static char Char(string value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToChar(value, provider);
+    }
+
+    public static char CharOrDefault(string value, IFormatProvider? provider, char defaultValue = default)
+    {
+        return StringExtensions.ToCharOrDefault(value, provider);
+    }
+
+    public static char CharInvariant(string value)
+    {
+        return StringExtensions.ToCharInvariant(value);
+    }
+
+    public static char CharOrDefaultInvariant(string value, char defaultValue = default)
+    {
+        return StringExtensions.ToCharOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static char CharLocal(string value)
+    {
+        return StringExtensions.ToCharLocal(value);
+    }
+
+    public static char CharOrDefaultLocal(string value, char defaultValue = default)
+    {
+        return StringExtensions.ToCharOrDefaultLocal(value, defaultValue);
+    }
 }
