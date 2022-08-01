@@ -361,4 +361,64 @@ public static class ObjectTo
     {
         return ObjectExtensions.ToSByteOrDefaultLocal(value, defaultValue);
     }
+
+    public static float Single(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToSingle(value, provider);
+    }
+
+    public static float SingleOrDefault(object? value, IFormatProvider? provider, float defaultValue = default)
+    {
+        return ObjectExtensions.ToSingleOrDefault(value, provider, defaultValue);
+    }
+
+    public static float Float(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToSingle(value, provider);
+    }
+
+    public static float FloatOrDefault(object? value, IFormatProvider? provider, float defaultValue = default)
+    {
+        return ObjectExtensions.ToSingleOrDefault(value, provider, defaultValue);
+    }
+
+    public static float SingleInvariant(object? value)
+    {
+        return ObjectExtensions.ToSingleInvariant(value);
+    }
+
+    public static float SingleOrDefaultInvariant(object? value, float defaultValue = default)
+    {
+        return ObjectExtensions.ToSingleOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static float FloatInvariant(object? value)
+    {
+        return ObjectExtensions.ToSingleInvariant(value);
+    }
+
+    public static float FloatOrDefaultInvariant(object? value, float defaultValue = default)
+    {
+        return ObjectExtensions.ToSingleOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static float SingleLocal(object? value)
+    {
+        return ObjectExtensions.ToSingleLocal(value);
+    }
+
+    public static float SingleOrDefaultLocal(object? value, float defaultValue = default)
+    {
+        return ObjectExtensions.ToSingleOrDefaultLocal(value, defaultValue);
+    }
+
+    public static float FloatLocal(object? value)
+    {
+        return ObjectExtensions.ToSingleLocal(value);
+    }
+
+    public static float FloatOrDefaultLocal(object? value, float defaultValue = default)
+    {
+        return ObjectExtensions.ToSingleOrDefaultLocal(value, defaultValue);
+    }
 }
