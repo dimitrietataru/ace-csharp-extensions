@@ -31,4 +31,34 @@ public static class ObjectTo
     {
         return ObjectExtensions.ToBooleanOrDefaultLocal(value, defaultValue);
     }
+
+    public static byte Byte(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToByte(value, provider);
+    }
+
+    public static byte ByteOrDefault(object? value, IFormatProvider? provider, byte defaultValue = default)
+    {
+        return ObjectExtensions.ToByteOrDefault(value, provider, defaultValue);
+    }
+
+    public static byte ByteInvariant(object? value)
+    {
+        return ObjectExtensions.ToByteInvariant(value);
+    }
+
+    public static byte ByteOrDefaultInvariant(object? value, byte defaultValue = default)
+    {
+        return ObjectExtensions.ToByteOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static byte ByteLocal(object? value)
+    {
+        return ObjectExtensions.ToByteLocal(value);
+    }
+
+    public static byte ByteOrDefaultLocal(object? value, byte defaultValue = default)
+    {
+        return ObjectExtensions.ToByteOrDefaultLocal(value, defaultValue);
+    }
 }
