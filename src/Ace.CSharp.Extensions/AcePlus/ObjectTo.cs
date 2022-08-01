@@ -61,4 +61,34 @@ public static class ObjectTo
     {
         return ObjectExtensions.ToByteOrDefaultLocal(value, defaultValue);
     }
+
+    public static char Char(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToChar(value, provider);
+    }
+
+    public static char CharOrDefault(object? value, IFormatProvider? provider, char defaultValue = default)
+    {
+        return ObjectExtensions.ToCharOrDefault(value, provider);
+    }
+
+    public static char CharInvariant(object? value)
+    {
+        return ObjectExtensions.ToCharInvariant(value);
+    }
+
+    public static char CharOrDefaultInvariant(object? value, char defaultValue = default)
+    {
+        return ObjectExtensions.ToCharOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static char CharLocal(object? value)
+    {
+        return ObjectExtensions.ToCharLocal(value);
+    }
+
+    public static char CharOrDefaultLocal(object? value, char defaultValue = default)
+    {
+        return ObjectExtensions.ToCharOrDefaultLocal(value, defaultValue);
+    }
 }
