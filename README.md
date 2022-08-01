@@ -9,5 +9,7 @@
   * [IndexOf](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.IndexOf.cs)
   * [Replace](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.Replace.cs)
   * [StartsWith](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.StartsWith.cs)
+  * To
+    * [Boolean](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Boolean.cs)
   * [ToLower](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.ToLower.cs)
   * [ToUpper](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.ToUpper.cs)
