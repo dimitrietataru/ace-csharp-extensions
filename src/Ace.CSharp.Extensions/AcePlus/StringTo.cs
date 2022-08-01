@@ -121,4 +121,34 @@ public static class StringTo
     {
         return StringExtensions.ToDateTimeOrDefaultLocal(value, defaultValue);
     }
+
+    public static decimal Decimal(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToDecimal(value, provider);
+    }
+
+    public static decimal DecimalOrDefault(string? value, IFormatProvider? provider, decimal defaultValue = default)
+    {
+        return StringExtensions.ToDecimalOrDefault(value, provider, defaultValue);
+    }
+
+    public static decimal DecimalInvariant(string? value)
+    {
+        return StringExtensions.ToDecimalInvariant(value);
+    }
+
+    public static decimal DecimalOrDefaultInvariant(string? value, decimal defaultValue = default)
+    {
+        return StringExtensions.ToDecimalOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static decimal DecimalLocal(string? value)
+    {
+        return StringExtensions.ToDecimalLocal(value);
+    }
+
+    public static decimal DecimalOrDefaultLocal(string? value, decimal defaultValue = default)
+    {
+        return StringExtensions.ToDecimalOrDefaultLocal(value, defaultValue);
+    }
 }
