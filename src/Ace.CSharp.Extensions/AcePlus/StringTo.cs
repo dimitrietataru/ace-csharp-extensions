@@ -421,4 +421,34 @@ public static class StringTo
     {
         return StringExtensions.ToSingleOrDefaultLocal(value, defaultValue);
     }
+
+    public static ushort UInt16(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToUInt16(value, provider);
+    }
+
+    public static ushort UInt16OrDefault(string? value, IFormatProvider? provider, ushort defaultValue = default)
+    {
+        return StringExtensions.ToUInt16OrDefault(value, provider, defaultValue);
+    }
+
+    public static ushort UInt16Invariant(string? value)
+    {
+        return StringExtensions.ToUInt16Invariant(value);
+    }
+
+    public static ushort UInt16OrDefaultInvariant(string? value, ushort defaultValue = default)
+    {
+        return StringExtensions.ToUInt16OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static ushort UInt16Local(string? value)
+    {
+        return StringExtensions.ToUInt16Local(value);
+    }
+
+    public static ushort UInt16OrDefaultLocal(string? value, ushort defaultValue = default)
+    {
+        return StringExtensions.ToUInt16OrDefaultLocal(value, defaultValue);
+    }
 }
