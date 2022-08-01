@@ -271,4 +271,64 @@ public static class StringTo
     {
         return StringExtensions.ToInt32OrDefaultLocal(value, defaultValue);
     }
+
+    public static long Int64(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToInt64(value, provider);
+    }
+
+    public static long Int64OrDefault(string? value, IFormatProvider? provider, long defaultValue = default)
+    {
+        return StringExtensions.ToInt64OrDefault(value, provider, defaultValue);
+    }
+
+    public static long Long(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToInt64(value, provider);
+    }
+
+    public static long LongOrDefault(string? value, IFormatProvider? provider, long defaultValue = default)
+    {
+        return StringExtensions.ToInt64OrDefault(value, provider, defaultValue);
+    }
+
+    public static long Int64Invariant(string? value)
+    {
+        return StringExtensions.ToInt64Invariant(value);
+    }
+
+    public static long Int64OrDefaultInvariant(string? value, long defaultValue = default)
+    {
+        return StringExtensions.ToInt64OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static long LongLocalInvariant(string? value)
+    {
+        return StringExtensions.ToInt64Invariant(value);
+    }
+
+    public static long LongOrDefaultInvariant(string? value, long defaultValue = default)
+    {
+        return StringExtensions.ToInt64OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static long Int64Local(string? value)
+    {
+        return StringExtensions.ToInt64Local(value);
+    }
+
+    public static long Int64OrDefaultLocal(string? value, long defaultValue = default)
+    {
+        return StringExtensions.ToInt64OrDefaultLocal(value, defaultValue);
+    }
+
+    public static long LongLocal(string? value)
+    {
+        return StringExtensions.ToInt64Local(value);
+    }
+
+    public static long LongOrDefaultLocal(string? value, long defaultValue = default)
+    {
+        return StringExtensions.ToInt64OrDefaultLocal(value, defaultValue);
+    }
 }
