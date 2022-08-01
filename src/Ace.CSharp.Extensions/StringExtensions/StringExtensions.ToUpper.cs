@@ -11,4 +11,14 @@ public static partial class StringExtensions
 
         return value.ToUpper(CultureInfo.CurrentCulture);
     }
+
+    public static string ToUpperOrDefaultLocal(this string? value, string defaultValue = "")
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return defaultValue;
+        }
+
+        return value.ToUpper(CultureInfo.CurrentCulture);
+    }
 }
