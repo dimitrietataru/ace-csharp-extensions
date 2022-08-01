@@ -511,4 +511,64 @@ public static class StringTo
     {
         return StringExtensions.ToUInt32OrDefaultLocal(value, defaultValue);
     }
+
+    public static ulong UInt64(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToUInt64(value, provider);
+    }
+
+    public static ulong UInt64OrDefault(string? value, IFormatProvider? provider, ulong defaultValue = default)
+    {
+        return StringExtensions.ToUInt64OrDefault(value, provider, defaultValue);
+    }
+
+    public static ulong ULong(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToUInt64(value, provider);
+    }
+
+    public static ulong ULongOrDefault(string? value, IFormatProvider? provider, ulong defaultValue = default)
+    {
+        return StringExtensions.ToUInt64OrDefault(value, provider, defaultValue);
+    }
+
+    public static ulong UInt64Invariant(string? value)
+    {
+        return StringExtensions.ToUInt64Invariant(value);
+    }
+
+    public static ulong UInt64OrDefaultInvariant(string? value, ulong defaultValue = default)
+    {
+        return StringExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static ulong ULongInvariant(string? value)
+    {
+        return StringExtensions.ToUInt64Invariant(value);
+    }
+
+    public static ulong ULongOrDefaultInvariant(string? value, ulong defaultValue = default)
+    {
+        return StringExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static ulong UInt64Local(string? value)
+    {
+        return StringExtensions.ToUInt64Local(value);
+    }
+
+    public static ulong UInt64OrDefaultLocal(string? value, ulong defaultValue = default)
+    {
+        return StringExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static ulong ULongLocal(string? value)
+    {
+        return StringExtensions.ToUInt64Local(value);
+    }
+
+    public static ulong ULongOrDefaultLocal(string? value, ulong defaultValue = default)
+    {
+        return StringExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+    }
 }
