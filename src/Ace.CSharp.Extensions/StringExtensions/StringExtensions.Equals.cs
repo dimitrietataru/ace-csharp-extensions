@@ -6,4 +6,9 @@ public static partial class StringExtensions
     {
         return string.Equals(value, other, StringComparison.Ordinal);
     }
+
+    public static bool EqualsOrdinalIgnoreCase(this string value, string? other)
+    {
+        return string.Equals(value, other, StringComparison.OrdinalIgnoreCase);
+    }
 }
