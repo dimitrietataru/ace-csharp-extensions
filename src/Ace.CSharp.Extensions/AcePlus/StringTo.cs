@@ -331,4 +331,34 @@ public static class StringTo
     {
         return StringExtensions.ToInt64OrDefaultLocal(value, defaultValue);
     }
+
+    public static sbyte SByte(string value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToSByte(value, provider);
+    }
+
+    public static sbyte SByteOrDefault(string value, IFormatProvider? provider, sbyte defaultValue = default)
+    {
+        return StringExtensions.ToSByteOrDefault(value, provider, defaultValue);
+    }
+
+    public static sbyte SByteInvariant(string value)
+    {
+        return StringExtensions.ToSByteInvariant(value);
+    }
+
+    public static sbyte SByteOrDefaultInvariant(string value, sbyte defaultValue = default)
+    {
+        return StringExtensions.ToSByteOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static sbyte SByteLocal(string value)
+    {
+        return StringExtensions.ToSByteLocal(value);
+    }
+
+    public static sbyte SByteOrDefaultLocal(string value, sbyte defaultValue = default)
+    {
+        return StringExtensions.ToSByteOrDefaultLocal(value, defaultValue);
+    }
 }
