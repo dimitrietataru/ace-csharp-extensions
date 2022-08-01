@@ -181,4 +181,34 @@ public static class ObjectTo
     {
         return ObjectExtensions.ToDoubleOrDefaultLocal(value, defaultValue);
     }
+
+    public static short Int16(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToInt16(value, provider);
+    }
+
+    public static short Int16OrDefault(object? value, IFormatProvider? provider, short defaultValue = default)
+    {
+        return ObjectExtensions.ToInt16OrDefault(value, provider, defaultValue);
+    }
+
+    public static short Int16Invariant(object? value)
+    {
+        return ObjectExtensions.ToInt16Invariant(value);
+    }
+
+    public static short Int16OrDefaultInvariant(object? value, short defaultValue = default)
+    {
+        return ObjectExtensions.ToInt16OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static short Int16Local(object? value)
+    {
+        return ObjectExtensions.ToInt16Local(value);
+    }
+
+    public static short Int16OrDefaultLocal(object? value, short defaultValue = default)
+    {
+        return ObjectExtensions.ToInt16OrDefaultLocal(value, defaultValue);
+    }
 }
