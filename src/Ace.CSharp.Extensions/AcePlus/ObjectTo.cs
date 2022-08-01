@@ -91,4 +91,34 @@ public static class ObjectTo
     {
         return ObjectExtensions.ToCharOrDefaultLocal(value, defaultValue);
     }
+
+    public static DateTime DateTime(object? value, IFormatProvider? provider)
+    {
+        return ObjectExtensions.ToDateTime(value, provider);
+    }
+
+    public static DateTime DateTimeOrDefault(object? value, IFormatProvider? provider, DateTime defaultValue = default)
+    {
+        return ObjectExtensions.ToDateTimeOrDefault(value, provider, defaultValue);
+    }
+
+    public static DateTime DateTimeInvariant(object? value)
+    {
+        return ObjectExtensions.ToDateTimeInvariant(value);
+    }
+
+    public static DateTime DateTimeOrDefaultInvariant(object? value, DateTime defaultValue = default)
+    {
+        return ObjectExtensions.ToDateTimeOrDefaultInvariant(value, defaultValue);
+    }
+
+    public static DateTime DateTimeLocal(object? value)
+    {
+        return ObjectExtensions.ToDateTimeLocal(value);
+    }
+
+    public static DateTime DateTimeOrDefaultLocal(object? value, DateTime defaultValue = default)
+    {
+        return ObjectExtensions.ToDateTimeOrDefaultLocal(value, defaultValue);
+    }
 }
