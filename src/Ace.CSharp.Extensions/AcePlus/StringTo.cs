@@ -69,7 +69,7 @@ public static class StringTo
 
     public static char CharOrDefault(string value, IFormatProvider? provider, char defaultValue = default)
     {
-        return StringExtensions.ToCharOrDefault(value, provider);
+        return StringExtensions.ToCharOrDefault(value, provider, defaultValue);
     }
 
     public static char CharInvariant(string value)
@@ -369,7 +369,7 @@ public static class StringTo
 
     public static float SingleOrDefault(string? value, IFormatProvider? provider, float defaultValue = default)
     {
-        return StringExtensions.ToSingleOrDefault(value, provider);
+        return StringExtensions.ToSingleOrDefault(value, provider, defaultValue);
     }
 
     public static float Float(string? value, IFormatProvider? provider)
@@ -379,7 +379,7 @@ public static class StringTo
 
     public static float FloatOrDefault(string? value, IFormatProvider? provider, float defaultValue = default)
     {
-        return StringExtensions.ToSingleOrDefault(value, provider);
+        return StringExtensions.ToSingleOrDefault(value, provider, defaultValue);
     }
 
     public static float SingleInvariant(string? value)

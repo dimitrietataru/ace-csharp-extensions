@@ -69,7 +69,7 @@ public static class ObjectTo
 
     public static char CharOrDefault(object? value, IFormatProvider? provider, char defaultValue = default)
     {
-        return ObjectExtensions.ToCharOrDefault(value, provider);
+        return ObjectExtensions.ToCharOrDefault(value, provider, defaultValue);
     }
 
     public static char CharInvariant(object? value)
