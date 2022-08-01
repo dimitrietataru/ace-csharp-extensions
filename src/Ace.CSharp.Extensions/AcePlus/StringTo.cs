@@ -451,4 +451,64 @@ public static class StringTo
     {
         return StringExtensions.ToUInt16OrDefaultLocal(value, defaultValue);
     }
+
+    public static uint UInt32(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToUInt32(value, provider);
+    }
+
+    public static uint UInt32OrDefault(string? value, IFormatProvider? provider, uint defaultValue = default)
+    {
+        return StringExtensions.ToUInt32OrDefault(value, provider, defaultValue);
+    }
+
+    public static uint UInt(string? value, IFormatProvider? provider)
+    {
+        return StringExtensions.ToUInt32(value, provider);
+    }
+
+    public static uint UIntOrDefault(string? value, IFormatProvider? provider, uint defaultValue = default)
+    {
+        return StringExtensions.ToUInt32OrDefault(value, provider, defaultValue);
+    }
+
+    public static uint UInt32Invariant(string? value)
+    {
+        return StringExtensions.ToUInt32Invariant(value);
+    }
+
+    public static uint UInt32OrDefaultInvariant(string? value, uint defaultValue = default)
+    {
+        return StringExtensions.ToUInt32OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static uint UIntInvariant(string? value)
+    {
+        return StringExtensions.ToUInt32Invariant(value);
+    }
+
+    public static uint UIntOrDefaultInvariant(string? value, uint defaultValue = default)
+    {
+        return StringExtensions.ToUInt32OrDefaultInvariant(value, defaultValue);
+    }
+
+    public static uint UInt32Local(string? value)
+    {
+        return StringExtensions.ToUInt32Local(value);
+    }
+
+    public static uint UInt32OrDefaultLocal(string? value, uint defaultValue = default)
+    {
+        return StringExtensions.ToUInt32OrDefaultLocal(value, defaultValue);
+    }
+
+    public static uint UIntLocal(string? value)
+    {
+        return StringExtensions.ToUInt32Local(value);
+    }
+
+    public static uint UIntOrDefaultLocal(string? value, uint defaultValue = default)
+    {
+        return StringExtensions.ToUInt32OrDefaultLocal(value, defaultValue);
+    }
 }
