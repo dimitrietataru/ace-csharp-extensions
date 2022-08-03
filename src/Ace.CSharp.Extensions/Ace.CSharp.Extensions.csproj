@@ -8,6 +8,12 @@
     <ImplicitUsings>disable</ImplicitUsings>
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>AceCSharp.Extensions</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Dimitrie Tataru</Authors>
+    <Company>A C E</Company>
+    <Description>C# extension methods</Description>
+    <PackageTags>extensions;extension methods</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

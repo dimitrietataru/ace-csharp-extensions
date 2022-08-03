@@ -1,0 +1,50 @@
+name: release-CI
+
+on:
+  create:
+    branches: 
+      - release/**
+  push:
+    branches:
+    - ace
+    - main
+
+jobs:
+  build:
+
+    env:
+      CONFIG: 'Release'
+      SOLUTION: 'src/Ace.CSharp.Extensions.sln'
+      TEST_PROJECT: 'src/Ace.CSharp.Extensions.Tests/Ace.CSharp.Extensions.Tests.csproj'
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    
+    - name: Get build version
+      run: |
+        Import-Module .\build\GetBuildVersion.psm1
+        Write-Host $Env:GITHUB_REF
+        $version = GetBuildVersion -VersionString $Env:GITHUB_REF
+        echo "BUILD_VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
+      shell: pwsh
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+
+    - name: dotnet restore
+      run: dotnet restore $SOLUTION
+
+    - name: dotnet build
+      run: dotnet build $SOLUTION --configuration $CONFIG -p:Version=$BUILD_VERSION --no-restore
+
+    - name: dotnet test
+      run: dotnet test $TEST_PROJECT --configuration $CONFIG --no-restore --no-build --verbosity normal
+
+    - name: dotnet nuget push
+      if: startsWith(github.ref, 'refs/heads/release')
+      run: dotnet nuget push **\*.nupkg -s 'https://api.nuget.org/v3/index.json' -k ${{secrets.NUGETSECRET}}

@@ -1,5 +1,8 @@
 # C# extension methods
 
+[![build](https://github.com/dimitrietataru/ace-csharp-extensions/actions/workflows/build.yml/badge.svg)](https://github.com/dimitrietataru/ace-csharp-extensions/actions/workflows/build.yml)
+[![release](https://github.com/dimitrietataru/ace-csharp-extensions/actions/workflows/release.yml/badge.svg)](https://github.com/dimitrietataru/ace-csharp-extensions/actions/workflows/release.yml)
+
 ## Table of contents
 
 * [Object extensions](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/ObjectExtensions)

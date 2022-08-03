@@ -1,0 +1,41 @@
+name: build-CI
+
+on:
+  create:
+    branches: 
+      - feature/**
+  push:
+    branches:
+    - ace
+    - main
+    - develop
+    - feature/**
+    - bugfix/**
+
+jobs:
+  build:
+
+    env:
+      CONFIG: 'Release'
+      SOLUTION: 'src/Ace.CSharp.Extensions.sln'
+      TEST_PROJECT: 'src/Ace.CSharp.Extensions.Tests/Ace.CSharp.Extensions.Tests.csproj'
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+
+    - name: dotnet restore
+      run: dotnet restore $SOLUTION
+
+    - name: dotnet build
+      run: dotnet build $SOLUTION --configuration $CONFIG --no-restore
+
+    - name: dotnet test
+      run: dotnet test $TEST_PROJECT --configuration $CONFIG --no-restore --no-build --verbosity normal

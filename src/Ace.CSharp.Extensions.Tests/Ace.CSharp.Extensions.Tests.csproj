@@ -6,6 +6,11 @@
 
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
+
+    <PackageId>AceCSharp.Extensions.Tests</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Dimitrie Tataru</Authors>
+    <Company>A C E</Company>
   </PropertyGroup>
 
   <ItemGroup>
