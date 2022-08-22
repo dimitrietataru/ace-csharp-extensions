@@ -7,7 +7,6 @@
 
 * [Object extensions](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/ObjectExtensions)
   * To
-    * [Char](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Char.cs)
     * [DateTime](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.DateTime.cs)
     * [Decimal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Decimal.cs)
     * [Double](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Double.cs)
