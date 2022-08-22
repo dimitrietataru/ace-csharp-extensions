@@ -17,7 +17,7 @@ public sealed class ToBooleanLocalTests
     }
 
     [Fact]
-    internal void GivenToBooleanLocalWhenInputIsNotValidThenExceptionIsThrown()
+    internal void GivenToBooleanLocalWhenInputIsNotValidThenFormatExceptionIsThrown()
     {
         // Arrange
         string @this = "foo";

@@ -17,7 +17,7 @@ public sealed class ToBooleanTests
     }
 
     [Fact]
-    internal void GivenToBooleanWhenInputIsNotValidThenExceptionIsThrown()
+    internal void GivenToBooleanWhenInputIsNotValidThenFormatExceptionIsThrown()
     {
         // Arrange
         string @this = "foo";
