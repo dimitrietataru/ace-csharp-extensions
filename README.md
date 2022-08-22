@@ -7,7 +7,6 @@
 
 * [Object extensions](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/ObjectExtensions)
   * To
-    * [Decimal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Decimal.cs)
     * [Double](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Double.cs)
     * [Int16](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Int16.cs)
     * [Int32](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Int32.cs)
@@ -63,6 +62,12 @@
     * [DateTimeOrDefault](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DateTime.cs#L10)
       * [DateTimeOrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DateTimeInvariant.cs#L10)
       * [DateTimeOrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DateTimeLocal.cs#L10)
+    * [Decimal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Decimal.cs#L5)
+      * [DecimalInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DecimalInvariant.cs#L5)
+      * [DecimalLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DecimalLocal.cs#L5)
+    * [DecimalOrDefault](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Decimal.cs#L10)
+      * [DecimalOrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DecimalInvariant.cs#L10)
+      * [DecimalOrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DecimalLocal.cs#L10)
 * [System.String](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/System.String)
   * To
     * [Boolean](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Boolean.cs#L5)
