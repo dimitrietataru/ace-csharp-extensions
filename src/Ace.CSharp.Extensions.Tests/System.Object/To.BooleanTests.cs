@@ -17,7 +17,7 @@ public sealed class ToBooleanTests
     }
 
     [Fact]
-    internal void GivenToBooleanWhenInputIsNotValidThenExceptionIsThrown()
+    internal void GivenToBooleanWhenInputIsNotValidThenFormatExceptionIsThrown()
     {
         // Arrange
         object @this = "foo";
@@ -27,6 +27,19 @@ public sealed class ToBooleanTests
 
         // Assert
         action.Should().Throw<FormatException>();
+    }
+
+    [Fact]
+    internal void GivenToBooleanWhenInputIsNotValidThenInvalidCastExceptionIsThrown()
+    {
+        // Arrange
+        object @this = new { Foo = "foo" };
+
+        // Act
+        var action = () => @this.ToBoolean(provider: default);
+
+        // Assert
+        action.Should().Throw<InvalidCastException>();
     }
 
     [Fact]

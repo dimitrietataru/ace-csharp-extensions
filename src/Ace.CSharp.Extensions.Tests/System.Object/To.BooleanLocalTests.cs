@@ -17,7 +17,7 @@ public sealed class ToBooleanLocalTests
     }
 
     [Fact]
-    internal void GivenToBooleanLocalWhenInputIsNotValidThenExceptionIsThrown()
+    internal void GivenToBooleanLocalWhenInputIsNotValidThenFormatExceptionIsThrown()
     {
         // Arrange
         object @this = "foo";
@@ -27,6 +27,19 @@ public sealed class ToBooleanLocalTests
 
         // Assert
         action.Should().Throw<FormatException>();
+    }
+
+    [Fact]
+    internal void GivenToBooleanLocalWhenInputIsNotValidThenInvalidCastExceptionIsThrown()
+    {
+        // Arrange
+        object @this = new { Foo = "foo" };
+
+        // Act
+        var action = () => @this.ToBooleanLocal();
+
+        // Assert
+        action.Should().Throw<InvalidCastException>();
     }
 
     [Fact]

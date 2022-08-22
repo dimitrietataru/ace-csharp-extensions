@@ -17,7 +17,7 @@ public sealed class ToBooleanInvariantTests
     }
 
     [Fact]
-    internal void GivenToBooleanInvariantWhenInputIsNotValidThenExceptionIsThrown()
+    internal void GivenToBooleanInvariantWhenInputIsNotValidThenFormatExceptionIsThrown()
     {
         // Arrange
         object @this = "foo";
@@ -27,6 +27,19 @@ public sealed class ToBooleanInvariantTests
 
         // Assert
         action.Should().Throw<FormatException>();
+    }
+
+    [Fact]
+    internal void GivenToBooleanInvariantWhenInputIsNotValidThenInvalidCastExceptionIsThrown()
+    {
+        // Arrange
+        object @this = new { Foo = "foo" };
+
+        // Act
+        var action = () => @this.ToBooleanInvariant();
+
+        // Assert
+        action.Should().Throw<InvalidCastException>();
     }
 
     [Fact]
