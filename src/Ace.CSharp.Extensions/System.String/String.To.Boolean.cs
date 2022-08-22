@@ -11,11 +11,7 @@ public static partial class StringExtensions
     {
         bool isBoolean = TryConvertToBoolean(@this, provider, out bool result);
 
-        return isBoolean switch
-        {
-            true => result,
-            false => @default
-        };
+        return isBoolean ? result : @default;
     }
 
     public static bool TryConvertToBoolean(this string? @this, IFormatProvider? provider, out bool result)
