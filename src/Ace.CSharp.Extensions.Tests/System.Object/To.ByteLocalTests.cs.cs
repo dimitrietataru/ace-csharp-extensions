@@ -30,6 +30,19 @@ public sealed class ToByteLocalTests
     }
 
     [Fact]
+    internal void GivenToByteLocalWhenInputIsNotValidThenInvalidCastExceptionIsThrown()
+    {
+        // Arrange
+        object @this = new { Foo = "foo" };
+
+        // Act
+        var action = () => @this.ToByteLocal();
+
+        // Assert
+        action.Should().Throw<InvalidCastException>();
+    }
+
+    [Fact]
     internal void GivenToByteLocalWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange

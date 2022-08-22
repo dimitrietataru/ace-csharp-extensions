@@ -30,6 +30,19 @@ public sealed class ToByteInvariantTests
     }
 
     [Fact]
+    internal void GivenToByteInvariantWhenInputIsNotValidThenInvalidCastExceptionIsThrown()
+    {
+        // Arrange
+        object @this = new { Foo = "foo" };
+
+        // Act
+        var action = () => @this.ToByteInvariant();
+
+        // Assert
+        action.Should().Throw<InvalidCastException>();
+    }
+
+    [Fact]
     internal void GivenToByteInvariantWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange

@@ -30,6 +30,19 @@ public sealed class ToByteTests
     }
 
     [Fact]
+    internal void GivenToByteWhenInputIsNotValidThenInvalidCastExceptionIsThrown()
+    {
+        // Arrange
+        object @this = new { Foo = "foo" };
+
+        // Act
+        var action = () => @this.ToByte(provider: default);
+
+        // Assert
+        action.Should().Throw<InvalidCastException>();
+    }
+
+    [Fact]
     internal void GivenToByteWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange
