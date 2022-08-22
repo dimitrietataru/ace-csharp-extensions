@@ -28,7 +28,6 @@
   * [Replace](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.Replace.cs)
   * [StartsWith](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.StartsWith.cs)
   * To
-    * [Char](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Char.cs)
     * [DateTime](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.DateTime.cs)
     * [Decimal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Decimal.cs)
     * [Double](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Double.cs)
@@ -70,3 +69,9 @@
     * [ByteOrDefault](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Byte.cs#L10)
       * [ByteOrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.ByteInvariant.cs#L10)
       * [ByteOrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.ByteLocal.cs#L10)
+    * [Char](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Char.cs#L5)
+      * [CharInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.CharInvariant.cs#L5)
+      * [CharLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.CharLocal.cs#L5)
+    * [CharOrDefault](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Char.cs#L10)
+      * [CharOrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.CharInvariant.cs#L10)
+      * [CharOrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.CharLocal.cs#L10)
