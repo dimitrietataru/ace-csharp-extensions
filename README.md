@@ -7,7 +7,6 @@
 
 * [Object extensions](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/ObjectExtensions)
   * To
-    * [Double](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Double.cs)
     * [Int16](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Int16.cs)
     * [Int32](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Int32.cs)
     * [Int64](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Int64.cs)
@@ -25,7 +24,6 @@
   * [Replace](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.Replace.cs)
   * [StartsWith](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.StartsWith.cs)
   * To
-    * [Double](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Double.cs)
     * [Int16](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Int16.cs)
     * [Int32](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Int32.cs)
     * [Int64](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Int64.cs)
@@ -68,6 +66,12 @@
     * [DecimalOrDefault](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Decimal.cs#L10)
       * [DecimalOrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DecimalInvariant.cs#L10)
       * [DecimalOrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DecimalLocal.cs#L10)
+    * [Double](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Double.cs#L5)
+      * [DoubleInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DoubleInvariant.cs#L5)
+      * [DoubleLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DoubleLocal.cs#L5)
+    * [DoubleOrDefault](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Double.cs#L10)
+      * [DoubleOrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DoubleInvariant.cs#L10)
+      * [DoubleOrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.DoubleLocal.cs#L10)
 * [System.String](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/System.String)
   * To
     * [Boolean](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Boolean.cs#L5)
