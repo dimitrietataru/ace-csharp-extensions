@@ -24,7 +24,6 @@
   * [Replace](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.Replace.cs)
   * [StartsWith](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.StartsWith.cs)
   * To
-    * [Int16](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Int16.cs)
     * [Int32](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Int32.cs)
     * [Int64](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.Int64.cs)
     * [SByte](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.To.SByte.cs)
@@ -110,3 +109,9 @@
     * [DoubleOrDefault](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Double.cs#L10)
       * [DoubleOrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.DoubleInvariant.cs#L10)
       * [DoubleOrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.DoubleLocal.cs#L10)
+    * [Int16](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Int16.cs#L5)
+      * [Int16Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Int16Invariant.cs#L5)
+      * [Int16Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Int16Local.cs#L5)
+    * [Int16OrDefault](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Int16.cs#L10)
+      * [Int16OrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Int16Invariant.cs#L10)
+      * [Int16OrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Int16Local.cs#L10)
