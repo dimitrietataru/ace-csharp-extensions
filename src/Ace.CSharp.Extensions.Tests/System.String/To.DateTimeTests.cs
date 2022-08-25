@@ -6,7 +6,7 @@ public sealed class ToDateTimeTests
     internal void GivenToDateTimeWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = DateTime.UnixEpoch.ToString(CultureInfo.InvariantCulture);
+        string @this = DateTime.UnixEpoch.ToString(CultureInfo.CurrentCulture);
         var expected = DateTime.UnixEpoch;
 
         // Act
@@ -33,7 +33,7 @@ public sealed class ToDateTimeTests
     internal void GivenToDateTimeOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = DateTime.UnixEpoch.ToString(CultureInfo.InvariantCulture);
+        string @this = DateTime.UnixEpoch.ToString(CultureInfo.CurrentCulture);
         var expected = DateTime.UnixEpoch;
 
         // Act
@@ -61,7 +61,7 @@ public sealed class ToDateTimeTests
     internal void GivenTryConvertToDateTimeWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = DateTime.UnixEpoch.ToString(CultureInfo.InvariantCulture);
+        string @this = DateTime.UnixEpoch.ToString(CultureInfo.CurrentCulture);
         var expected = DateTime.UnixEpoch;
 
         // Act
