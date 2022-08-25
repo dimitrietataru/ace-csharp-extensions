@@ -6,8 +6,8 @@ public sealed class ToInt16LocalTests
     internal void GivenToInt16LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((short)1024).ToString(CultureInfo.CurrentCulture);
-        short expected = 1024;
+        string @this = short.MaxValue.ToString(CultureInfo.CurrentCulture);
+        short expected = short.MaxValue;
 
         // Act
         short actual = @this.ToInt16Local();
@@ -46,8 +46,8 @@ public sealed class ToInt16LocalTests
     internal void GivenToInt16OrDefaultLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((short)1024).ToString(CultureInfo.CurrentCulture);
-        short expected = 1024;
+        string @this = short.MaxValue.ToString(CultureInfo.CurrentCulture);
+        short expected = short.MaxValue;
 
         // Act
         short actual = @this.ToInt16OrDefaultLocal();
@@ -61,7 +61,7 @@ public sealed class ToInt16LocalTests
     {
         // Arrange
         string @this = "foo";
-        short expected = 1024;
+        short expected = short.MaxValue;
 
         // Act
         short actual = @this.ToInt16OrDefaultLocal(@default: expected);
@@ -74,8 +74,8 @@ public sealed class ToInt16LocalTests
     internal void GivenTryConvertToInt16LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((short)1024).ToString(CultureInfo.CurrentCulture);
-        short expected = 1024;
+        string @this = short.MaxValue.ToString(CultureInfo.CurrentCulture);
+        short expected = short.MaxValue;
 
         // Act
         bool isInt16 = @this.TryConvertToInt16Local(out short actual);

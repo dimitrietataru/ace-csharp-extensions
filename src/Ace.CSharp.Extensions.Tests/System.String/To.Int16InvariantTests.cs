@@ -6,8 +6,8 @@ public sealed class ToInt16InvariantTests
     internal void GivenToInt16InvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((short)1024).ToString(CultureInfo.InvariantCulture);
-        short expected = 1024;
+        string @this = short.MaxValue.ToString(CultureInfo.InvariantCulture);
+        short expected = short.MaxValue;
 
         // Act
         short actual = @this.ToInt16Invariant();
@@ -46,8 +46,8 @@ public sealed class ToInt16InvariantTests
     internal void GivenToInt16OrDefaultInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((short)1024).ToString(CultureInfo.InvariantCulture);
-        short expected = 1024;
+        string @this = short.MaxValue.ToString(CultureInfo.InvariantCulture);
+        short expected = short.MaxValue;
 
         // Act
         short actual = @this.ToInt16OrDefaultInvariant();
@@ -61,7 +61,7 @@ public sealed class ToInt16InvariantTests
     {
         // Arrange
         string @this = "foo";
-        short expected = 1024;
+        short expected = short.MaxValue;
 
         // Act
         short actual = @this.ToInt16OrDefaultInvariant(@default: expected);
@@ -74,8 +74,8 @@ public sealed class ToInt16InvariantTests
     internal void GivenTryConvertToInt16InvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((short)1024).ToString(CultureInfo.InvariantCulture);
-        short expected = 1024;
+        string @this = short.MaxValue.ToString(CultureInfo.InvariantCulture);
+        short expected = short.MaxValue;
 
         // Act
         bool isInt16 = @this.TryConvertToInt16Invariant(out short actual);
