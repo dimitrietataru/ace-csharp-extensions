@@ -6,7 +6,7 @@ public sealed class ToSByteTests
     internal void GivenToSByteWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = sbyte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = sbyte.MaxValue.ToString(provider: default);
         sbyte expected = sbyte.MaxValue;
 
         // Act
@@ -59,7 +59,7 @@ public sealed class ToSByteTests
     internal void GivenToSByteOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = sbyte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = sbyte.MaxValue.ToString(provider: default);
         sbyte expected = sbyte.MaxValue;
 
         // Act
@@ -87,7 +87,7 @@ public sealed class ToSByteTests
     internal void GivenTryConvertToSByteWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = sbyte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = sbyte.MaxValue.ToString(provider: default);
         sbyte expected = sbyte.MaxValue;
 
         // Act
