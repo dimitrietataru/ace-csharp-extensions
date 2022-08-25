@@ -6,8 +6,8 @@ public sealed class ToDecimalLocalTests
     internal void GivenToDecimalLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024M.ToString(CultureInfo.CurrentCulture);
-        decimal expected = 1.024M;
+        string @this = decimal.MaxValue.ToString(CultureInfo.CurrentCulture);
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimalLocal();
@@ -33,7 +33,7 @@ public sealed class ToDecimalLocalTests
     internal void GivenToDecimalLocalWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange
-        string @this = $"{decimal.MaxValue}0";
+        string @this = $"{int.MaxValue}{decimal.MaxValue}";
 
         // Act
         var action = () => @this.ToDecimalLocal();
@@ -46,8 +46,8 @@ public sealed class ToDecimalLocalTests
     internal void GivenToDecimalOrDefaultLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024M.ToString(CultureInfo.CurrentCulture);
-        decimal expected = 1.024M;
+        string @this = decimal.MaxValue.ToString(CultureInfo.CurrentCulture);
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimalOrDefaultLocal();
@@ -61,7 +61,7 @@ public sealed class ToDecimalLocalTests
     {
         // Arrange
         string @this = "foo";
-        decimal expected = 1.024M;
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimalOrDefaultLocal(@default: expected);
@@ -74,8 +74,8 @@ public sealed class ToDecimalLocalTests
     internal void GivenTryConvertToDecimalLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024M.ToString(CultureInfo.CurrentCulture);
-        decimal expected = 1.024M;
+        string @this = decimal.MaxValue.ToString(CultureInfo.CurrentCulture);
+        decimal expected = decimal.MaxValue;
 
         // Act
         bool isDecimal = @this.TryConvertToDecimalLocal(out decimal actual);

@@ -6,8 +6,8 @@ public sealed class ToDecimalTests
     internal void GivenToDecimalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024M.ToString(provider: default);
-        decimal expected = 1.024M;
+        string @this = decimal.MaxValue.ToString(CultureInfo.CurrentCulture);
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimal(provider: default);
@@ -33,7 +33,7 @@ public sealed class ToDecimalTests
     internal void GivenToDecimalWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange
-        string @this = $"{decimal.MaxValue}0";
+        string @this = $"{int.MaxValue}{decimal.MaxValue}";
 
         // Act
         var action = () => @this.ToDecimal(provider: default);
@@ -46,8 +46,8 @@ public sealed class ToDecimalTests
     internal void GivenToDecimalOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024M.ToString(provider: default);
-        decimal expected = 1.024M;
+        string @this = decimal.MaxValue.ToString(CultureInfo.CurrentCulture);
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimalOrDefault(provider: default);
@@ -61,7 +61,7 @@ public sealed class ToDecimalTests
     {
         // Arrange
         string @this = "foo";
-        decimal expected = 1.024M;
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimalOrDefault(provider: default, @default: expected);
@@ -74,8 +74,8 @@ public sealed class ToDecimalTests
     internal void GivenTryConvertToDecimalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024M.ToString(provider: default);
-        decimal expected = 1.024M;
+        string @this = decimal.MaxValue.ToString(CultureInfo.CurrentCulture);
+        decimal expected = decimal.MaxValue;
 
         // Act
         bool isDecimal = @this.TryConvertToDecimal(provider: default, out decimal actual);
