@@ -30,6 +30,12 @@ namespace Ace.CSharp.Extensions
 
                 return false;
             }
+            catch (InvalidCastException)
+            {
+                result = default;
+
+                return false;
+            }
             catch (OverflowException)
             {
                 result = default;

@@ -30,6 +30,19 @@ public sealed class ToDecimalLocalTests
     }
 
     [Fact]
+    internal void GivenToDecimalLocalWhenInputIsNotValidThenInvalidCastExceptionIsThrown()
+    {
+        // Arrange
+        object @this = new { Foo = "foo" };
+
+        // Act
+        var action = () => @this.ToDecimalLocal();
+
+        // Assert
+        action.Should().Throw<InvalidCastException>();
+    }
+
+    [Fact]
     internal void GivenToDecimalLocalWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange

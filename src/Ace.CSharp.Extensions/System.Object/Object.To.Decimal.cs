@@ -28,6 +28,12 @@ public static partial class ObjectExtensions
 
             return false;
         }
+        catch (InvalidCastException)
+        {
+            result = default;
+
+            return false;
+        }
         catch (OverflowException)
         {
             result = default;

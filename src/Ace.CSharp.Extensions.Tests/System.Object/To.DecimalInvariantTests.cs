@@ -30,6 +30,19 @@ public sealed class ToDecimalInvariantTests
     }
 
     [Fact]
+    internal void GivenToDecimalInvariantWhenInputIsNotValidThenInvalidCastExceptionIsThrown()
+    {
+        // Arrange
+        object @this = new { Foo = "foo" };
+
+        // Act
+        var action = () => @this.ToDecimalInvariant();
+
+        // Assert
+        action.Should().Throw<InvalidCastException>();
+    }
+
+    [Fact]
     internal void GivenToDecimalInvariantWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange
