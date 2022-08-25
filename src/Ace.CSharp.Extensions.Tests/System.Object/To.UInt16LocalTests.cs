@@ -6,8 +6,8 @@ public sealed class ToUInt16LocalTests
     internal void GivenToUInt16LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (ushort)1024;
-        ushort expected = 1024;
+        object @this = ushort.MaxValue;
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16Local();
@@ -59,8 +59,8 @@ public sealed class ToUInt16LocalTests
     internal void GivenToUInt16OrDefaultLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (ushort)1024;
-        ushort expected = 1024;
+        object @this = ushort.MaxValue;
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16OrDefaultLocal();
@@ -74,7 +74,7 @@ public sealed class ToUInt16LocalTests
     {
         // Arrange
         object @this = "foo";
-        ushort expected = 1024;
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16OrDefaultLocal(@default: expected);
@@ -87,8 +87,8 @@ public sealed class ToUInt16LocalTests
     internal void GivenTryConvertToUInt16LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (ushort)1024;
-        ushort expected = 1024;
+        object @this = ushort.MaxValue;
+        ushort expected = ushort.MaxValue;
 
         // Act
         bool isUInt16 = @this.TryConvertToUInt16Local(out ushort actual);
