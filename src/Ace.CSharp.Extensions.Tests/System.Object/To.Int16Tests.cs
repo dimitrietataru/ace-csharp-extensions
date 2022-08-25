@@ -6,8 +6,8 @@ public sealed class ToInt16Tests
     internal void GivenToInt16WhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (short)1024;
-        short expected = 1024;
+        object @this = short.MaxValue;
+        short expected = short.MaxValue;
 
         // Act
         short actual = @this.ToInt16(provider: default);
@@ -59,8 +59,8 @@ public sealed class ToInt16Tests
     internal void GivenToInt16OrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (short)1024;
-        short expected = 1024;
+        object @this = short.MaxValue;
+        short expected = short.MaxValue;
 
         // Act
         short actual = @this.ToInt16OrDefault(provider: default);
@@ -74,7 +74,7 @@ public sealed class ToInt16Tests
     {
         // Arrange
         object @this = "foo";
-        short expected = 1024;
+        short expected = short.MaxValue;
 
         // Act
         short actual = @this.ToInt16OrDefault(provider: default, @default: expected);
@@ -87,8 +87,8 @@ public sealed class ToInt16Tests
     internal void GivenTryConvertToInt16WhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (short)1024;
-        short expected = 1024;
+        object @this = short.MaxValue;
+        short expected = short.MaxValue;
 
         // Act
         bool isInt16 = @this.TryConvertToInt16(provider: default, out short actual);
