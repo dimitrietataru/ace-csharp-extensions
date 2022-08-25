@@ -6,8 +6,8 @@ public sealed class ToDoubleTests
     internal void GivenToDoubleWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024D.ToString(provider: default);
-        double expected = 1.024D;
+        string @this = double.MaxValue.ToString(CultureInfo.CurrentCulture);
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDouble(provider: default);
@@ -33,7 +33,7 @@ public sealed class ToDoubleTests
     internal void GivenToDoubleWhenInputIsNotValidThenOverflowExceptionIsNotThrown()
     {
         // Arrange
-        string @this = $"{byte.MaxValue}{double.MaxValue}";
+        string @this = $"{int.MaxValue}{double.MaxValue}";
 
         // Act
         var action = () => @this.ToDouble(provider: default);
@@ -47,8 +47,8 @@ public sealed class ToDoubleTests
     internal void GivenToDoubleOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024D.ToString(provider: default);
-        double expected = 1.024D;
+        string @this = double.MaxValue.ToString(CultureInfo.CurrentCulture);
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefault(provider: default);
@@ -62,7 +62,7 @@ public sealed class ToDoubleTests
     {
         // Arrange
         string @this = "foo";
-        double expected = 1.024D;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefault(provider: default, @default: expected);
@@ -75,8 +75,8 @@ public sealed class ToDoubleTests
     internal void GivenTryConvertToDoubleWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024D.ToString(provider: default);
-        double expected = 1.024D;
+        string @this = double.MaxValue.ToString(CultureInfo.CurrentCulture);
+        double expected = double.MaxValue;
 
         // Act
         bool isDouble = @this.TryConvertToDouble(provider: default, out double actual);

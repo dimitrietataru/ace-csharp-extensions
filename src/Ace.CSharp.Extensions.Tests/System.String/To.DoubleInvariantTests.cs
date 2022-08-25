@@ -6,8 +6,8 @@ public sealed class ToDoubleInvariantTests
     internal void GivenToDoubleInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024D.ToString(CultureInfo.InvariantCulture);
-        double expected = 1.024D;
+        string @this = double.MaxValue.ToString(CultureInfo.InvariantCulture);
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleInvariant();
@@ -33,7 +33,7 @@ public sealed class ToDoubleInvariantTests
     internal void GivenToDoubleInvariantWhenInputIsNotValidThenOverflowExceptionIsNotThrown()
     {
         // Arrange
-        string @this = $"{byte.MaxValue}{double.MaxValue}";
+        string @this = $"{int.MaxValue}{double.MaxValue}";
 
         // Act
         var action = () => @this.ToDoubleInvariant();
@@ -47,8 +47,8 @@ public sealed class ToDoubleInvariantTests
     internal void GivenToDoubleOrDefaultInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024D.ToString(CultureInfo.InvariantCulture);
-        double expected = 1.024D;
+        string @this = double.MaxValue.ToString(CultureInfo.InvariantCulture);
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefaultInvariant();
@@ -62,7 +62,7 @@ public sealed class ToDoubleInvariantTests
     {
         // Arrange
         string @this = "foo";
-        double expected = 1.024D;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefaultInvariant(@default: expected);
@@ -75,8 +75,8 @@ public sealed class ToDoubleInvariantTests
     internal void GivenTryConvertToDoubleInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024D.ToString(CultureInfo.InvariantCulture);
-        double expected = 1.024D;
+        string @this = double.MaxValue.ToString(CultureInfo.InvariantCulture);
+        double expected = double.MaxValue;
 
         // Act
         bool isDouble = @this.TryConvertToDoubleInvariant(out double actual);

@@ -6,8 +6,8 @@ public sealed class ToDoubleLocalTests
     internal void GivenToDoubleLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024D.ToString(CultureInfo.CurrentCulture);
-        double expected = 1.024D;
+        string @this = double.MaxValue.ToString(CultureInfo.CurrentCulture);
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleLocal();
@@ -33,7 +33,7 @@ public sealed class ToDoubleLocalTests
     internal void GivenToDoubleLocalWhenInputIsNotValidThenOverflowExceptionIsNotThrown()
     {
         // Arrange
-        string @this = $"{byte.MaxValue}{double.MaxValue}";
+        string @this = $"{int.MaxValue}{double.MaxValue}";
 
         // Act
         var action = () => @this.ToDoubleLocal();
@@ -47,8 +47,8 @@ public sealed class ToDoubleLocalTests
     internal void GivenToDoubleOrDefaultLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024D.ToString(CultureInfo.CurrentCulture);
-        double expected = 1.024D;
+        string @this = double.MaxValue.ToString(CultureInfo.CurrentCulture);
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefaultLocal();
@@ -62,7 +62,7 @@ public sealed class ToDoubleLocalTests
     {
         // Arrange
         string @this = "foo";
-        double expected = 1.024D;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefaultLocal(@default: expected);
@@ -75,8 +75,8 @@ public sealed class ToDoubleLocalTests
     internal void GivenTryConvertToDoubleLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = 1.024D.ToString(CultureInfo.CurrentCulture);
-        double expected = 1.024D;
+        string @this = double.MaxValue.ToString(CultureInfo.CurrentCulture);
+        double expected = double.MaxValue;
 
         // Act
         bool isDouble = @this.TryConvertToDoubleLocal(out double actual);
