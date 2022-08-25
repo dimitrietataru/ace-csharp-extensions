@@ -6,7 +6,7 @@ public sealed class ToBooleanTests
     internal void GivenToBooleanWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = true.ToString();
+        string @this = true.ToString(CultureInfo.CurrentCulture);
         bool expected = true;
 
         // Act
@@ -33,7 +33,7 @@ public sealed class ToBooleanTests
     internal void GivenToBooleanOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = true.ToString();
+        string @this = true.ToString(CultureInfo.CurrentCulture);
         bool expected = true;
 
         // Act
@@ -61,7 +61,7 @@ public sealed class ToBooleanTests
     internal void GivenTryConvertToBooleanWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = true.ToString();
+        string @this = true.ToString(CultureInfo.CurrentCulture);
         bool expected = true;
 
         // Act

@@ -6,7 +6,7 @@ public sealed class ToBooleanInvariantTests
     internal void GivenToBooleanInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = true.ToString();
+        string @this = true.ToString(CultureInfo.InvariantCulture);
         bool expected = true;
 
         // Act
@@ -33,7 +33,7 @@ public sealed class ToBooleanInvariantTests
     internal void GivenToBooleanOrDefaultInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = true.ToString();
+        string @this = true.ToString(CultureInfo.InvariantCulture);
         bool expected = true;
 
         // Act
@@ -61,7 +61,7 @@ public sealed class ToBooleanInvariantTests
     internal void GivenTryConvertToBooleanInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = true.ToString();
+        string @this = true.ToString(CultureInfo.InvariantCulture);
         bool expected = true;
 
         // Act
