@@ -6,8 +6,8 @@ public sealed class ToDecimalInvariantTests
     internal void GivenToDecimalInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024M;
-        decimal expected = 1.024M;
+        object @this = decimal.MaxValue;
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimalInvariant();
@@ -33,7 +33,7 @@ public sealed class ToDecimalInvariantTests
     internal void GivenToDecimalInvariantWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange
-        object @this = $"{decimal.MaxValue}0";
+        object @this = $"{int.MaxValue}{decimal.MaxValue}";
 
         // Act
         var action = () => @this.ToDecimalInvariant();
@@ -46,8 +46,8 @@ public sealed class ToDecimalInvariantTests
     internal void GivenToDecimalOrDefaultInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024M;
-        decimal expected = 1.024M;
+        object @this = decimal.MaxValue;
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimalOrDefaultInvariant();
@@ -61,7 +61,7 @@ public sealed class ToDecimalInvariantTests
     {
         // Arrange
         object @this = "foo";
-        decimal expected = 1.024M;
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimalOrDefaultInvariant(@default: expected);
@@ -74,8 +74,8 @@ public sealed class ToDecimalInvariantTests
     internal void GivenTryConvertToDecimalInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024M;
-        decimal expected = 1.024M;
+        object @this = decimal.MaxValue;
+        decimal expected = decimal.MaxValue;
 
         // Act
         bool isDecimal = @this.TryConvertToDecimalInvariant(out decimal actual);

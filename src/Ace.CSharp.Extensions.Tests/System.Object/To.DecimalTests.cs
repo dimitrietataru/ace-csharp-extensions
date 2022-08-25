@@ -6,8 +6,8 @@ public sealed class ToDecimalTests
     internal void GivenToDecimalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024M;
-        decimal expected = 1.024M;
+        object @this = decimal.MaxValue;
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimal(provider: default);
@@ -33,7 +33,7 @@ public sealed class ToDecimalTests
     internal void GivenToDecimalWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange
-        object @this = $"{decimal.MaxValue}0";
+        object @this = $"{int.MaxValue}{decimal.MaxValue}";
 
         // Act
         var action = () => @this.ToDecimal(provider: default);
@@ -46,8 +46,8 @@ public sealed class ToDecimalTests
     internal void GivenToDecimalOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024M;
-        decimal expected = 1.024M;
+        object @this = decimal.MaxValue;
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimalOrDefault(provider: default);
@@ -61,7 +61,7 @@ public sealed class ToDecimalTests
     {
         // Arrange
         object @this = "foo";
-        decimal expected = 1.024M;
+        decimal expected = decimal.MaxValue;
 
         // Act
         decimal actual = @this.ToDecimalOrDefault(provider: default, @default: expected);
@@ -74,8 +74,8 @@ public sealed class ToDecimalTests
     internal void GivenTryConvertToDecimalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024M;
-        decimal expected = 1.024M;
+        object @this = decimal.MaxValue;
+        decimal expected = decimal.MaxValue;
 
         // Act
         bool isDecimal = @this.TryConvertToDecimal(provider: default, out decimal actual);
