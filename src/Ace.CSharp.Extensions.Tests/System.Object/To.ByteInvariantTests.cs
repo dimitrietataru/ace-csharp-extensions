@@ -6,8 +6,8 @@ public sealed class ToByteInvariantTests
     internal void GivenToByteInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (byte)128;
-        byte expected = 128;
+        object @this = byte.MaxValue;
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteInvariant();
@@ -46,7 +46,7 @@ public sealed class ToByteInvariantTests
     internal void GivenToByteInvariantWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange
-        object @this = "512";
+        object @this = $"{byte.MaxValue}{byte.MaxValue}";
 
         // Act
         var action = () => @this.ToByteInvariant();
@@ -59,8 +59,8 @@ public sealed class ToByteInvariantTests
     internal void GivenToByteOrDefaultInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (byte)128;
-        byte expected = 128;
+        object @this = byte.MaxValue;
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteOrDefaultInvariant();
@@ -74,7 +74,7 @@ public sealed class ToByteInvariantTests
     {
         // Arrange
         object @this = "foo";
-        byte expected = 128;
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteOrDefaultInvariant(@default: expected);
@@ -87,8 +87,8 @@ public sealed class ToByteInvariantTests
     internal void GivenTryConvertToByteInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (byte)128;
-        byte expected = 128;
+        object @this = byte.MaxValue;
+        byte expected = byte.MaxValue;
 
         // Act
         bool isByte = @this.TryConvertToByteInvariant(out byte actual);

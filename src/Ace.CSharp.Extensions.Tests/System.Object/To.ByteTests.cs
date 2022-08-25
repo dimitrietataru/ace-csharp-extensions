@@ -6,8 +6,8 @@ public sealed class ToByteTests
     internal void GivenToByteWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (byte)128;
-        byte expected = 128;
+        object @this = byte.MaxValue;
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByte(provider: default);
@@ -46,7 +46,7 @@ public sealed class ToByteTests
     internal void GivenToByteWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange
-        object @this = "512";
+        object @this = $"{byte.MaxValue}{byte.MaxValue}";
 
         // Act
         var action = () => @this.ToByte(provider: default);
@@ -59,8 +59,8 @@ public sealed class ToByteTests
     internal void GivenToByteOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (byte)128;
-        byte expected = 128;
+        object @this = byte.MaxValue;
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteOrDefault(provider: default);
@@ -74,7 +74,7 @@ public sealed class ToByteTests
     {
         // Arrange
         object @this = "foo";
-        byte expected = 128;
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteOrDefault(provider: default, @default: expected);
@@ -87,8 +87,8 @@ public sealed class ToByteTests
     internal void GivenTryConvertToByteWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (byte)128;
-        byte expected = 128;
+        object @this = byte.MaxValue;
+        byte expected = byte.MaxValue;
 
         // Act
         bool isByte = @this.TryConvertToByte(provider: default, out byte actual);

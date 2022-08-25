@@ -6,8 +6,8 @@ public sealed class ToByteLocalTests
     internal void GivenToByteLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (byte)128;
-        byte expected = 128;
+        object @this = byte.MaxValue;
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteLocal();
@@ -46,7 +46,7 @@ public sealed class ToByteLocalTests
     internal void GivenToByteLocalWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange
-        object @this = "512";
+        object @this = $"{byte.MaxValue}{byte.MaxValue}";
 
         // Act
         var action = () => @this.ToByteLocal();
@@ -59,8 +59,8 @@ public sealed class ToByteLocalTests
     internal void GivenToByteOrDefaultLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (byte)128;
-        byte expected = 128;
+        object @this = byte.MaxValue;
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteOrDefaultLocal();
@@ -74,7 +74,7 @@ public sealed class ToByteLocalTests
     {
         // Arrange
         object @this = "foo";
-        byte expected = 128;
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteOrDefaultLocal(@default: expected);
@@ -87,8 +87,8 @@ public sealed class ToByteLocalTests
     internal void GivenTryConvertToByteLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = (byte)128;
-        byte expected = 128;
+        object @this = byte.MaxValue;
+        byte expected = byte.MaxValue;
 
         // Act
         bool isByte = @this.TryConvertToByteLocal(out byte actual);
