@@ -6,8 +6,8 @@ public sealed class ToDoubleLocalTests
     internal void GivenToDoubleLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024D;
-        double expected = 1.024D;
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleLocal();
@@ -46,7 +46,7 @@ public sealed class ToDoubleLocalTests
     internal void GivenToDoubleLocalWhenInputIsNotValidThenOverflowExceptionIsNotThrown()
     {
         // Arrange
-        object @this = $"{byte.MaxValue}{double.MaxValue}";
+        object @this = $"{int.MaxValue}{double.MaxValue}";
 
         // Act
         var action = () => @this.ToDoubleLocal();
@@ -60,8 +60,8 @@ public sealed class ToDoubleLocalTests
     internal void GivenToDoubleOrDefaultLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024D;
-        double expected = 1.024D;
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefaultLocal();
@@ -75,7 +75,7 @@ public sealed class ToDoubleLocalTests
     {
         // Arrange
         object @this = "foo";
-        double expected = 1.024D;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefaultLocal(@default: expected);
@@ -88,8 +88,8 @@ public sealed class ToDoubleLocalTests
     internal void GivenTryConvertToDoubleLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024D;
-        double expected = 1.024D;
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
 
         // Act
         bool isDouble = @this.TryConvertToDoubleLocal(out double actual);

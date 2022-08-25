@@ -6,8 +6,8 @@ public sealed class ToDoubleInvariantTests
     internal void GivenToDoubleInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024D;
-        double expected = 1.024D;
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleInvariant();
@@ -46,7 +46,7 @@ public sealed class ToDoubleInvariantTests
     internal void GivenToDoubleInvariantWhenInputIsNotValidThenOverflowExceptionIsNotThrown()
     {
         // Arrange
-        object @this = $"{byte.MaxValue}{double.MaxValue}";
+        object @this = $"{int.MaxValue}{double.MaxValue}";
 
         // Act
         var action = () => @this.ToDoubleInvariant();
@@ -60,8 +60,8 @@ public sealed class ToDoubleInvariantTests
     internal void GivenToDoubleOrDefaultInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024D;
-        double expected = 1.024D;
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefaultInvariant();
@@ -75,7 +75,7 @@ public sealed class ToDoubleInvariantTests
     {
         // Arrange
         object @this = "foo";
-        double expected = 1.024D;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefaultInvariant(@default: expected);
@@ -88,8 +88,8 @@ public sealed class ToDoubleInvariantTests
     internal void GivenTryConvertToDoubleInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024D;
-        double expected = 1.024D;
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
 
         // Act
         bool isDouble = @this.TryConvertToDoubleInvariant(out double actual);

@@ -6,8 +6,8 @@ public sealed class ToDoubleTests
     internal void GivenToDoubleWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024D;
-        double expected = 1.024D;
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDouble(provider: default);
@@ -46,7 +46,7 @@ public sealed class ToDoubleTests
     internal void GivenToDoubleWhenInputIsNotValidThenOverflowExceptionIsNotThrown()
     {
         // Arrange
-        object @this = $"{byte.MaxValue}{double.MaxValue}";
+        object @this = $"{int.MaxValue}{double.MaxValue}";
 
         // Act
         var action = () => @this.ToDouble(provider: default);
@@ -60,8 +60,8 @@ public sealed class ToDoubleTests
     internal void GivenToDoubleOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024D;
-        double expected = 1.024D;
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefault(provider: default);
@@ -75,7 +75,7 @@ public sealed class ToDoubleTests
     {
         // Arrange
         object @this = "foo";
-        double expected = 1.024D;
+        double expected = double.MaxValue;
 
         // Act
         double actual = @this.ToDoubleOrDefault(provider: default, @default: expected);
@@ -88,8 +88,8 @@ public sealed class ToDoubleTests
     internal void GivenTryConvertToDoubleWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = 1.024D;
-        double expected = 1.024D;
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
 
         // Act
         bool isDouble = @this.TryConvertToDouble(provider: default, out double actual);
