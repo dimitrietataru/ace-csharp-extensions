@@ -6,8 +6,8 @@ public sealed class ToUInt16Tests
     internal void GivenToUInt16WhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((ushort)1024).ToString(provider: default);
-        ushort expected = 1024;
+        string @this = ushort.MaxValue.ToString(provider: default);
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16(provider: default);
@@ -46,8 +46,8 @@ public sealed class ToUInt16Tests
     internal void GivenToUInt16OrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((ushort)1024).ToString(provider: default);
-        ushort expected = 1024;
+        string @this = ushort.MaxValue.ToString(provider: default);
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16OrDefault(provider: default);
@@ -61,7 +61,7 @@ public sealed class ToUInt16Tests
     {
         // Arrange
         string @this = "foo";
-        ushort expected = 1024;
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16OrDefault(provider: default, @default: expected);
@@ -74,8 +74,8 @@ public sealed class ToUInt16Tests
     internal void GivenTryConvertToUInt16WhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((ushort)1024).ToString(provider: default);
-        ushort expected = 1024;
+        string @this = ushort.MaxValue.ToString(provider: default);
+        ushort expected = ushort.MaxValue;
 
         // Act
         bool isUInt16 = @this.TryConvertToUInt16(provider: default, out ushort actual);

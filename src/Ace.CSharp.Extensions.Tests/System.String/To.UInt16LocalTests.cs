@@ -6,8 +6,8 @@ public sealed class ToUInt16LocalTests
     internal void GivenToUInt16LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((ushort)1024).ToString(CultureInfo.CurrentCulture);
-        ushort expected = 1024;
+        string @this = ushort.MaxValue.ToString(CultureInfo.CurrentCulture);
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16Local();
@@ -46,8 +46,8 @@ public sealed class ToUInt16LocalTests
     internal void GivenToUInt16OrDefaultLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((ushort)1024).ToString(CultureInfo.CurrentCulture);
-        ushort expected = 1024;
+        string @this = ushort.MaxValue.ToString(CultureInfo.CurrentCulture);
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16OrDefaultLocal();
@@ -61,7 +61,7 @@ public sealed class ToUInt16LocalTests
     {
         // Arrange
         string @this = "foo";
-        ushort expected = 1024;
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16OrDefaultLocal(@default: expected);
@@ -74,8 +74,8 @@ public sealed class ToUInt16LocalTests
     internal void GivenTryConvertToUInt16LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((ushort)1024).ToString(CultureInfo.CurrentCulture);
-        ushort expected = 1024;
+        string @this = ushort.MaxValue.ToString(CultureInfo.CurrentCulture);
+        ushort expected = ushort.MaxValue;
 
         // Act
         bool isUInt16 = @this.TryConvertToUInt16Local(out ushort actual);

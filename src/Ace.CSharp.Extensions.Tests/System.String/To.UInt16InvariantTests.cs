@@ -6,8 +6,8 @@ public sealed class ToUInt16InvariantTests
     internal void GivenToUInt16InvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((ushort)1024).ToString(CultureInfo.InvariantCulture);
-        ushort expected = 1024;
+        string @this = ushort.MaxValue.ToString(CultureInfo.InvariantCulture);
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16Invariant();
@@ -46,8 +46,8 @@ public sealed class ToUInt16InvariantTests
     internal void GivenToUInt16OrDefaultInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((ushort)1024).ToString(CultureInfo.InvariantCulture);
-        ushort expected = 1024;
+        string @this = ushort.MaxValue.ToString(CultureInfo.InvariantCulture);
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16OrDefaultInvariant();
@@ -61,7 +61,7 @@ public sealed class ToUInt16InvariantTests
     {
         // Arrange
         string @this = "foo";
-        ushort expected = 1024;
+        ushort expected = ushort.MaxValue;
 
         // Act
         ushort actual = @this.ToUInt16OrDefaultInvariant(@default: expected);
@@ -74,8 +74,8 @@ public sealed class ToUInt16InvariantTests
     internal void GivenTryConvertToUInt16InvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((ushort)1024).ToString(CultureInfo.InvariantCulture);
-        ushort expected = 1024;
+        string @this = ushort.MaxValue.ToString(CultureInfo.InvariantCulture);
+        ushort expected = ushort.MaxValue;
 
         // Act
         bool isUInt16 = @this.TryConvertToUInt16Invariant(out ushort actual);
