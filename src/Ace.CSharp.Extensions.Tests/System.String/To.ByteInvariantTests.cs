@@ -6,8 +6,8 @@ public sealed class ToByteInvariantTests
     internal void GivenToByteInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((byte)128).ToString(CultureInfo.InvariantCulture);
-        byte expected = 128;
+        string @this = byte.MaxValue.ToString(CultureInfo.InvariantCulture);
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteInvariant();
@@ -33,7 +33,7 @@ public sealed class ToByteInvariantTests
     internal void GivenToByteInvariantWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange
-        string @this = "512";
+        string @this = $"{byte.MaxValue}{byte.MaxValue}";
 
         // Act
         var action = () => @this.ToByteInvariant();
@@ -46,8 +46,8 @@ public sealed class ToByteInvariantTests
     internal void GivenToByteOrDefaultInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((byte)128).ToString(CultureInfo.InvariantCulture);
-        byte expected = 128;
+        string @this = byte.MaxValue.ToString(CultureInfo.InvariantCulture);
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteOrDefaultInvariant();
@@ -61,7 +61,7 @@ public sealed class ToByteInvariantTests
     {
         // Arrange
         string @this = "foo";
-        byte expected = 128;
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteOrDefaultInvariant(@default: expected);
@@ -74,8 +74,8 @@ public sealed class ToByteInvariantTests
     internal void GivenTryConvertToByteInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((byte)128).ToString(CultureInfo.InvariantCulture);
-        byte expected = 128;
+        string @this = byte.MaxValue.ToString(CultureInfo.InvariantCulture);
+        byte expected = byte.MaxValue;
 
         // Act
         bool isByte = @this.TryConvertToByteInvariant(out byte actual);

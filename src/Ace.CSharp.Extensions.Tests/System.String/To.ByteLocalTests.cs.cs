@@ -6,8 +6,8 @@ public sealed class ToByteLocalTests
     internal void GivenToByteLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((byte)128).ToString(CultureInfo.CurrentCulture);
-        byte expected = 128;
+        string @this = byte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteLocal();
@@ -33,7 +33,7 @@ public sealed class ToByteLocalTests
     internal void GivenToByteLocalWhenInputIsNotValidThenOverflowExceptionIsThrown()
     {
         // Arrange
-        string @this = "512";
+        string @this = $"{byte.MaxValue}{byte.MaxValue}";
 
         // Act
         var action = () => @this.ToByteLocal();
@@ -46,8 +46,8 @@ public sealed class ToByteLocalTests
     internal void GivenToByteOrDefaultLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((byte)128).ToString(CultureInfo.CurrentCulture);
-        byte expected = 128;
+        string @this = byte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteOrDefaultLocal();
@@ -61,7 +61,7 @@ public sealed class ToByteLocalTests
     {
         // Arrange
         string @this = "foo";
-        byte expected = 128;
+        byte expected = byte.MaxValue;
 
         // Act
         byte actual = @this.ToByteOrDefaultLocal(@default: expected);
@@ -74,8 +74,8 @@ public sealed class ToByteLocalTests
     internal void GivenTryConvertToByteLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ((byte)128).ToString(CultureInfo.CurrentCulture);
-        byte expected = 128;
+        string @this = byte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        byte expected = byte.MaxValue;
 
         // Act
         bool isByte = @this.TryConvertToByteLocal(out byte actual);
