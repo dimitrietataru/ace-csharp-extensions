@@ -7,7 +7,6 @@
 
 * [Object extensions](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/ObjectExtensions)
   * To
-    * [Int64](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Int64.cs)
     * [Single](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.Single.cs)
     * [UInt32](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.UInt32.cs)
     * [UInt64](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/ObjectExtensions/ObjectExtensions.To.UInt64.cs)
@@ -76,6 +75,12 @@
     * [Int32OrDefault](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Int32.cs#L10)
       * [Int32OrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Int32Invariant.cs#L10)
       * [Int32OrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Int32Local.cs#L10)
+    * [Int64](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Int64.cs#L5)
+      * [Int64Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Int64Invariant.cs#L5)
+      * [Int64Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Int64Local.cs#L5)
+    * [Int64OrDefault](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Int64.cs#L10)
+      * [Int64OrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Int64Invariant.cs#L10)
+      * [Int64OrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.Int64Local.cs#L10)
     * [SByte](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.SByte.cs#L5)
       * [SByteInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.SByteInvariant.cs#L5)
       * [SByteLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.SByteLocal.cs#L5)
