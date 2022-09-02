@@ -8,9 +8,9 @@ public static class ObjectTo
         return ObjectExtensions.ToBoolean(value, provider);
     }
 
-    public static bool BooleanOrDefault(object? value, IFormatProvider? provider, bool defaultValue = default)
+    public static bool BooleanOrDefault(object? value, IFormatProvider? provider, bool @default = default)
     {
-        return ObjectExtensions.ToBooleanOrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToBooleanOrDefault(value, provider, @default);
     }
 
     public static bool BooleanInvariant(object? value)
@@ -18,9 +18,9 @@ public static class ObjectTo
         return ObjectExtensions.ToBooleanInvariant(value);
     }
 
-    public static bool BooleanOrDefaultInvariant(object? value, bool defaultValue = default)
+    public static bool BooleanOrDefaultInvariant(object? value, bool @default = default)
     {
-        return ObjectExtensions.ToBooleanOrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToBooleanOrDefaultInvariant(value, @default);
     }
 
     public static bool BooleanLocal(object? value)
@@ -28,9 +28,9 @@ public static class ObjectTo
         return ObjectExtensions.ToBooleanLocal(value);
     }
 
-    public static bool BooleanOrDefaultLocal(object? value, bool defaultValue = default)
+    public static bool BooleanOrDefaultLocal(object? value, bool @default = default)
     {
-        return ObjectExtensions.ToBooleanOrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToBooleanOrDefaultLocal(value, @default);
     }
 
     public static byte Byte(object? value, IFormatProvider? provider)
@@ -38,9 +38,9 @@ public static class ObjectTo
         return ObjectExtensions.ToByte(value, provider);
     }
 
-    public static byte ByteOrDefault(object? value, IFormatProvider? provider, byte defaultValue = default)
+    public static byte ByteOrDefault(object? value, IFormatProvider? provider, byte @default = default)
     {
-        return ObjectExtensions.ToByteOrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToByteOrDefault(value, provider, @default);
     }
 
     public static byte ByteInvariant(object? value)
@@ -48,9 +48,9 @@ public static class ObjectTo
         return ObjectExtensions.ToByteInvariant(value);
     }
 
-    public static byte ByteOrDefaultInvariant(object? value, byte defaultValue = default)
+    public static byte ByteOrDefaultInvariant(object? value, byte @default = default)
     {
-        return ObjectExtensions.ToByteOrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToByteOrDefaultInvariant(value, @default);
     }
 
     public static byte ByteLocal(object? value)
@@ -58,9 +58,9 @@ public static class ObjectTo
         return ObjectExtensions.ToByteLocal(value);
     }
 
-    public static byte ByteOrDefaultLocal(object? value, byte defaultValue = default)
+    public static byte ByteOrDefaultLocal(object? value, byte @default = default)
     {
-        return ObjectExtensions.ToByteOrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToByteOrDefaultLocal(value, @default);
     }
 
     public static char Char(object? value, IFormatProvider? provider)
@@ -68,9 +68,9 @@ public static class ObjectTo
         return ObjectExtensions.ToChar(value, provider);
     }
 
-    public static char CharOrDefault(object? value, IFormatProvider? provider, char defaultValue = default)
+    public static char CharOrDefault(object? value, IFormatProvider? provider, char @default = default)
     {
-        return ObjectExtensions.ToCharOrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToCharOrDefault(value, provider, @default);
     }
 
     public static char CharInvariant(object? value)
@@ -78,9 +78,9 @@ public static class ObjectTo
         return ObjectExtensions.ToCharInvariant(value);
     }
 
-    public static char CharOrDefaultInvariant(object? value, char defaultValue = default)
+    public static char CharOrDefaultInvariant(object? value, char @default = default)
     {
-        return ObjectExtensions.ToCharOrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToCharOrDefaultInvariant(value, @default);
     }
 
     public static char CharLocal(object? value)
@@ -88,9 +88,9 @@ public static class ObjectTo
         return ObjectExtensions.ToCharLocal(value);
     }
 
-    public static char CharOrDefaultLocal(object? value, char defaultValue = default)
+    public static char CharOrDefaultLocal(object? value, char @default = default)
     {
-        return ObjectExtensions.ToCharOrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToCharOrDefaultLocal(value, @default);
     }
 
     public static DateTime DateTime(object? value, IFormatProvider? provider)
@@ -98,9 +98,9 @@ public static class ObjectTo
         return ObjectExtensions.ToDateTime(value, provider);
     }
 
-    public static DateTime DateTimeOrDefault(object? value, IFormatProvider? provider, DateTime defaultValue = default)
+    public static DateTime DateTimeOrDefault(object? value, IFormatProvider? provider, DateTime @default = default)
     {
-        return ObjectExtensions.ToDateTimeOrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToDateTimeOrDefault(value, provider, @default);
     }
 
     public static DateTime DateTimeInvariant(object? value)
@@ -108,9 +108,9 @@ public static class ObjectTo
         return ObjectExtensions.ToDateTimeInvariant(value);
     }
 
-    public static DateTime DateTimeOrDefaultInvariant(object? value, DateTime defaultValue = default)
+    public static DateTime DateTimeOrDefaultInvariant(object? value, DateTime @default = default)
     {
-        return ObjectExtensions.ToDateTimeOrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToDateTimeOrDefaultInvariant(value, @default);
     }
 
     public static DateTime DateTimeLocal(object? value)
@@ -118,9 +118,9 @@ public static class ObjectTo
         return ObjectExtensions.ToDateTimeLocal(value);
     }
 
-    public static DateTime DateTimeOrDefaultLocal(object? value, DateTime defaultValue = default)
+    public static DateTime DateTimeOrDefaultLocal(object? value, DateTime @default = default)
     {
-        return ObjectExtensions.ToDateTimeOrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToDateTimeOrDefaultLocal(value, @default);
     }
 
     public static decimal Decimal(object? value, IFormatProvider? provider)
@@ -128,9 +128,9 @@ public static class ObjectTo
         return ObjectExtensions.ToDecimal(value, provider);
     }
 
-    public static decimal DecimalOrDefault(object? value, IFormatProvider? provider, decimal defaultValue = default)
+    public static decimal DecimalOrDefault(object? value, IFormatProvider? provider, decimal @default = default)
     {
-        return ObjectExtensions.ToDecimalOrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToDecimalOrDefault(value, provider, @default);
     }
 
     public static decimal DecimalInvariant(object? value)
@@ -138,9 +138,9 @@ public static class ObjectTo
         return ObjectExtensions.ToDecimalInvariant(value);
     }
 
-    public static decimal DecimalOrDefaultInvariant(object? value, decimal defaultValue = default)
+    public static decimal DecimalOrDefaultInvariant(object? value, decimal @default = default)
     {
-        return ObjectExtensions.ToDecimalOrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToDecimalOrDefaultInvariant(value, @default);
     }
 
     public static decimal DecimalLocal(object? value)
@@ -148,9 +148,9 @@ public static class ObjectTo
         return ObjectExtensions.ToDecimalLocal(value);
     }
 
-    public static decimal DecimalOrDefaultLocal(object? value, decimal defaultValue = default)
+    public static decimal DecimalOrDefaultLocal(object? value, decimal @default = default)
     {
-        return ObjectExtensions.ToDecimalOrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToDecimalOrDefaultLocal(value, @default);
     }
 
     public static double Double(object? value, IFormatProvider? provider)
@@ -158,9 +158,9 @@ public static class ObjectTo
         return ObjectExtensions.ToDouble(value, provider);
     }
 
-    public static double DoubleOrDefault(object? value, IFormatProvider? provider, double defaultValue = default)
+    public static double DoubleOrDefault(object? value, IFormatProvider? provider, double @default = default)
     {
-        return ObjectExtensions.ToDoubleOrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToDoubleOrDefault(value, provider, @default);
     }
 
     public static double DoubleInvariant(object? value)
@@ -168,9 +168,9 @@ public static class ObjectTo
         return ObjectExtensions.ToDoubleInvariant(value);
     }
 
-    public static double DoubleOrDefaultInvariant(object? value, double defaultValue = default)
+    public static double DoubleOrDefaultInvariant(object? value, double @default = default)
     {
-        return ObjectExtensions.ToDoubleOrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToDoubleOrDefaultInvariant(value, @default);
     }
 
     public static double DoubleLocal(object? value)
@@ -178,9 +178,9 @@ public static class ObjectTo
         return ObjectExtensions.ToDoubleLocal(value);
     }
 
-    public static double DoubleOrDefaultLocal(object? value, double defaultValue = default)
+    public static double DoubleOrDefaultLocal(object? value, double @default = default)
     {
-        return ObjectExtensions.ToDoubleOrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToDoubleOrDefaultLocal(value, @default);
     }
 
     public static short Int16(object? value, IFormatProvider? provider)
@@ -188,9 +188,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt16(value, provider);
     }
 
-    public static short Int16OrDefault(object? value, IFormatProvider? provider, short defaultValue = default)
+    public static short Int16OrDefault(object? value, IFormatProvider? provider, short @default = default)
     {
-        return ObjectExtensions.ToInt16OrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToInt16OrDefault(value, provider, @default);
     }
 
     public static short Int16Invariant(object? value)
@@ -198,9 +198,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt16Invariant(value);
     }
 
-    public static short Int16OrDefaultInvariant(object? value, short defaultValue = default)
+    public static short Int16OrDefaultInvariant(object? value, short @default = default)
     {
-        return ObjectExtensions.ToInt16OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToInt16OrDefaultInvariant(value, @default);
     }
 
     public static short Int16Local(object? value)
@@ -208,9 +208,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt16Local(value);
     }
 
-    public static short Int16OrDefaultLocal(object? value, short defaultValue = default)
+    public static short Int16OrDefaultLocal(object? value, short @default = default)
     {
-        return ObjectExtensions.ToInt16OrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToInt16OrDefaultLocal(value, @default);
     }
 
     public static int Int32(object? value, IFormatProvider? provider)
@@ -218,9 +218,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt32(value, provider);
     }
 
-    public static int Int32OrDefault(object? value, IFormatProvider? provider, int defaultValue = default)
+    public static int Int32OrDefault(object? value, IFormatProvider? provider, int @default = default)
     {
-        return ObjectExtensions.ToInt32OrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToInt32OrDefault(value, provider, @default);
     }
 
     public static int Int(object? value, IFormatProvider? provider)
@@ -228,9 +228,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt32(value, provider);
     }
 
-    public static int IntOrDefault(object? value, IFormatProvider? provider, int defaultValue = default)
+    public static int IntOrDefault(object? value, IFormatProvider? provider, int @default = default)
     {
-        return ObjectExtensions.ToInt32OrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToInt32OrDefault(value, provider, @default);
     }
 
     public static int Int32Invariant(object? value)
@@ -238,9 +238,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt32Invariant(value);
     }
 
-    public static int Int32OrDefaultInvariant(object? value, int defaultValue = default)
+    public static int Int32OrDefaultInvariant(object? value, int @default = default)
     {
-        return ObjectExtensions.ToInt32OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToInt32OrDefaultInvariant(value, @default);
     }
 
     public static int IntInvariant(object? value)
@@ -248,9 +248,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt32Invariant(value);
     }
 
-    public static int IntOrDefaultInvariant(object? value, int defaultValue = default)
+    public static int IntOrDefaultInvariant(object? value, int @default = default)
     {
-        return ObjectExtensions.ToInt32OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToInt32OrDefaultInvariant(value, @default);
     }
 
     public static int Int32Local(object? value)
@@ -258,9 +258,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt32Local(value);
     }
 
-    public static int Int32OrDefaultLocal(object? value, int defaultValue = default)
+    public static int Int32OrDefaultLocal(object? value, int @default = default)
     {
-        return ObjectExtensions.ToInt32OrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToInt32OrDefaultLocal(value, @default);
     }
 
     public static int IntLocal(object? value)
@@ -268,9 +268,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt32Local(value);
     }
 
-    public static int IntOrDefaultLocal(object? value, int defaultValue = default)
+    public static int IntOrDefaultLocal(object? value, int @default = default)
     {
-        return ObjectExtensions.ToInt32OrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToInt32OrDefaultLocal(value, @default);
     }
 
     public static long Int64(object? value, IFormatProvider? provider)
@@ -278,9 +278,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt64(value, provider);
     }
 
-    public static long Int64OrDefault(object? value, IFormatProvider? provider, long defaultValue = default)
+    public static long Int64OrDefault(object? value, IFormatProvider? provider, long @default = default)
     {
-        return ObjectExtensions.ToInt64OrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToInt64OrDefault(value, provider, @default);
     }
 
     public static long Long(object? value, IFormatProvider? provider)
@@ -288,9 +288,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt64(value, provider);
     }
 
-    public static long LongOrDefault(object? value, IFormatProvider? provider, long defaultValue = default)
+    public static long LongOrDefault(object? value, IFormatProvider? provider, long @default = default)
     {
-        return ObjectExtensions.ToInt64OrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToInt64OrDefault(value, provider, @default);
     }
 
     public static long Int64Invariant(object? value)
@@ -298,9 +298,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt64Invariant(value);
     }
 
-    public static long Int64OrDefaultInvariant(object? value, long defaultValue = default)
+    public static long Int64OrDefaultInvariant(object? value, long @default = default)
     {
-        return ObjectExtensions.ToInt64OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToInt64OrDefaultInvariant(value, @default);
     }
 
     public static long LongLocalInvariant(object? value)
@@ -308,9 +308,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt64Invariant(value);
     }
 
-    public static long LongOrDefaultInvariant(object? value, long defaultValue = default)
+    public static long LongOrDefaultInvariant(object? value, long @default = default)
     {
-        return ObjectExtensions.ToInt64OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToInt64OrDefaultInvariant(value, @default);
     }
 
     public static long Int64Local(object? value)
@@ -318,9 +318,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt64Local(value);
     }
 
-    public static long Int64OrDefaultLocal(object? value, long defaultValue = default)
+    public static long Int64OrDefaultLocal(object? value, long @default = default)
     {
-        return ObjectExtensions.ToInt64OrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToInt64OrDefaultLocal(value, @default);
     }
 
     public static long LongLocal(object? value)
@@ -328,9 +328,9 @@ public static class ObjectTo
         return ObjectExtensions.ToInt64Local(value);
     }
 
-    public static long LongOrDefaultLocal(object? value, long defaultValue = default)
+    public static long LongOrDefaultLocal(object? value, long @default = default)
     {
-        return ObjectExtensions.ToInt64OrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToInt64OrDefaultLocal(value, @default);
     }
 
     public static sbyte SByte(object? value, IFormatProvider? provider)
@@ -338,9 +338,9 @@ public static class ObjectTo
         return ObjectExtensions.ToSByte(value, provider);
     }
 
-    public static sbyte SByteOrDefault(object? value, IFormatProvider? provider, sbyte defaultValue = default)
+    public static sbyte SByteOrDefault(object? value, IFormatProvider? provider, sbyte @default = default)
     {
-        return ObjectExtensions.ToSByteOrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToSByteOrDefault(value, provider, @default);
     }
 
     public static sbyte SByteInvariant(object? value)
@@ -348,9 +348,9 @@ public static class ObjectTo
         return ObjectExtensions.ToSByteInvariant(value);
     }
 
-    public static sbyte SByteOrDefaultInvariant(object? value, sbyte defaultValue = default)
+    public static sbyte SByteOrDefaultInvariant(object? value, sbyte @default = default)
     {
-        return ObjectExtensions.ToSByteOrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToSByteOrDefaultInvariant(value, @default);
     }
 
     public static sbyte SByteLocal(object? value)
@@ -358,9 +358,9 @@ public static class ObjectTo
         return ObjectExtensions.ToSByteLocal(value);
     }
 
-    public static sbyte SByteOrDefaultLocal(object? value, sbyte defaultValue = default)
+    public static sbyte SByteOrDefaultLocal(object? value, sbyte @default = default)
     {
-        return ObjectExtensions.ToSByteOrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToSByteOrDefaultLocal(value, @default);
     }
 
     public static float Single(object? value, IFormatProvider? provider)
@@ -368,9 +368,9 @@ public static class ObjectTo
         return ObjectExtensions.ToSingle(value, provider);
     }
 
-    public static float SingleOrDefault(object? value, IFormatProvider? provider, float defaultValue = default)
+    public static float SingleOrDefault(object? value, IFormatProvider? provider, float @default = default)
     {
-        return ObjectExtensions.ToSingleOrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToSingleOrDefault(value, provider, @default);
     }
 
     public static float Float(object? value, IFormatProvider? provider)
@@ -378,9 +378,9 @@ public static class ObjectTo
         return ObjectExtensions.ToSingle(value, provider);
     }
 
-    public static float FloatOrDefault(object? value, IFormatProvider? provider, float defaultValue = default)
+    public static float FloatOrDefault(object? value, IFormatProvider? provider, float @default = default)
     {
-        return ObjectExtensions.ToSingleOrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToSingleOrDefault(value, provider, @default);
     }
 
     public static float SingleInvariant(object? value)
@@ -388,9 +388,9 @@ public static class ObjectTo
         return ObjectExtensions.ToSingleInvariant(value);
     }
 
-    public static float SingleOrDefaultInvariant(object? value, float defaultValue = default)
+    public static float SingleOrDefaultInvariant(object? value, float @default = default)
     {
-        return ObjectExtensions.ToSingleOrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToSingleOrDefaultInvariant(value, @default);
     }
 
     public static float FloatInvariant(object? value)
@@ -398,9 +398,9 @@ public static class ObjectTo
         return ObjectExtensions.ToSingleInvariant(value);
     }
 
-    public static float FloatOrDefaultInvariant(object? value, float defaultValue = default)
+    public static float FloatOrDefaultInvariant(object? value, float @default = default)
     {
-        return ObjectExtensions.ToSingleOrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToSingleOrDefaultInvariant(value, @default);
     }
 
     public static float SingleLocal(object? value)
@@ -408,9 +408,9 @@ public static class ObjectTo
         return ObjectExtensions.ToSingleLocal(value);
     }
 
-    public static float SingleOrDefaultLocal(object? value, float defaultValue = default)
+    public static float SingleOrDefaultLocal(object? value, float @default = default)
     {
-        return ObjectExtensions.ToSingleOrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToSingleOrDefaultLocal(value, @default);
     }
 
     public static float FloatLocal(object? value)
@@ -418,9 +418,9 @@ public static class ObjectTo
         return ObjectExtensions.ToSingleLocal(value);
     }
 
-    public static float FloatOrDefaultLocal(object? value, float defaultValue = default)
+    public static float FloatOrDefaultLocal(object? value, float @default = default)
     {
-        return ObjectExtensions.ToSingleOrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToSingleOrDefaultLocal(value, @default);
     }
 
     public static ushort UInt16(object? value, IFormatProvider? provider)
@@ -428,9 +428,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt16(value, provider);
     }
 
-    public static ushort UInt16OrDefault(object? value, IFormatProvider? provider, ushort defaultValue = default)
+    public static ushort UInt16OrDefault(object? value, IFormatProvider? provider, ushort @default = default)
     {
-        return ObjectExtensions.ToUInt16OrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToUInt16OrDefault(value, provider, @default);
     }
 
     public static ushort UInt16Invariant(object? value)
@@ -438,9 +438,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt16Invariant(value);
     }
 
-    public static ushort UInt16OrDefaultInvariant(object? value, ushort defaultValue = default)
+    public static ushort UInt16OrDefaultInvariant(object? value, ushort @default = default)
     {
-        return ObjectExtensions.ToUInt16OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToUInt16OrDefaultInvariant(value, @default);
     }
 
     public static ushort UInt16Local(object? value)
@@ -448,9 +448,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt16Local(value);
     }
 
-    public static ushort UInt16OrDefaultLocal(object? value, ushort defaultValue = default)
+    public static ushort UInt16OrDefaultLocal(object? value, ushort @default = default)
     {
-        return ObjectExtensions.ToUInt16OrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToUInt16OrDefaultLocal(value, @default);
     }
 
     public static uint UInt32(object? value, IFormatProvider? provider)
@@ -458,9 +458,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt32(value, provider);
     }
 
-    public static uint UInt32OrDefault(object? value, IFormatProvider? provider, uint defaultValue = default)
+    public static uint UInt32OrDefault(object? value, IFormatProvider? provider, uint @default = default)
     {
-        return ObjectExtensions.ToUInt32OrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToUInt32OrDefault(value, provider, @default);
     }
 
     public static uint UInt(object? value, IFormatProvider? provider)
@@ -468,9 +468,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt32(value, provider);
     }
 
-    public static uint UIntOrDefault(object? value, IFormatProvider? provider, uint defaultValue = default)
+    public static uint UIntOrDefault(object? value, IFormatProvider? provider, uint @default = default)
     {
-        return ObjectExtensions.ToUInt32OrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToUInt32OrDefault(value, provider, @default);
     }
 
     public static uint UInt32Invariant(object? value)
@@ -478,9 +478,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt32Invariant(value);
     }
 
-    public static uint UInt32OrDefaultInvariant(object? value, uint defaultValue = default)
+    public static uint UInt32OrDefaultInvariant(object? value, uint @default = default)
     {
-        return ObjectExtensions.ToUInt32OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToUInt32OrDefaultInvariant(value, @default);
     }
 
     public static uint UIntInvariant(object? value)
@@ -488,9 +488,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt32Invariant(value);
     }
 
-    public static uint UIntOrDefaultInvariant(object? value, uint defaultValue = default)
+    public static uint UIntOrDefaultInvariant(object? value, uint @default = default)
     {
-        return ObjectExtensions.ToUInt32OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToUInt32OrDefaultInvariant(value, @default);
     }
 
     public static uint UInt32Local(object? value)
@@ -498,9 +498,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt32Local(value);
     }
 
-    public static uint UInt32OrDefaultLocal(object? value, uint defaultValue = default)
+    public static uint UInt32OrDefaultLocal(object? value, uint @default = default)
     {
-        return ObjectExtensions.ToUInt32OrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToUInt32OrDefaultLocal(value, @default);
     }
 
     public static uint UIntLocal(object? value)
@@ -508,9 +508,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt32Local(value);
     }
 
-    public static uint UIntOrDefaultLocal(object? value, uint defaultValue = default)
+    public static uint UIntOrDefaultLocal(object? value, uint @default = default)
     {
-        return ObjectExtensions.ToUInt32OrDefaultLocal(value, defaultValue);
+        return ObjectExtensions.ToUInt32OrDefaultLocal(value, @default);
     }
 
     public static ulong UInt64(object? value, IFormatProvider? provider)
@@ -518,9 +518,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt64(value, provider);
     }
 
-    public static ulong UInt64OrDefault(object? value, IFormatProvider? provider, ulong defaultValue = default)
+    public static ulong UInt64OrDefault(object? value, IFormatProvider? provider, ulong @default = default)
     {
-        return ObjectExtensions.ToUInt64OrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToUInt64OrDefault(value, provider, @default);
     }
 
     public static ulong ULong(object? value, IFormatProvider? provider)
@@ -528,9 +528,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt64(value, provider);
     }
 
-    public static ulong ULongOrDefault(object? value, IFormatProvider? provider, ulong defaultValue = default)
+    public static ulong ULongOrDefault(object? value, IFormatProvider? provider, ulong @default = default)
     {
-        return ObjectExtensions.ToUInt64OrDefault(value, provider, defaultValue);
+        return ObjectExtensions.ToUInt64OrDefault(value, provider, @default);
     }
 
     public static ulong UInt64Invariant(object? value)
@@ -538,9 +538,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt64Invariant(value);
     }
 
-    public static ulong UInt64OrDefaultInvariant(object? value, ulong defaultValue = default)
+    public static ulong UInt64OrDefaultInvariant(object? value, ulong @default = default)
     {
-        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, @default);
     }
 
     public static ulong ULongInvariant(object? value)
@@ -548,9 +548,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt64Invariant(value);
     }
 
-    public static ulong ULongOrDefaultInvariant(object? value, ulong defaultValue = default)
+    public static ulong ULongOrDefaultInvariant(object? value, ulong @default = default)
     {
-        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, @default);
     }
 
     public static ulong UInt64Local(object? value)
@@ -558,9 +558,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt64Local(value);
     }
 
-    public static ulong UInt64OrDefaultLocal(object? value, ulong defaultValue = default)
+    public static ulong UInt64OrDefaultLocal(object? value, ulong @default = default)
     {
-        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, @default);
     }
 
     public static ulong ULongLocal(object? value)
@@ -568,9 +568,9 @@ public static class ObjectTo
         return ObjectExtensions.ToUInt64Local(value);
     }
 
-    public static ulong ULongOrDefaultLocal(object? value, ulong defaultValue = default)
+    public static ulong ULongOrDefaultLocal(object? value, ulong @default = default)
     {
-        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, defaultValue);
+        return ObjectExtensions.ToUInt64OrDefaultInvariant(value, @default);
     }
 }
 #pragma warning restore CA1720 // Identifier contains type name
