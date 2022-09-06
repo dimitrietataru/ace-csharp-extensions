@@ -6,7 +6,6 @@
 ## Table of contents
 
 * [String extensions](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/StringExtensions)
-  * [Equals](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.Equals.cs)
   * [ToLower](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.ToLower.cs)
   * [ToUpper](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.ToUpper.cs)
 * [System.Object](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/System.Object)
@@ -102,6 +101,9 @@
   * EndsWith
     * [Ordinal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.EndsWithOrdinal.cs#L5)
     * [OrdinalIgnoreCase](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.EndsWithOrdinalIgnoreCase.cs#L5)
+  * Equals
+    * [Ordinal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.EqualsOrdinal.cs#L5)
+    * [OrdinalIgnoreCase](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.EqualsOrdinalIgnoreCase.cs#L5)
   * Format
     * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.FormatInvariant.cs#L5)
     * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.FormatLocal.cs#L5)
