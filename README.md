@@ -15,6 +15,15 @@
 </details>
 
 <details>
+  <summary> System.Byte extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Byte/ByteExtensions.ToStringLocal.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Byte/ByteExtensions.ToStringInvariant.cs#L5)
+
+</details>
+
+<details>
   <summary> System.Object extensions </summary>
 
 * To
