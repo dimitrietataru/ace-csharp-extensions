@@ -2,6 +2,7 @@
 
 [![build](https://github.com/dimitrietataru/ace-csharp-extensions/actions/workflows/build.yml/badge.svg)](https://github.com/dimitrietataru/ace-csharp-extensions/actions/workflows/build.yml)
 [![release](https://github.com/dimitrietataru/ace-csharp-extensions/actions/workflows/release.yml/badge.svg)](https://github.com/dimitrietataru/ace-csharp-extensions/actions/workflows/release.yml)
+[![Nuget](https://img.shields.io/nuget/v/AceCSharp.Extensions)](https://www.nuget.org/packages/AceCSharp.Extensions)
 
 ## Table of contents
 
