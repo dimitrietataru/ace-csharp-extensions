@@ -6,12 +6,12 @@ public sealed class ToLowerTests
     internal void GivenToLowerLocalWhenNoSideEffectOccursThenResultIsExpected()
     {
         // Arrange
-        string input = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
+        string @this = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
         string expected = "the quick brown fox jumps over the lazy dog";
 
         // Act
         Thread.CurrentThread.CurrentCulture = CultureFactory.GetByName(Cultures.EnUS);
-        string actual = input.ToLowerLocal();
+        string actual = @this.ToLowerLocal();
 
         // Assert
         actual.Should().BeEquivalentTo(expected);
@@ -21,12 +21,12 @@ public sealed class ToLowerTests
     internal void GivenToLowerLocalWhenSideEffectMayOccurThenResultIsUnpredictable()
     {
         // Arrange
-        string input = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
+        string @this = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
 
         // Act
         Thread.CurrentThread.CurrentCulture = CultureFactory.GetByName(Cultures.EnUS);
-        string actual = input.ToLowerLocal();
-        string unexpected = input.ToLower(CultureFactory.GetByName(Cultures.TrTR));
+        string actual = @this.ToLowerLocal();
+        string unexpected = @this.ToLower(CultureFactory.GetByName(Cultures.TrTR));
 
         // Assert
         actual.Should().NotBeEquivalentTo(unexpected);
@@ -36,27 +36,27 @@ public sealed class ToLowerTests
     [InlineData(null!)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToLowerLocalWhenValueIsNotValidThenReturnsValue(string input)
+    internal void GivenToLowerLocalWhenValueIsNotValidThenReturnsValue(string @this)
     {
         // Arrange
 
         // Act
-        string actual = input.ToLowerLocal();
+        string actual = @this.ToLowerLocal();
 
         // Assert
-        actual.Should().BeSameAs(input);
+        actual.Should().BeSameAs(@this);
     }
 
     [Fact]
     internal void GivenToLowerOrDefaultLocalWhenNoSideEffectOccursThenResultIsExpected()
     {
         // Arrange
-        string input = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
+        string @this = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
         string expected = "the quick brown fox jumps over the lazy dog";
 
         // Act
         Thread.CurrentThread.CurrentCulture = CultureFactory.GetByName(Cultures.EnUS);
-        string actual = input.ToLowerOrDefaultLocal();
+        string actual = @this.ToLowerOrDefaultLocal();
 
         // Assert
         actual.Should().BeEquivalentTo(expected);
@@ -66,13 +66,13 @@ public sealed class ToLowerTests
     [InlineData(null!)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToLowerOrDefaultLocalWhenValueIsNotValidThenReturnsFallbackValue(string input)
+    internal void GivenToLowerOrDefaultLocalWhenValueIsNotValidThenReturnsFallbackValue(string @this)
     {
         // Arrange
         string fallbackValue = "foo";
 
         // Act
-        string actual = input.ToLowerOrDefaultLocal(fallbackValue);
+        string actual = @this.ToLowerOrDefaultLocal(fallbackValue);
 
         // Assert
         actual.Should().Be(fallbackValue);

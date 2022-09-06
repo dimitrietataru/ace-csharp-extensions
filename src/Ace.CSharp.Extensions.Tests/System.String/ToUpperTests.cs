@@ -6,12 +6,12 @@ public sealed class ToUpperTests
     internal void GivenToUpperLocalWhenNoSideEffectOccursThenResultIsExpected()
     {
         // Arrange
-        string input = "the quick brown fox jumps over the lazy dog";
+        string @this = "the quick brown fox jumps over the lazy dog";
         string expected = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
 
         // Act
         Thread.CurrentThread.CurrentCulture = CultureFactory.GetByName(Cultures.EnUS);
-        string actual = input.ToUpperLocal();
+        string actual = @this.ToUpperLocal();
 
         // Assert
         actual.Should().BeEquivalentTo(expected);
@@ -21,12 +21,12 @@ public sealed class ToUpperTests
     internal void GivenToUpperLocalWhenSideEffectMayOccurThenResultIsUnpredictable()
     {
         // Arrange
-        string input = "the quick brown fox jumps over the lazy dog";
+        string @this = "the quick brown fox jumps over the lazy dog";
 
         // Act
         Thread.CurrentThread.CurrentCulture = CultureFactory.GetByName(Cultures.EnUS);
-        string actual = input.ToUpperLocal();
-        string unexpected = input.ToUpper(CultureFactory.GetByName(Cultures.TrTR));
+        string actual = @this.ToUpperLocal();
+        string unexpected = @this.ToUpper(CultureFactory.GetByName(Cultures.TrTR));
 
         // Assert
         actual.Should().NotBeEquivalentTo(unexpected);
@@ -36,27 +36,27 @@ public sealed class ToUpperTests
     [InlineData(null!)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToUpperLocalWhenValueIsNotValidThenReturnsValue(string input)
+    internal void GivenToUpperLocalWhenValueIsNotValidThenReturnsValue(string @this)
     {
         // Arrange
 
         // Act
-        string actual = input.ToUpperLocal();
+        string actual = @this.ToUpperLocal();
 
         // Assert
-        actual.Should().BeSameAs(input);
+        actual.Should().BeSameAs(@this);
     }
 
     [Fact]
     internal void GivenToUpperOrDefaultLocalWhenNoSideEffectOccursThenResultIsExpected()
     {
         // Arrange
-        string input = "the quick brown fox jumps over the lazy dog";
+        string @this = "the quick brown fox jumps over the lazy dog";
         string expected = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
 
         // Act
         Thread.CurrentThread.CurrentCulture = CultureFactory.GetByName(Cultures.EnUS);
-        string actual = input.ToUpperOrDefaultLocal();
+        string actual = @this.ToUpperOrDefaultLocal();
 
         // Assert
         actual.Should().BeEquivalentTo(expected);
@@ -66,13 +66,13 @@ public sealed class ToUpperTests
     [InlineData(null!)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToUpperOrDefaultLocalWhenValueIsNotValidThenReturnsFallbackValue(string input)
+    internal void GivenToUpperOrDefaultLocalWhenValueIsNotValidThenReturnsFallbackValue(string @this)
     {
         // Arrange
         string fallbackValue = "foo";
 
         // Act
-        string actual = input.ToUpperOrDefaultLocal(fallbackValue);
+        string actual = @this.ToUpperOrDefaultLocal(fallbackValue);
 
         // Assert
         actual.Should().Be(fallbackValue);
