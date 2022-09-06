@@ -6,7 +6,6 @@
 ## Table of contents
 
 * [String extensions](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/StringExtensions)
-  * [Contains](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.Contains.cs)
   * [EndsWith](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.EndsWith.cs)
   * [Equals](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.Equals.cs)  
   * [IndexOf](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.IndexOf.cs)
@@ -101,6 +100,9 @@
       * [UInt64OrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.UInt64Invariant.cs#L10)
       * [UInt64OrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.UInt64Local.cs#L10)
 * [System.String](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/System.String)
+  * Contains
+    * [Ordinal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.ContainsOrdinal.cs#L5)
+    * [OrdinalIgnoreCase](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.ContainsOrdinalIgnoreCase.cs#L5)
   * Format
     * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.FormatInvariant.cs#L5)
     * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.FormatLocal.cs#L5)
