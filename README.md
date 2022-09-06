@@ -6,6 +6,15 @@
 ## Table of contents
 
 <details>
+  <summary> System.Boolean extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Boolean/BooleanExtensions.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Boolean/BooleanExtensions.ToStringLocal.cs#L5)
+
+</details>
+
+<details>
   <summary> System.Object extensions </summary>
 
 * To
