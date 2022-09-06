@@ -9,8 +9,8 @@
   <summary> System.Boolean extensions </summary>
 
 * ToString
-  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Boolean/BooleanExtensions.ToStringInvariant.cs#L5)
-  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Boolean/BooleanExtensions.ToStringLocal.cs#L5)
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Boolean/Boolean.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Boolean/Boolean.ToStringLocal.cs#L5)
 
 </details>
 
@@ -18,8 +18,71 @@
   <summary> System.Byte extensions </summary>
 
 * ToString
-  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Byte/ByteExtensions.ToStringLocal.cs#L5)
-  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Byte/ByteExtensions.ToStringInvariant.cs#L5)
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Byte/Byte.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Byte/Byte.ToStringLocal.cs#L5)
+
+</details>
+
+<details>
+  <summary> System.Char extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Char/Char.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Char/Char.ToStringLocal.cs#L5)
+
+</details>
+
+<details>
+  <summary> System.DateTime extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.DateTime/DateTime.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.DateTime/DateTime.ToStringLocal.cs#L5)
+
+</details>
+
+<details>
+  <summary> System.Decimal extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Decimal/Decimal.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Decimal/Decimal.ToStringLocal.cs#L5)
+
+</details>
+
+<details>
+  <summary> System.Double extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Double/Double.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Double/Double.ToStringLocal.cs#L5)
+
+</details>
+
+<details>
+  <summary> System.Int16 extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Int16/Int16.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Int16/Int16.ToStringLocal.cs#L5)
+
+</details>
+
+<details>
+  <summary> System.Int32 extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Int32/Int32.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Int32/Int32.ToStringLocal.cs#L5)
+
+</details>
+
+<details>
+  <summary> System.Int64 extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Int64/Int64.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Int64/Int64.ToStringLocal.cs#L5)
 
 </details>
 
@@ -111,6 +174,24 @@
   * [UInt64OrDefault](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.UInt64.cs#L10)
     * [UInt64OrDefaultInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.UInt64Invariant.cs#L10)
     * [UInt64OrDefaultLocal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Object/Object.To.UInt64Local.cs#L10)
+
+</details>
+
+<details>
+  <summary> System.SByte extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.SByte/SByte.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.SByte/SByte.ToStringLocal.cs#L5)
+
+</details>
+
+<details>
+  <summary> System.Single extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Single/Single.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.Single/Single.ToStringLocal.cs#L5)
 
 </details>
 
@@ -227,5 +308,32 @@
   * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.ToLowerLocal.cs#L5)
 * ToUpper
   * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.ToUpperLocal.cs#L5)
+
+</details>
+
+<details>
+  <summary> System.UInt16 extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.UInt16/UInt16.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.UInt16/UInt16.ToStringLocal.cs#L5)
+
+</details>
+
+<details>
+  <summary> System.UInt32 extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.UInt32/UInt32.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.UInt32/UInt32.ToStringLocal.cs#L5)
+
+</details>
+
+<details>
+  <summary> System.UInt64 extensions </summary>
+
+* ToString
+  * [Invariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.UInt64/UInt64.ToStringInvariant.cs#L5)
+  * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.UInt64/UInt64.ToStringLocal.cs#L5)
 
 </details>
