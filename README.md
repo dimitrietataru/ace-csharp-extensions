@@ -7,8 +7,7 @@
 
 * [String extensions](https://github.com/dimitrietataru/ace-csharp-extensions/tree/ace/src/Ace.CSharp.Extensions/StringExtensions)
   * [EndsWith](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.EndsWith.cs)
-  * [Equals](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.Equals.cs)  
-  * [Replace](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.Replace.cs)
+  * [Equals](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.Equals.cs)
   * [StartsWith](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.StartsWith.cs)
   * [ToLower](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.ToLower.cs)
   * [ToUpper](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/StringExtensions/StringExtensions.ToUpper.cs)
@@ -108,6 +107,9 @@
   * IndexOf
     * [Ordinal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.IndexOfOrdinal.cs#L5)
     * [OrdinalIgnoreCase](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.IndexOfOrdinalIgnoreCase.cs#L5)
+  * Replace
+    * [Ordinal](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.ReplaceOrdinal.cs#L5)
+    * [OrdinalIgnoreCase](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.ReplaceOrdinalIgnoreCase.cs#L5)
   * To
     * [Boolean](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.Boolean.cs#L5)
       * [BooleanInvariant](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.String/String.To.BooleanInvariant.cs#L5)
