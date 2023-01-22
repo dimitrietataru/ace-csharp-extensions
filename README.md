@@ -338,3 +338,6 @@
   * [Local](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/src/Ace.CSharp.Extensions/System.UInt64/UInt64.ToStringLocal.cs#L5)
 
 </details>
+
+### License
+AceCSharp.Extensions is Copyright © 2022 [Dimitrie Tataru](https://github.com/dimitrietataru) and other contributors under the [MIT license](https://github.com/dimitrietataru/ace-csharp-extensions/blob/ace/LICENSE.txt).
