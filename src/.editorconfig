@@ -19,7 +19,7 @@ indent_size = 4
 indent_style = space
 tab_width = 4
 
-[*.{csproj,xml}]
+[*.{csproj,xml,json}]
 indent_size = 2
 indent_style = space
 tab_width = 2
@@ -39,8 +39,8 @@ dotnet_style_predefined_type_for_locals_parameters_members = true:warning
 dotnet_style_predefined_type_for_member_access = true:warning
 
 # Code Style | General | 'var' preferences
-csharp_style_var_elsewhere = true:suggestion
 csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_elsewhere = true:suggestion
 csharp_style_var_when_type_is_apparent = true:suggestion
 
 # Code Style | General | Code block preferences
@@ -48,6 +48,8 @@ csharp_prefer_braces = true:warning
 csharp_style_namespace_declarations = file_scoped:suggestion
 csharp_prefer_simple_using_statement = true:suggestion
 dotnet_style_prefer_auto_properties = true:silent
+csharp_style_prefer_method_group_conversion = true:suggestion
+csharp_style_prefer_top_level_statements = true:suggestion
 
 # Code Style | General | Parentheses preferences
 dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:suggestion
@@ -72,8 +74,8 @@ csharp_style_implicit_object_creation_when_type_is_apparent = true:suggestion
 csharp_style_prefer_index_operator = true:suggestion
 csharp_style_prefer_range_operator = true:suggestion
 csharp_style_prefer_tuple_swap = true:suggestion
-csharp_style_unused_value_assignment_preference = discard_variable:suggestion
-csharp_style_unused_value_expression_statement_preference = discard_variable:suggestion
+csharp_style_unused_value_assignment_preference = discard_variable:silent
+csharp_style_unused_value_expression_statement_preference = discard_variable:silent
 
 # Code Style | General | Expression-bodied members
 csharp_style_expression_bodied_methods = false:silent
@@ -82,14 +84,14 @@ csharp_style_expression_bodied_operators = false:silent
 csharp_style_expression_bodied_properties = true:suggestion
 csharp_style_expression_bodied_indexers = true:suggestion
 csharp_style_expression_bodied_accessors = true:suggestion
-csharp_style_expression_bodied_lambdas = true:suggestion
+csharp_style_expression_bodied_lambdas = true:silent
 csharp_style_expression_bodied_local_functions = false:suggestion
 
 # Code Style | General | Pattern matching preferences
 csharp_style_prefer_pattern_matching = true:suggestion
 csharp_style_pattern_matching_over_is_with_cast_check = true:warning
 csharp_style_pattern_matching_over_as_with_null_check = true:warning
-csharp_style_prefer_not_pattern = true:suggestion
+csharp_style_prefer_not_pattern = true:warning
 
 # Code Style | General | Variable preferences
 csharp_style_inlined_variable_declaration = true:warning
@@ -108,6 +110,7 @@ csharp_using_directive_placement = outside_namespace:error
 
 # Code Style | General | Modifier preferences
 dotnet_style_readonly_field = true:warning
+csharp_style_prefer_readonly_struct = true:suggestion
 csharp_prefer_static_local_function = true:warning
 
 # Code Style | General | Parameter preferences
@@ -119,6 +122,8 @@ csharp_style_allow_embedded_statements_on_same_line_experimental = false:warning
 csharp_style_allow_blank_lines_between_consecutive_braces_experimental = false:warning
 dotnet_style_allow_statement_immediately_after_block_experimental = false:warning
 csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimental = false:warning
+csharp_style_allow_blank_line_after_token_in_conditional_expression_experimental = false:warning
+csharp_style_allow_blank_line_after_token_in_arrow_expression_clause_experimental = false:suggestion
 
 # Code Style | Formatting | General
 
@@ -201,6 +206,21 @@ dotnet_naming_rule.generic_parameter_should_be_begins_with_t.style = begins_with
 #dotnet_naming_rule.field_private_should_be_begins_with_underscore.severity = warning
 #dotnet_naming_rule.field_private_should_be_begins_with_underscore.symbols = field_private
 #dotnet_naming_rule.field_private_should_be_begins_with_underscore.style = begins_with_underscore
+
+# Code Style | Naming | Rules | Const field should be UPPER_SNAKE_CASE
+#dotnet_naming_rule.const_should_be_upper_snake_case.severity = warning
+#dotnet_naming_rule.const_should_be_upper_snake_case.symbols = const_field
+#dotnet_naming_rule.const_should_be_upper_snake_case.style = upper_snake_case
+
+# Code Style | Naming | Rules | Const local should be UPPER_SNAKE_CASE
+#dotnet_naming_rule.const_local_should_be_pascal_case.severity = warning
+#dotnet_naming_rule.const_local_should_be_pascal_case.symbols = const_local
+#dotnet_naming_rule.const_local_should_be_pascal_case.style = upper_snake_case
+
+# Code Style | Naming | Rules | Const should be UPPER_SNAKE_CASE
+#dotnet_naming_rule.const_should_be_pascal_case.severity = warning
+#dotnet_naming_rule.const_should_be_pascal_case.symbols = const
+#dotnet_naming_rule.const_should_be_pascal_case.style = upper_snake_case
 
 # Code Style | Naming | Rules | Async Method should end in Async
 dotnet_naming_rule.method_async_should_be_ends_with_async.severity = warning
@@ -409,6 +429,24 @@ dotnet_naming_style.camel_case.required_suffix =
 dotnet_naming_style.camel_case.word_separator = 
 dotnet_naming_style.camel_case.capitalization = camel_case
 
+# Code Style | Naming | Styles | Upper Case
+#dotnet_naming_style.upper_case.required_prefix = 
+#dotnet_naming_style.upper_case.required_suffix = 
+#dotnet_naming_style.upper_case.word_separator = 
+#dotnet_naming_style.upper_case.capitalization = all_upper
+
+# Code Style | Naming | Styles | Snake Case
+#dotnet_naming_style.snake_case.required_prefix = 
+#dotnet_naming_style.snake_case.required_suffix = 
+#dotnet_naming_style.snake_case.word_separator = _
+#dotnet_naming_style.snake_case.capitalization = all_lower
+
+# Code Style | Naming | Styles | Upper Snake Case
+dotnet_naming_style.upper_snake_case.required_prefix = 
+dotnet_naming_style.upper_snake_case.required_suffix = 
+dotnet_naming_style.upper_snake_case.word_separator = _
+dotnet_naming_style.upper_snake_case.capitalization = all_upper
+
 # Code Style | Naming | Styles | Begins with I
 dotnet_naming_style.begins_with_i.required_prefix = I
 dotnet_naming_style.begins_with_i.required_suffix = 
@@ -495,6 +533,7 @@ dotnet_diagnostic.CA1307.severity = warning
 dotnet_diagnostic.CA1308.severity = suggestion
 dotnet_diagnostic.CA1309.severity = warning
 dotnet_diagnostic.CA1310.severity = warning
+dotnet_diagnostic.CA1311.severity = warning
 dotnet_diagnostic.CA2101.severity = suggestion
 
 # Microsoft.CodeAnalysis.NetAnalyzers | Interoperability
@@ -503,6 +542,9 @@ dotnet_diagnostic.CA1416.severity = warning
 dotnet_diagnostic.CA1417.severity = warning
 dotnet_diagnostic.CA1418.severity = warning
 dotnet_diagnostic.CA1419.severity = suggestion
+dotnet_diagnostic.CA1420.severity = warning
+dotnet_diagnostic.CA1421.severity = suggestion
+dotnet_diagnostic.CA1422.severity = warning
 
 # Microsoft.CodeAnalysis.NetAnalyzers | Maintainability
 dotnet_diagnostic.CA1501.severity = warning
@@ -573,6 +615,10 @@ dotnet_diagnostic.CA1848.severity = suggestion
 dotnet_diagnostic.CA1849.severity = warning
 dotnet_diagnostic.CA1850.severity = none
 dotnet_diagnostic.CA1851.severity = warning
+dotnet_diagnostic.CA1852.severity = warning
+dotnet_diagnostic.CA1853.severity = warning
+dotnet_diagnostic.CA1854.severity = suggestion
+dotnet_diagnostic.CA1855.severity = suggestion
 
 # Microsoft.CodeAnalysis.NetAnalyzers | Reliability
 dotnet_diagnostic.CA2000.severity = suggestion
@@ -588,6 +634,8 @@ dotnet_diagnostic.CA2015.severity = warning
 dotnet_diagnostic.CA2016.severity = warning
 dotnet_diagnostic.CA2017.severity = warning
 dotnet_diagnostic.CA2018.severity = warning
+dotnet_diagnostic.CA2019.severity = suggestion
+dotnet_diagnostic.CA2020.severity = suggestion
 
 # Microsoft.CodeAnalysis.NetAnalyzers | Security
 dotnet_diagnostic.CA2100.severity = warning
@@ -673,7 +721,7 @@ dotnet_diagnostic.CA5390.severity = warning
 dotnet_diagnostic.CA5391.severity = warning
 dotnet_diagnostic.CA5392.severity = none
 dotnet_diagnostic.CA5393.severity = none
-dotnet_diagnostic.CA5394.severity = warning
+dotnet_diagnostic.CA5394.severity = suggestion
 dotnet_diagnostic.CA5395.severity = error
 dotnet_diagnostic.CA5396.severity = warning
 dotnet_diagnostic.CA5397.severity = warning
@@ -727,10 +775,13 @@ dotnet_diagnostic.CA2255.severity = warning
 dotnet_diagnostic.CA2256.severity = warning
 dotnet_diagnostic.CA2257.severity = warning
 dotnet_diagnostic.CA2258.severity = warning
+dotnet_diagnostic.CA2259.severity = warning
+dotnet_diagnostic.CA2260.severity = warning
 
 # Exception | E001
 [**[Dd][Tt][Oo]{s,}**.cs]
 dotnet_diagnostic.CA1002.severity = none
+dotnet_diagnostic.CA1819.severity = none
 dotnet_diagnostic.CA2227.severity = none
 
 # Exception | E002
@@ -771,6 +822,18 @@ dotnet_diagnostic.IDE0058.severity = silent
 [**[Cc]onfiguration{s,}**.cs]
 dotnet_diagnostic.IDE0058.severity = silent
 
+# Exception | E104?
+[**[Cc]lassMap**.cs]
+dotnet_diagnostic.IDE0058.severity = silent
+
+# Exception | E105?
+[**[Pp]rogram**.cs]
+dotnet_diagnostic.IDE0058.severity = silent
+
+# Exception | E106?
+[**[Ss]tartup**.cs]
+dotnet_diagnostic.IDE0058.severity = silent
+
 # Exception | E201
 [**[Pp]rogram.cs]
 dotnet_diagnostic.CA1812.severity = none
@@ -783,6 +846,14 @@ dotnet_diagnostic.IDE0051.severity = none
 [**[Tt]est{s,}**.cs]
 dotnet_naming_rule.method_async_should_be_ends_with_async.severity = none
 
+# Exception | TODO: Add exception code
+[**[Pp]rogram**.cs]
+csharp_style_unused_value_expression_statement_preference = discard_variable:none
+
+# Exception | TODO: Add exception code
+[**[Ss]tartup**.cs]
+csharp_style_unused_value_expression_statement_preference = discard_variable:none
+
 # Overlapping SonarAnalyzer rules | S1144 and IDE0051 | Unused private types or members should be removed
 [*.cs]
 dotnet_diagnostic.S1144.severity = none
@@ -790,3 +861,21 @@ dotnet_diagnostic.S1144.severity = none
 # Overlapping SonarAnalyzer rules | S1905 and IDE0004 | Redundant casts should not be used
 [*.cs]
 dotnet_diagnostic.S1905.severity = none
+
+# Missing XML comment for publicly visible type or member
+[*.cs]
+dotnet_diagnostic.CS1591.severity = silent
+[**[Cc]ontroller{s,}**.cs]
+dotnet_diagnostic.CS1591.severity = warning
+[**[Mm]odel{s,}**.cs]
+dotnet_diagnostic.CS1591.severity = warning
+[**[Ee]ntit{y,i}{e,}{s,}**.cs]
+dotnet_diagnostic.CS1591.severity = warning
+[**[Dd][Tt][Oo]{s,}**.cs]
+dotnet_diagnostic.CS1591.severity = warning
+[**[Ee]num{s,}**.cs]
+dotnet_diagnostic.CS1591.severity = warning
+
+# Remove unnecessary expression value
+[*.cs]
+dotnet_diagnostic.IDE0058.severity = silent
