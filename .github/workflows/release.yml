@@ -4,10 +4,6 @@ on:
   create:
     branches: 
       - release/**
-  push:
-    branches:
-    - ace
-    - main
 
 jobs:
   build:
@@ -25,14 +21,14 @@ jobs:
     
     - name: Get build version
       run: |
-        Import-Module .\build\GetBuildVersion.psm1
+        Import-Module .\.github\tools\get-build-version.psm1
         Write-Host $Env:GITHUB_REF
         $version = GetBuildVersion -VersionString $Env:GITHUB_REF
         echo "BUILD_VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
       shell: pwsh
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
 
