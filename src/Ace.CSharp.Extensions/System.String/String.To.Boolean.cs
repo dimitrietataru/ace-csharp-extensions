@@ -14,6 +14,18 @@ public static partial class StringExtensions
         return isBoolean ? result : @default;
     }
 
+    public static bool? ToBooleanOrNull(this string? @this, IFormatProvider? provider)
+    {
+        if (string.IsNullOrWhiteSpace(@this))
+        {
+            return null;
+        }
+
+        bool isBoolean = TryConvertToBoolean(@this, provider, out bool result);
+
+        return isBoolean ? result : null;
+    }
+
     public static bool TryConvertToBoolean(this string? @this, IFormatProvider? provider, out bool result)
     {
         try

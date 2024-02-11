@@ -58,6 +58,46 @@ public sealed class ToBooleanInvariantTests
     }
 
     [Fact]
+    internal void GivenToBooleanOrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = true.ToString(CultureInfo.InvariantCulture);
+        bool expected = true;
+
+        // Act
+        bool? actual = @this.ToBooleanOrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToBooleanOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string input)
+    {
+        // Act
+        bool? actual = input.ToBooleanOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToBooleanOrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        bool? actual = @this.ToBooleanOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToBooleanInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
