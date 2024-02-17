@@ -14,6 +14,18 @@ public static partial class ObjectExtensions
         return isDecimal ? result : @default;
     }
 
+    public static decimal? ToDecimalOrNull(this object? @this, IFormatProvider? provider)
+    {
+        if (@this == null)
+        {
+            return null;
+        }
+
+        bool isDecimal = TryConvertToDecimal(@this, provider, out decimal result);
+
+        return isDecimal ? result : null;
+    }
+
     public static bool TryConvertToDecimal(this object? @this, IFormatProvider? provider, out decimal result)
     {
         try

@@ -14,6 +14,18 @@ public static partial class ObjectExtensions
         return isUInt16 ? result : @default;
     }
 
+    public static ushort? ToUInt16OrNull(this object? @this, IFormatProvider? provider)
+    {
+        if (@this == null)
+        {
+            return null;
+        }
+
+        bool isUInt16 = TryConvertToUInt16(@this, provider, out ushort result);
+
+        return isUInt16 ? result : null;
+    }
+
     public static bool TryConvertToUInt16(this object? @this, IFormatProvider? provider, out ushort result)
     {
         try

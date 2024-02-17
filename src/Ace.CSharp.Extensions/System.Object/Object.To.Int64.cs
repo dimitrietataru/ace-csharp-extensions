@@ -14,6 +14,18 @@ public static partial class ObjectExtensions
         return isInt64 ? result : @default;
     }
 
+    public static long? ToInt64OrNull(this object? @this, IFormatProvider? provider)
+    {
+        if (@this == null)
+        {
+            return null;
+        }
+
+        bool isInt64 = TryConvertToInt64(@this, provider, out long result);
+
+        return isInt64 ? result : null;
+    }
+
     public static bool TryConvertToInt64(this object? @this, IFormatProvider? provider, out long result)
     {
         try

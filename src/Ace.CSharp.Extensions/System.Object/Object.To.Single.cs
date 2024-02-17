@@ -14,6 +14,18 @@ public static partial class ObjectExtensions
         return isSingle ? result : @default;
     }
 
+    public static float? ToSingleOrNull(this object? @this, IFormatProvider? provider)
+    {
+        if (@this == null)
+        {
+            return null;
+        }
+
+        bool isSingle = TryConvertToSingle(@this, provider, out float result);
+
+        return isSingle ? result : null;
+    }
+
     public static bool TryConvertToSingle(this object? @this, IFormatProvider? provider, out float result)
     {
         try

@@ -14,6 +14,18 @@ public static partial class ObjectExtensions
         return isUInt64 ? result : @default;
     }
 
+    public static ulong? ToUInt64OrNull(this object? @this, IFormatProvider? provider)
+    {
+        if (@this == null)
+        {
+            return null;
+        }
+
+        bool isUInt64 = TryConvertToUInt64(@this, provider, out ulong result);
+
+        return isUInt64 ? result : null;
+    }
+
     public static bool TryConvertToUInt64(this object? @this, IFormatProvider? provider, out ulong result)
     {
         try

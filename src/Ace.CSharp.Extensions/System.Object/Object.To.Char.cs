@@ -14,6 +14,18 @@ public static partial class ObjectExtensions
         return isChar ? result : @default;
     }
 
+    public static char? ToCharOrNull(this object? @this, IFormatProvider? provider)
+    {
+        if (@this == null)
+        {
+            return null;
+        }
+
+        bool isChar = TryConvertToChar(@this, provider, out char result);
+
+        return isChar ? result : null;
+    }
+
     public static bool TryConvertToChar(this object? @this, IFormatProvider? provider, out char result)
     {
         try
