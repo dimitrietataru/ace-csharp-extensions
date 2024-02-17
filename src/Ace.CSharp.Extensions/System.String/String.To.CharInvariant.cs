@@ -12,6 +12,11 @@ public static partial class StringExtensions
         return ToCharOrDefault(@this, CultureInfo.InvariantCulture, @default);
     }
 
+    public static char? ToCharOrNullInvariant(this string? @this)
+    {
+        return ToCharOrNull(@this, CultureInfo.InvariantCulture);
+    }
+
     public static bool TryConvertToCharInvariant(this string @this, out char result)
     {
         return TryConvertToChar(@this, CultureInfo.InvariantCulture, out result);
