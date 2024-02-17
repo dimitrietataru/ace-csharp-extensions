@@ -14,16 +14,16 @@ public static partial class ObjectExtensions
         return isDateTime ? result : @default;
     }
 
-    public static DateTime? ToDateTImeOrNull(this object? @this, IFormatProvider? provider)
+    public static DateTime? ToDateTimeOrNull(this object? @this, IFormatProvider? provider)
     {
         if (@this == null)
         {
             return null;
         }
 
-        bool isDateTIme = TryConvertToDateTime(@this, provider, out var result);
+        bool isDateTime = TryConvertToDateTime(@this, provider, out var result);
 
-        return isDateTIme ? result : null;
+        return isDateTime ? result : null;
     }
 
     public static bool TryConvertToDateTime(this object? @this, IFormatProvider? provider, out DateTime result)
