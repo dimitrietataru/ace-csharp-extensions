@@ -97,6 +97,46 @@ public sealed class ToCharInvariantTests
     }
 
     [Fact]
+    internal void GivenToCharOrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = '*';
+        char expected = '*';
+
+        // Act
+        char? actual = @this.ToCharOrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToCharOrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        char? actual = @this.ToCharOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToCharOrNullInvariantWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        char? actual = @this.ToCharOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToCharInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
