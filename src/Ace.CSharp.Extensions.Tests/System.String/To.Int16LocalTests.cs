@@ -71,6 +71,46 @@ public sealed class ToInt16LocalTests
     }
 
     [Fact]
+    internal void GivenToInt16OrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = short.MaxValue.ToString(CultureInfo.CurrentCulture);
+        short expected = short.MaxValue;
+
+        // Act
+        short? actual = @this.ToInt16OrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToInt16OrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        short? actual = @this.ToInt16OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToInt16OrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        short? actual = @this.ToInt16OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToInt16LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

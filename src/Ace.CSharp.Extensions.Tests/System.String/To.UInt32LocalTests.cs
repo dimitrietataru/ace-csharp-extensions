@@ -71,6 +71,46 @@ public sealed class ToUInt32LocalTests
     }
 
     [Fact]
+    internal void GivenToUInt32OrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = uint.MaxValue.ToString(CultureInfo.CurrentCulture);
+        uint expected = uint.MaxValue;
+
+        // Act
+        uint? actual = @this.ToUInt32OrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToUInt32OrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        uint? actual = @this.ToUInt32OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToUInt32OrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        uint? actual = @this.ToUInt32OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToUInt32LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
