@@ -12,6 +12,11 @@ public static partial class ObjectExtensions
         return ToUInt16OrDefault(@this, CultureInfo.InvariantCulture, @default);
     }
 
+    public static ushort? ToUInt16OrNullInvariant(this object? @this)
+    {
+        return ToUInt16OrNull(@this, CultureInfo.InvariantCulture);
+    }
+
     public static bool TryConvertToUInt16Invariant(this object? @this, out ushort result)
     {
         return TryConvertToUInt16(@this, CultureInfo.InvariantCulture, out result);

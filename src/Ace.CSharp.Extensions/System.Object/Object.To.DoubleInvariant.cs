@@ -12,6 +12,11 @@ public static partial class ObjectExtensions
         return ToDoubleOrDefault(@this, CultureInfo.InvariantCulture, @default);
     }
 
+    public static double? ToDoubleOrNullInvariant(this object? @this)
+    {
+        return ToDoubleOrNull(@this, CultureInfo.InvariantCulture);
+    }
+
     public static bool TryConvertToDoubleInvariant(this object? @this, out double result)
     {
         return TryConvertToDouble(@this, CultureInfo.InvariantCulture, out result);
