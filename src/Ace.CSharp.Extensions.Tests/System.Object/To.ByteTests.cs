@@ -84,6 +84,46 @@ public sealed class ToByteTests
     }
 
     [Fact]
+    internal void GivenToByteOrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = byte.MaxValue;
+        byte expected = byte.MaxValue;
+
+        // Act
+        byte? actual = @this.ToByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToByteOrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        byte? actual = @this.ToByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToByteOrNullWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        byte? actual = @this.ToByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToByteWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

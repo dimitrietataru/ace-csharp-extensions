@@ -85,6 +85,46 @@ public sealed class ToDoubleTests
     }
 
     [Fact]
+    internal void GivenToDoubleOrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
+
+        // Act
+        double? actual = @this.ToDoubleOrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToDoubleOrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        double? actual = @this.ToDoubleOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToDoubleOrNullWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        double? actual = @this.ToDoubleOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToDoubleWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

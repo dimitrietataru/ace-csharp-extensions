@@ -84,6 +84,46 @@ public sealed class ToUInt16Tests
     }
 
     [Fact]
+    internal void GivenToUInt16OrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = uint.MaxValue;
+        uint expected = uint.MaxValue;
+
+        // Act
+        uint? actual = @this.ToUInt16OrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToUInt16OrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        uint? actual = @this.ToUInt16OrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToUInt16OrNullWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        uint? actual = @this.ToUInt16OrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToUInt16WhenInputIsValidThenResultIsExpected()
     {
         // Arrange
