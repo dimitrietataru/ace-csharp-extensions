@@ -12,6 +12,11 @@ public static partial class ObjectExtensions
         return ToInt16OrDefault(@this, CultureInfo.CurrentCulture, @default);
     }
 
+    public static short? ToInt16OrNullLocal(this object? @this)
+    {
+        return ToInt16OrNull(@this, CultureInfo.CurrentCulture);
+    }
+
     public static bool TryConvertToInt16Local(this object? @this, out short result)
     {
         return TryConvertToInt16(@this, CultureInfo.CurrentCulture, out result);
