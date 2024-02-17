@@ -58,6 +58,11 @@ public static partial class StringExtensions
         return ToInt64OrDefault(@this, provider, @default);
     }
 
+    public static long? ToLongOrNull(this string? @this, IFormatProvider? provider)
+    {
+        return ToInt64OrNull(@this, provider);
+    }
+
     public static bool TryConvertToLong(this string? @this, IFormatProvider? provider, out long result)
     {
         return TryConvertToInt64(@this, provider, out result);

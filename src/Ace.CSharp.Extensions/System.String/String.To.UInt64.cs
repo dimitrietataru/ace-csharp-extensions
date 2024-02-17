@@ -58,6 +58,11 @@ public static partial class StringExtensions
         return ToUInt64OrDefault(@this, provider, @default);
     }
 
+    public static ulong? ToULongOrNull(this string? @this, IFormatProvider? provider)
+    {
+        return ToUInt64OrNull(@this, provider);
+    }
+
     public static bool TryConvertToULong(this string? @this, IFormatProvider? provider, out ulong result)
     {
         return TryConvertToUInt64(@this, provider, out result);

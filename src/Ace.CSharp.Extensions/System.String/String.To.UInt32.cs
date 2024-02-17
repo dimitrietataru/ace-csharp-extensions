@@ -58,6 +58,11 @@ public static partial class StringExtensions
         return ToUInt32OrDefault(@this, provider, @default);
     }
 
+    public static uint? ToUIntOrNull(this string? @this, IFormatProvider? provider)
+    {
+        return ToUInt32OrNull(@this, provider);
+    }
+
     public static bool TryConvertToUInt(this string? @this, IFormatProvider? provider, out uint result)
     {
         return TryConvertToUInt32(@this, provider, out result);

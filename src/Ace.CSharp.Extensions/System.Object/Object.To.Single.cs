@@ -64,6 +64,11 @@ public static partial class ObjectExtensions
         return ToSingleOrDefault(@this, provider, @default);
     }
 
+    public static float? ToFloatOrNull(this object? @this, IFormatProvider? provider)
+    {
+        return ToSingleOrNull(@this, provider);
+    }
+
     public static bool TryConvertToFloat(this object? @this, IFormatProvider? provider, out float result)
     {
         return TryConvertToSingle(@this, provider, out result);

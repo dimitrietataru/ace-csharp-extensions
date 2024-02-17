@@ -58,6 +58,11 @@ public static partial class StringExtensions
         return ToSingleOrDefault(@this, provider, @default);
     }
 
+    public static float? ToFloatOrNull(this string? @this, IFormatProvider? provider)
+    {
+        return ToSingleOrNull(@this, provider);
+    }
+
     public static bool TryConvertToFloat(this string? @this, IFormatProvider? provider, out float result)
     {
         return TryConvertToSingle(@this, provider, out result);

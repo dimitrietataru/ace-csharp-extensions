@@ -64,6 +64,11 @@ public static partial class ObjectExtensions
         return ToInt32OrDefault(@this, provider, @default);
     }
 
+    public static int? ToIntOrNull(this object? @this, IFormatProvider? provider)
+    {
+        return ToInt32OrNull(@this, provider);
+    }
+
     public static bool TryConvertToInt(this object? @this, IFormatProvider? provider, out int result)
     {
         return TryConvertToInt32(@this, provider, out result);

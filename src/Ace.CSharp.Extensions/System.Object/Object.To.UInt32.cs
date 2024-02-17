@@ -64,6 +64,11 @@ public static partial class ObjectExtensions
         return ToUInt32OrDefault(@this, provider, @default);
     }
 
+    public static uint? ToUIntOrNull(this object? @this, IFormatProvider? provider)
+    {
+        return ToUInt32OrNull(@this, provider);
+    }
+
     public static bool TryConvertToUInt(this object? @this, IFormatProvider? provider, out uint result)
     {
         return TryConvertToUInt32(@this, provider, out result);

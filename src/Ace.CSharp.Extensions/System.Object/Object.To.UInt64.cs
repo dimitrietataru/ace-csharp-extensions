@@ -64,6 +64,11 @@ public static partial class ObjectExtensions
         return ToUInt64OrDefault(@this, provider, @default);
     }
 
+    public static ulong? ToULongOrNull(this object? @this, IFormatProvider? provider)
+    {
+        return ToUInt64OrNull(@this, provider);
+    }
+
     public static bool TryConvertToULong(this object? @this, IFormatProvider? provider, out ulong result)
     {
         return TryConvertToUInt64(@this, provider, out result);

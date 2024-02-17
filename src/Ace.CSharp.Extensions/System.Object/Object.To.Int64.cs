@@ -64,6 +64,11 @@ public static partial class ObjectExtensions
         return ToInt64OrDefault(@this, provider, @default);
     }
 
+    public static long? ToLongOrNull(this object? @this, IFormatProvider? provider)
+    {
+        return ToInt64OrNull(@this, provider);
+    }
+
     public static bool TryConvertToLong(this object? @this, IFormatProvider? provider, out long result)
     {
         return TryConvertToInt64(@this, provider, out result);
