@@ -71,6 +71,46 @@ public sealed class ToInt32Tests
     }
 
     [Fact]
+    internal void GivenToInt32OrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = int.MaxValue.ToString(CultureInfo.CurrentCulture);
+        int expected = int.MaxValue;
+
+        // Act
+        int? actual = @this.ToInt32OrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToInt32OrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        int? actual = @this.ToInt32OrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToInt32OrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        int? actual = @this.ToInt32OrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToInt32WhenInputIsValidThenResultIsExpected()
     {
         // Arrange

@@ -84,6 +84,46 @@ public sealed class ToSByteTests
     }
 
     [Fact]
+    internal void GivenToSByteOrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = sbyte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        sbyte expected = sbyte.MaxValue;
+
+        // Act
+        sbyte? actual = @this.ToSByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToSByteOrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        sbyte? actual = @this.ToSByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToSByteOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        sbyte? actual = @this.ToSByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToSByteWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

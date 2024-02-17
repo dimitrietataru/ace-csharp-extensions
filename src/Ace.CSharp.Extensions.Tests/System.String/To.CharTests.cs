@@ -71,6 +71,46 @@ public sealed class ToCharTests
     }
 
     [Fact]
+    internal void GivenToCharOrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = "*";
+        char expected = '*';
+
+        // Act
+        char? actual = @this.ToCharOrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToCharOrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        char? actual = @this.ToCharOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToCharOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        char? actual = @this.ToCharOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToCharWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
