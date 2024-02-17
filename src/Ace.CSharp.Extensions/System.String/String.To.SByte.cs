@@ -14,7 +14,7 @@ public static partial class StringExtensions
         return isSByte ? result : @default;
     }
 
-    public static sbyte? ToBSyteOrNull(this string? @this, IFormatProvider? provider)
+    public static sbyte? ToSByteOrNull(this string? @this, IFormatProvider? provider)
     {
         if (string.IsNullOrWhiteSpace(@this))
         {
