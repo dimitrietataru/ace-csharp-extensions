@@ -74,11 +74,11 @@ public sealed class ToInt16InvariantTests
     internal void GivenToInt16OrNullInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = int.MaxValue.ToString(CultureInfo.InvariantCulture);
-        int expected = int.MaxValue;
+        string @this = short.MaxValue.ToString(CultureInfo.InvariantCulture);
+        short expected = short.MaxValue;
 
         // Act
-        int? actual = @this.ToInt16OrNullInvariant();
+        short? actual = @this.ToInt16OrNullInvariant();
 
         // Assert
         actual.Should().Be(expected);
@@ -91,7 +91,7 @@ public sealed class ToInt16InvariantTests
         string @this = "foo";
 
         // Act
-        int? actual = @this.ToInt16OrNullInvariant();
+        short? actual = @this.ToInt16OrNullInvariant();
 
         // Assert
         actual.Should().BeNull();
@@ -104,7 +104,7 @@ public sealed class ToInt16InvariantTests
     internal void GivenToInt16OrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
     {
         // Act
-        int? actual = @this.ToInt16OrNullInvariant();
+        short? actual = @this.ToInt16OrNullInvariant();
 
         // Assert
         actual.Should().BeNull();

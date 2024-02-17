@@ -87,11 +87,11 @@ public sealed class ToUInt16Tests
     internal void GivenToUInt16OrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        object @this = uint.MaxValue;
-        uint expected = uint.MaxValue;
+        object @this = ushort.MaxValue;
+        ushort expected = ushort.MaxValue;
 
         // Act
-        uint? actual = @this.ToUInt16OrNull(provider: default);
+        ushort? actual = @this.ToUInt16OrNull(provider: default);
 
         // Assert
         actual.Should().Be(expected);
@@ -104,7 +104,7 @@ public sealed class ToUInt16Tests
         object @this = "foo";
 
         // Act
-        uint? actual = @this.ToUInt16OrNull(provider: default);
+        ushort? actual = @this.ToUInt16OrNull(provider: default);
 
         // Assert
         actual.Should().BeNull();
@@ -117,7 +117,7 @@ public sealed class ToUInt16Tests
         object? @this = null;
 
         // Act
-        uint? actual = @this.ToUInt16OrNull(provider: default);
+        ushort? actual = @this.ToUInt16OrNull(provider: default);
 
         // Assert
         actual.Should().BeNull();
