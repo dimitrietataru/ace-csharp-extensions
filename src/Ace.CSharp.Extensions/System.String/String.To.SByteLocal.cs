@@ -12,6 +12,11 @@ public static partial class StringExtensions
         return ToSByteOrDefault(@this, CultureInfo.CurrentCulture, @default);
     }
 
+    public static sbyte? ToSByteOrNullLocal(this string? @this)
+    {
+        return ToSByteOrNull(@this, CultureInfo.CurrentCulture);
+    }
+
     public static bool TryConvertToSByteLocal(this string @this, out sbyte result)
     {
         return TryConvertToSByte(@this, CultureInfo.CurrentCulture, out result);
