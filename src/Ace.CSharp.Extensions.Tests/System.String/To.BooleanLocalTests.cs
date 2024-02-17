@@ -71,25 +71,25 @@ public sealed class ToBooleanLocalTests
         actual.Should().Be(expected);
     }
 
-    [Theory]
-    [InlineData(null)]
-    [InlineData("")]
-    [InlineData(" ")]
-    internal void GivenToBooleanOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string input)
-    {
-        // Act
-        bool? actual = input.ToBooleanOrNullLocal();
-
-        // Assert
-        actual.Should().BeNull();
-    }
-
     [Fact]
     internal void GivenToBooleanOrNullLocalWhenInputIsNotValidThenResultIsNull()
     {
         // Arrange
         string @this = "foo";
 
+        // Act
+        bool? actual = @this.ToBooleanOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToBooleanOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
         // Act
         bool? actual = @this.ToBooleanOrNullLocal();
 

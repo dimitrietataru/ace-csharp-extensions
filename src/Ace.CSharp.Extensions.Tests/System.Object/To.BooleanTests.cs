@@ -71,6 +71,46 @@ public sealed class ToBooleanTests
     }
 
     [Fact]
+    internal void GivenToBooleanOrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = true;
+        bool expected = true;
+
+        // Act
+        bool? actual = @this.ToBooleanOrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToBooleanOrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        bool? actual = @this.ToBooleanOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToBooleanOrNullWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        bool? actual = @this.ToBooleanOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToBooleanWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

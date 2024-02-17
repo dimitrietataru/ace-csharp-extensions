@@ -71,6 +71,46 @@ public sealed class ToBooleanInvariantTests
     }
 
     [Fact]
+    internal void GivenToBooleanOrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = true;
+        bool expected = true;
+
+        // Act
+        bool? actual = @this.ToBooleanOrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToBooleanOrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        bool? actual = @this.ToBooleanOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToBooleanOrNullInvariantWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        bool? actual = @this.ToBooleanOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToBooleanInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

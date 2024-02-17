@@ -14,7 +14,7 @@ public static partial class StringExtensions
 
     public static bool? ToBooleanOrNullLocal(this string? @this)
     {
-        return @this.ToBooleanOrNull(CultureInfo.CurrentCulture);
+        return ToBooleanOrNull(@this, CultureInfo.CurrentCulture);
     }
 
     public static bool TryConvertToBooleanLocal(this string? @this, out bool result)

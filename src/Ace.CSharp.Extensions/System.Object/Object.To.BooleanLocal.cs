@@ -12,6 +12,11 @@ public static partial class ObjectExtensions
         return ToBooleanOrDefault(@this, CultureInfo.CurrentCulture, @default);
     }
 
+    public static bool? ToBooleanOrNullLocal(this object? @this)
+    {
+        return ToBooleanOrNull(@this, CultureInfo.CurrentCulture);
+    }
+
     public static bool TryConvertToBooleanLocal(this object? @this, out bool result)
     {
         return TryConvertToBoolean(@this, CultureInfo.CurrentCulture, out result);
