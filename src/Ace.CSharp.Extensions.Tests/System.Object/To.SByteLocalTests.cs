@@ -84,6 +84,46 @@ public sealed class ToSByteLocalTests
     }
 
     [Fact]
+    internal void GivenToSByteOrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = sbyte.MaxValue;
+        sbyte expected = sbyte.MaxValue;
+
+        // Act
+        sbyte? actual = @this.ToSByteOrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToSByteOrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        sbyte? actual = @this.ToSByteOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToSByteOrNullLocalWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        sbyte? actual = @this.ToSByteOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToSByteLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
