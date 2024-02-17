@@ -14,6 +14,18 @@ public static partial class StringExtensions
         return isSingle ? result : @default;
     }
 
+    public static float? ToSingleOrNull(this string? @this, IFormatProvider? provider)
+    {
+        if (string.IsNullOrWhiteSpace(@this))
+        {
+            return null;
+        }
+
+        bool isSingle = TryConvertToSingle(@this, provider, out float result);
+
+        return isSingle ? result : null;
+    }
+
     public static bool TryConvertToSingle(this string? @this, IFormatProvider? provider, out float result)
     {
         try

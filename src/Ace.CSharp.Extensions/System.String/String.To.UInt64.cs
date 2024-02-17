@@ -14,6 +14,18 @@ public static partial class StringExtensions
         return isUInt64 ? result : @default;
     }
 
+    public static ulong? ToUInt64OrNull(this string? @this, IFormatProvider? provider)
+    {
+        if (string.IsNullOrWhiteSpace(@this))
+        {
+            return null;
+        }
+
+        bool isUInt64 = TryConvertToUInt64(@this, provider, out ulong result);
+
+        return isUInt64 ? result : null;
+    }
+
     public static bool TryConvertToUInt64(this string? @this, IFormatProvider? provider, out ulong result)
     {
         try

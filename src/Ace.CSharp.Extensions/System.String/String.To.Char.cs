@@ -14,6 +14,18 @@ public static partial class StringExtensions
         return isChar ? result : @default;
     }
 
+    public static char? ToCharOrNull(this string? @this, IFormatProvider? provider)
+    {
+        if (string.IsNullOrWhiteSpace(@this))
+        {
+            return null;
+        }
+
+        bool isChar = TryConvertToChar(@this, provider, out char result);
+
+        return isChar ? result : null;
+    }
+
     public static bool TryConvertToChar(this string @this, IFormatProvider? provider, out char result)
     {
         try

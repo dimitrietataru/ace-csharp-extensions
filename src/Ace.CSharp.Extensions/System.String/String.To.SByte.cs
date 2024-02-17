@@ -14,6 +14,18 @@ public static partial class StringExtensions
         return isSByte ? result : @default;
     }
 
+    public static sbyte? ToBSyteOrNull(this string? @this, IFormatProvider? provider)
+    {
+        if (string.IsNullOrWhiteSpace(@this))
+        {
+            return null;
+        }
+
+        bool isByte = TryConvertToSByte(@this, provider, out sbyte result);
+
+        return isByte ? result : null;
+    }
+
     public static bool TryConvertToSByte(this string @this, IFormatProvider? provider, out sbyte result)
     {
         try

@@ -14,6 +14,18 @@ public static partial class StringExtensions
         return isInt64 ? result : @default;
     }
 
+    public static long? ToInt64OrNull(this string? @this, IFormatProvider? provider)
+    {
+        if (string.IsNullOrWhiteSpace(@this))
+        {
+            return null;
+        }
+
+        bool isInt64 = TryConvertToInt64(@this, provider, out long result);
+
+        return isInt64 ? result : null;
+    }
+
     public static bool TryConvertToInt64(this string? @this, IFormatProvider? provider, out long result)
     {
         try
