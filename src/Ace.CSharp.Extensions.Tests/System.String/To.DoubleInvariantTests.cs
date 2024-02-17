@@ -72,6 +72,46 @@ public sealed class ToDoubleInvariantTests
     }
 
     [Fact]
+    internal void GivenToDoubleOrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = double.MaxValue.ToString(CultureInfo.InvariantCulture);
+        double expected = double.MaxValue;
+
+        // Act
+        double? actual = @this.ToDoubleOrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToDoubleOrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        double? actual = @this.ToDoubleOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToDoubleOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        double? actual = @this.ToDoubleOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToDoubleInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

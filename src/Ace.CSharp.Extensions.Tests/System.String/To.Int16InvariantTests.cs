@@ -71,6 +71,46 @@ public sealed class ToInt16InvariantTests
     }
 
     [Fact]
+    internal void GivenToInt16OrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = int.MaxValue.ToString(CultureInfo.InvariantCulture);
+        int expected = int.MaxValue;
+
+        // Act
+        int? actual = @this.ToInt16OrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToInt16OrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        int? actual = @this.ToInt16OrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToInt16OrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        int? actual = @this.ToInt16OrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToInt16InvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

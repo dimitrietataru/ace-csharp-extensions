@@ -71,6 +71,46 @@ public sealed class ToUInt16InvariantTests
     }
 
     [Fact]
+    internal void GivenToUInt16OrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = ushort.MaxValue.ToString(CultureInfo.InvariantCulture);
+        ushort expected = ushort.MaxValue;
+
+        // Act
+        ushort? actual = @this.ToUInt16OrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToUInt16OrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        ushort? actual = @this.ToUInt16OrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToUInt16OrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        ushort? actual = @this.ToUInt16OrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToUInt16InvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

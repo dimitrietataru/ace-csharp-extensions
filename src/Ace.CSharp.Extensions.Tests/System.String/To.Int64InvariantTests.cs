@@ -71,6 +71,46 @@ public sealed class ToInt64InvariantTests
     }
 
     [Fact]
+    internal void GivenToInt64OrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = long.MaxValue.ToString(CultureInfo.InvariantCulture);
+        long expected = long.MaxValue;
+
+        // Act
+        long? actual = @this.ToInt64OrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToInt64OrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        long? actual = @this.ToInt64OrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToInt64OrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        long? actual = @this.ToInt64OrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToInt64InvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
