@@ -34,7 +34,7 @@ public static partial class StringExtensions
 
     public static float? ToFloatOrNullInvariant(this string? @this)
     {
-        return ToSingleOrNull(@this, CultureInfo.InvariantCulture);
+        return ToSingleOrNullInvariant(@this);
     }
 
     public static bool TryConvertToFloatInvariant(this string? @this, out float result)

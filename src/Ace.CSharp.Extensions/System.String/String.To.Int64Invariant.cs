@@ -34,7 +34,7 @@ public static partial class StringExtensions
 
     public static long? ToLongOrNullInvariant(this string? @this)
     {
-        return ToInt64OrNull(@this, CultureInfo.InvariantCulture);
+        return ToInt64OrNullInvariant(@this);
     }
 
     public static bool TryConvertToLongInvariant(this string? @this, out long result)

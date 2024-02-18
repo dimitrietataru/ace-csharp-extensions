@@ -34,7 +34,7 @@ public static partial class StringExtensions
 
     public static long? ToLongOrNullLocal(this string? @this)
     {
-        return ToInt64OrNull(@this, CultureInfo.CurrentCulture);
+        return ToInt64OrNullLocal(@this);
     }
 
     public static bool TryConvertToLongLocal(this string? @this, out long result)

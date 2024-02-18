@@ -21,9 +21,9 @@ public static partial class StringExtensions
             return null;
         }
 
-        bool isByte = TryConvertToSByte(@this, provider, out sbyte result);
+        bool isSByte = TryConvertToSByte(@this, provider, out sbyte result);
 
-        return isByte ? result : null;
+        return isSByte ? result : null;
     }
 
     public static bool TryConvertToSByte(this string @this, IFormatProvider? provider, out sbyte result)

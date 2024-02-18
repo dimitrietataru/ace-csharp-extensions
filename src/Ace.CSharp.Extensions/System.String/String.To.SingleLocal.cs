@@ -34,7 +34,7 @@ public static partial class StringExtensions
 
     public static float? ToFloatOrNullLocal(this string? @this)
     {
-        return ToSingleOrNull(@this, CultureInfo.CurrentCulture);
+        return ToSingleOrNullLocal(@this);
     }
 
     public static bool TryConvertToFloatLocal(this string? @this, out float result)

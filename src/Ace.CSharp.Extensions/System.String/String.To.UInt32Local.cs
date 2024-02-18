@@ -34,7 +34,7 @@ public static partial class StringExtensions
 
     public static uint? ToUIntOrNullLocal(this string? @this)
     {
-        return ToUInt32OrNull(@this, CultureInfo.CurrentCulture);
+        return ToUInt32OrNullLocal(@this);
     }
 
     public static bool TryConvertToUIntLocal(this string? @this, out uint result)
