@@ -71,6 +71,46 @@ public sealed class ToUInt64LocalTests
     }
 
     [Fact]
+    internal void GivenToUInt64OrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = ulong.MaxValue.ToString(CultureInfo.CurrentCulture);
+        ulong expected = ulong.MaxValue;
+
+        // Act
+        ulong? actual = @this.ToUInt64OrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToUInt64OrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        ulong? actual = @this.ToUInt64OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToUInt64OrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        ulong? actual = @this.ToUInt64OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToUInt64LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

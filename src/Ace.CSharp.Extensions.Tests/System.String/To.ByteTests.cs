@@ -71,6 +71,46 @@ public sealed class ToByteTests
     }
 
     [Fact]
+    internal void GivenToByteOrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = byte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        byte expected = byte.MaxValue;
+
+        // Act
+        byte? actual = @this.ToByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToByteOrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        byte? actual = @this.ToByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToByteOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        byte? actual = @this.ToByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToByteWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

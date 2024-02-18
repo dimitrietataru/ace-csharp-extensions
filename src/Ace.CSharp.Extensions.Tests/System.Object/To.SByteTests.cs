@@ -84,6 +84,46 @@ public sealed class ToSByteTests
     }
 
     [Fact]
+    internal void GivenToSByteOrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = sbyte.MaxValue;
+        sbyte expected = sbyte.MaxValue;
+
+        // Act
+        sbyte? actual = @this.ToSByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToSByteOrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        sbyte? actual = @this.ToSByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToSByteOrNullWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        sbyte? actual = @this.ToSByteOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToSByteWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

@@ -71,6 +71,46 @@ public sealed class ToInt32InvariantTests
     }
 
     [Fact]
+    internal void GivenToInt32OrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = int.MaxValue;
+        int expected = int.MaxValue;
+
+        // Act
+        int? actual = @this.ToInt32OrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToInt32OrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        int? actual = @this.ToInt32OrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToInt32OrNullInvariantWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        int? actual = @this.ToInt32OrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToInt32InvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

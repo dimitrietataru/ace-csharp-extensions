@@ -12,6 +12,11 @@ public static partial class StringExtensions
         return ToDateTimeOrDefault(@this, CultureInfo.CurrentCulture, @default);
     }
 
+    public static DateTime? ToDateTimeOrNullLocal(this string? @this)
+    {
+        return ToDateTimeOrNull(@this, CultureInfo.CurrentCulture);
+    }
+
     public static bool TryConvertToDateTimeLocal(this string? @this, out DateTime result)
     {
         return TryConvertToDateTime(@this, CultureInfo.CurrentCulture, out result);

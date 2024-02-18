@@ -12,6 +12,11 @@ public static partial class StringExtensions
         return ToDoubleOrDefault(@this, CultureInfo.InvariantCulture, @default);
     }
 
+    public static double? ToDoubleOrNullInvariant(this string? @this)
+    {
+        return ToDoubleOrNull(@this, CultureInfo.InvariantCulture);
+    }
+
     public static bool TryConvertToDoubleInvariant(this string? @this, out double result)
     {
         return TryConvertToDouble(@this, CultureInfo.InvariantCulture, out result);

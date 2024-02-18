@@ -14,6 +14,18 @@ public static partial class StringExtensions
         return isInt16 ? result : @default;
     }
 
+    public static short? ToInt16OrNull(this string? @this, IFormatProvider? provider)
+    {
+        if (string.IsNullOrWhiteSpace(@this))
+        {
+            return null;
+        }
+
+        bool isInt16 = TryConvertToInt16(@this, provider, out short result);
+
+        return isInt16 ? result : null;
+    }
+
     public static bool TryConvertToInt16(this string? @this, IFormatProvider? provider, out short result)
     {
         try

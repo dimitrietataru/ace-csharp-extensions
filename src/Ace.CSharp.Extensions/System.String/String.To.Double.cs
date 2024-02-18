@@ -14,6 +14,18 @@ public static partial class StringExtensions
         return isDouble ? result : @default;
     }
 
+    public static double? ToDoubleOrNull(this string? @this, IFormatProvider? provider)
+    {
+        if (string.IsNullOrWhiteSpace(@this))
+        {
+            return null;
+        }
+
+        bool isDouble = TryConvertToDouble(@this, provider, out double result);
+
+        return isDouble ? result : null;
+    }
+
     public static bool TryConvertToDouble(this string? @this, IFormatProvider? provider, out double result)
     {
         try

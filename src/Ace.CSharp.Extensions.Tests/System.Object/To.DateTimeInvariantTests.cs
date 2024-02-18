@@ -71,6 +71,46 @@ public sealed class ToDateTimeInvariantTests
     }
 
     [Fact]
+    internal void GivenToDateTimeOrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = DateTime.UnixEpoch;
+        DateTime expected = DateTime.UnixEpoch;
+
+        // Act
+        DateTime? actual = @this.ToDateTimeOrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToDateTimeOrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        DateTime? actual = @this.ToDateTimeOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToDateTimeOrNullInvariantWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        DateTime? actual = @this.ToDateTimeOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToDateTimeInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

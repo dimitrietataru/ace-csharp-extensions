@@ -12,6 +12,11 @@ public static partial class StringExtensions
         return ToByteOrDefault(@this, CultureInfo.InvariantCulture, @default);
     }
 
+    public static byte? ToByteOrNullInvariant(this string? @this)
+    {
+        return ToByteOrNull(@this, CultureInfo.InvariantCulture);
+    }
+
     public static bool TryConvertToByteInvariant(this string? @this, out byte result)
     {
         return TryConvertToByte(@this, CultureInfo.InvariantCulture, out result);

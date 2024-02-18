@@ -85,6 +85,46 @@ public sealed class ToDoubleInvariantTests
     }
 
     [Fact]
+    internal void GivenToDoubleOrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
+
+        // Act
+        double? actual = @this.ToDoubleOrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToDoubleOrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        double? actual = @this.ToDoubleOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToDoubleOrNullInvariantWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        double? actual = @this.ToDoubleOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToDoubleInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

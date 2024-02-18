@@ -84,6 +84,46 @@ public sealed class ToDecimalLocalTests
     }
 
     [Fact]
+    internal void GivenToDecimalOrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = decimal.MaxValue;
+        decimal expected = decimal.MaxValue;
+
+        // Act
+        decimal? actual = @this.ToDecimalOrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToDecimalOrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        decimal? actual = @this.ToDecimalOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToDecimalOrNullLocalWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        decimal? actual = @this.ToDecimalOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToDecimalLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

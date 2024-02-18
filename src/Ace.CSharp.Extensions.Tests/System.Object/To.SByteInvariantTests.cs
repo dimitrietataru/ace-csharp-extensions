@@ -84,6 +84,46 @@ public sealed class ToSByteInvariantTests
     }
 
     [Fact]
+    internal void GivenToByteOrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = sbyte.MaxValue;
+        sbyte expected = sbyte.MaxValue;
+
+        // Act
+        sbyte? actual = @this.ToSByteOrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToByteOrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        sbyte? actual = @this.ToSByteOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToByteOrNullInvariantWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        sbyte? actual = @this.ToSByteOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToSByteInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

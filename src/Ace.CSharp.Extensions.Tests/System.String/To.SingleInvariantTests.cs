@@ -72,6 +72,46 @@ public sealed class ToSingleInvariantTests
     }
 
     [Fact]
+    internal void GivenToSingleOrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = float.MaxValue.ToString(CultureInfo.InvariantCulture);
+        float expected = float.MaxValue;
+
+        // Act
+        float? actual = @this.ToSingleOrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToSingleOrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        float? actual = @this.ToSingleOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToSingleOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        float? actual = @this.ToSingleOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToSingleInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

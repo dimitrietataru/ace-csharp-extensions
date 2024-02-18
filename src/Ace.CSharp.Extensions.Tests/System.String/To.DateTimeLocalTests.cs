@@ -58,6 +58,46 @@ public sealed class ToDateTimeLocalTests
     }
 
     [Fact]
+    internal void GivenToDateTimeOrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = DateTime.UnixEpoch.ToString(CultureInfo.CurrentCulture);
+        DateTime expected = DateTime.UnixEpoch;
+
+        // Act
+        DateTime? actual = @this.ToDateTimeOrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToDateTimeOrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        DateTime? actual = @this.ToDateTimeOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToDateTimeOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        DateTime? actual = @this.ToDateTimeOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToDateTimeLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

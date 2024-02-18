@@ -85,6 +85,46 @@ public sealed class ToDoubleLocalTests
     }
 
     [Fact]
+    internal void GivenToDoubleOrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = double.MaxValue;
+        double expected = double.MaxValue;
+
+        // Act
+        double? actual = @this.ToDoubleOrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToDoubleOrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        double? actual = @this.ToDoubleOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToDoubleOrNullLocalWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        double? actual = @this.ToDoubleOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToDoubleLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

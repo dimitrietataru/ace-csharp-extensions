@@ -84,6 +84,46 @@ public sealed class ToUInt32Tests
     }
 
     [Fact]
+    internal void GivenToUInt32OrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = uint.MaxValue;
+        uint expected = uint.MaxValue;
+
+        // Act
+        uint? actual = @this.ToUInt32OrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToUInt32OrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        uint? actual = @this.ToUInt32OrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToUInt32OrNullWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        uint? actual = @this.ToUInt32OrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToUInt32WhenInputIsValidThenResultIsExpected()
     {
         // Arrange

@@ -12,6 +12,11 @@ public static partial class StringExtensions
         return ToUInt16OrDefault(@this, CultureInfo.CurrentCulture, @default);
     }
 
+    public static ushort? ToUInt16OrNullLocal(this string? @this)
+    {
+        return ToUInt16OrNull(@this, CultureInfo.CurrentCulture);
+    }
+
     public static bool TryConvertToUInt16Local(this string? @this, out ushort result)
     {
         return TryConvertToUInt16(@this, CultureInfo.CurrentCulture, out result);

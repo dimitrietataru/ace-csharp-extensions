@@ -12,6 +12,11 @@ public static partial class StringExtensions
         return ToUInt32OrDefault(@this, CultureInfo.InvariantCulture, @default);
     }
 
+    public static uint? ToUInt32OrNullInvariant(this string? @this)
+    {
+        return ToUInt32OrNull(@this, CultureInfo.InvariantCulture);
+    }
+
     public static bool TryConvertToUInt32Invariant(this string? @this, out uint result)
     {
         return TryConvertToUInt32(@this, CultureInfo.InvariantCulture, out result);
@@ -25,6 +30,11 @@ public static partial class StringExtensions
     public static uint ToUIntOrDefaultInvariant(this string? @this, uint @default = default)
     {
         return ToUInt32OrDefaultInvariant(@this, @default);
+    }
+
+    public static uint? ToUIntOrNullInvariant(this string? @this)
+    {
+        return ToUInt32OrNull(@this, CultureInfo.InvariantCulture);
     }
 
     public static bool TryConvertToUIntInvariant(this string? @this, out uint result)

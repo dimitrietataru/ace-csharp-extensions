@@ -71,6 +71,46 @@ public sealed class ToInt32LocalTests
     }
 
     [Fact]
+    internal void GivenToInt32OrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = int.MaxValue;
+        int expected = int.MaxValue;
+
+        // Act
+        int? actual = @this.ToInt32OrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToInt32OrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        int? actual = @this.ToInt32OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToInt32OrNullLocalWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        int? actual = @this.ToInt32OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToInt32LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

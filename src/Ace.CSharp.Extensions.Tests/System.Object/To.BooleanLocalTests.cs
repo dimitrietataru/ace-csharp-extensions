@@ -71,6 +71,46 @@ public sealed class ToBooleanLocalTests
     }
 
     [Fact]
+    internal void GivenToBooleanOrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = true;
+        bool expected = true;
+
+        // Act
+        bool? actual = @this.ToBooleanOrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToBooleanOrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        bool? actual = @this.ToBooleanOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToBooleanOrNullLocalWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        bool? actual = @this.ToBooleanOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToBooleanLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

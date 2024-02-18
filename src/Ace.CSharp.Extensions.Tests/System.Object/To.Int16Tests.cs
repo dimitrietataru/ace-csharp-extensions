@@ -84,6 +84,46 @@ public sealed class ToInt16Tests
     }
 
     [Fact]
+    internal void GivenToInt16OrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = short.MaxValue;
+        short expected = short.MaxValue;
+
+        // Act
+        short? actual = @this.ToInt16OrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToInt16OrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        short? actual = @this.ToInt16OrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToInt16OrNullWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        short? actual = @this.ToInt16OrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToInt16WhenInputIsValidThenResultIsExpected()
     {
         // Arrange

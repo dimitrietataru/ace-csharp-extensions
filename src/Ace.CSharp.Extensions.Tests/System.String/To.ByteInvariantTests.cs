@@ -71,6 +71,46 @@ public sealed class ToByteInvariantTests
     }
 
     [Fact]
+    internal void GivenToByteOrNullInvariantWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = byte.MaxValue.ToString(CultureInfo.InvariantCulture);
+        byte expected = byte.MaxValue;
+
+        // Act
+        byte? actual = @this.ToByteOrNullInvariant();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToByteOrNullInvariantWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        byte? actual = @this.ToByteOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToByteOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        byte? actual = @this.ToByteOrNullInvariant();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToByteInvariantWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

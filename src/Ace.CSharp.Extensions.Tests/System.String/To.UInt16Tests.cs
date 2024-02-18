@@ -71,6 +71,46 @@ public sealed class ToUInt16Tests
     }
 
     [Fact]
+    internal void GivenToUInt16OrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = ushort.MaxValue.ToString(CultureInfo.CurrentCulture);
+        ushort expected = ushort.MaxValue;
+
+        // Act
+        ushort? actual = @this.ToUInt16OrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToUInt16OrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        ushort? actual = @this.ToUInt16OrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToUInt16OrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        ushort? actual = @this.ToUInt16OrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToUInt16WhenInputIsValidThenResultIsExpected()
     {
         // Arrange

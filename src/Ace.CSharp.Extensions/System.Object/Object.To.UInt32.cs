@@ -14,6 +14,18 @@ public static partial class ObjectExtensions
         return isUInt32 ? result : @default;
     }
 
+    public static uint? ToUInt32OrNull(this object? @this, IFormatProvider? provider)
+    {
+        if (@this == null)
+        {
+            return null;
+        }
+
+        bool isUInt32 = TryConvertToUInt32(@this, provider, out uint result);
+
+        return isUInt32 ? result : null;
+    }
+
     public static bool TryConvertToUInt32(this object? @this, IFormatProvider? provider, out uint result)
     {
         try
@@ -50,6 +62,11 @@ public static partial class ObjectExtensions
     public static uint ToUIntOrDefault(this object? @this, IFormatProvider? provider, uint @default = default)
     {
         return ToUInt32OrDefault(@this, provider, @default);
+    }
+
+    public static uint? ToUIntOrNull(this object? @this, IFormatProvider? provider)
+    {
+        return ToUInt32OrNull(@this, provider);
     }
 
     public static bool TryConvertToUInt(this object? @this, IFormatProvider? provider, out uint result)

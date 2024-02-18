@@ -84,6 +84,46 @@ public sealed class ToUInt16LocalTests
     }
 
     [Fact]
+    internal void GivenToUInt16OrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = ushort.MaxValue;
+        ushort expected = ushort.MaxValue;
+
+        // Act
+        ushort? actual = @this.ToUInt16OrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToUInt16OrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        ushort? actual = @this.ToUInt16OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToUInt16OrNullLocalWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        ushort? actual = @this.ToUInt16OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToUInt16LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

@@ -84,6 +84,46 @@ public sealed class ToByteLocalTests
     }
 
     [Fact]
+    internal void GivenToByteOrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = byte.MaxValue;
+        byte expected = byte.MaxValue;
+
+        // Act
+        byte? actual = @this.ToByteOrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToByteOrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        byte? actual = @this.ToByteOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToByteOrNullLocalWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        byte? actual = @this.ToByteOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToByteLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

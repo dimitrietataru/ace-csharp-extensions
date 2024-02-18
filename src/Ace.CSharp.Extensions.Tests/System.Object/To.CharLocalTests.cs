@@ -97,6 +97,46 @@ public sealed class ToCharLocalTests
     }
 
     [Fact]
+    internal void GivenToCharOrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = '*';
+        char expected = '*';
+
+        // Act
+        char? actual = @this.ToCharOrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToCharOrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        char? actual = @this.ToCharOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToCharOrNullLocalWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        char? actual = @this.ToCharOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToCharLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

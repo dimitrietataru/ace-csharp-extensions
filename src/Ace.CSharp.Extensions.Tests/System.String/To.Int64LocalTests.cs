@@ -71,6 +71,46 @@ public sealed class ToInt64LocalTests
     }
 
     [Fact]
+    internal void GivenToInt64OrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = long.MaxValue.ToString(CultureInfo.CurrentCulture);
+        long expected = long.MaxValue;
+
+        // Act
+        long? actual = @this.ToInt64OrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToInt64OrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        long? actual = @this.ToInt64OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToInt64OrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        long? actual = @this.ToInt64OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToInt64LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

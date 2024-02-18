@@ -85,6 +85,46 @@ public sealed class ToSingleTests
     }
 
     [Fact]
+    internal void GivenToSingleOrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = float.MaxValue;
+        float expected = float.MaxValue;
+
+        // Act
+        float? actual = @this.ToSingleOrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToSingleOrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        float? actual = @this.ToSingleOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToSingleOrNullWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        float? actual = @this.ToSingleOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToSingleWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

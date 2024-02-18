@@ -72,6 +72,46 @@ public sealed class ToSingleLocalTests
     }
 
     [Fact]
+    internal void GivenToSingleOrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = float.MaxValue.ToString(CultureInfo.CurrentCulture);
+        float expected = float.MaxValue;
+
+        // Act
+        float? actual = @this.ToSingleOrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToSingleOrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        float? actual = @this.ToSingleOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToSingleOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        float? actual = @this.ToSingleOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToSingleLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

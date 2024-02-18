@@ -12,6 +12,11 @@ public static partial class ObjectExtensions
         return ToByteOrDefault(@this, CultureInfo.CurrentCulture, @default);
     }
 
+    public static byte? ToByteOrNullLocal(this object? @this)
+    {
+        return ToByteOrNull(@this, CultureInfo.CurrentCulture);
+    }
+
     public static bool TryConvertToByteLocal(this object? @this, out byte result)
     {
         return TryConvertToByte(@this, CultureInfo.CurrentCulture, out result);

@@ -14,6 +14,18 @@ public static partial class ObjectExtensions
         return isBoolean ? result : @default;
     }
 
+    public static bool? ToBooleanOrNull(this object? @this, IFormatProvider? provider)
+    {
+        if (@this == null)
+        {
+            return null;
+        }
+
+        bool isBoolean = TryConvertToBoolean(@this, provider, out bool result);
+
+        return isBoolean ? result : null;
+    }
+
     public static bool TryConvertToBoolean(this object? @this, IFormatProvider? provider, out bool result)
     {
         try

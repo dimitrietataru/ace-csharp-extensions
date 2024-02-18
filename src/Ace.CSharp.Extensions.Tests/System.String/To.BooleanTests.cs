@@ -58,6 +58,46 @@ public sealed class ToBooleanTests
     }
 
     [Fact]
+    internal void GivenToBooleanOrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = true.ToString(CultureInfo.CurrentCulture);
+        bool expected = true;
+
+        // Act
+        bool? actual = @this.ToBooleanOrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToBooleanOrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        bool? actual = @this.ToBooleanOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToBooleanOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        bool? actual = @this.ToBooleanOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToBooleanWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

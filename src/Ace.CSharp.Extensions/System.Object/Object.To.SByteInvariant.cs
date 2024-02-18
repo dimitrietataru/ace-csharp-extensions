@@ -12,6 +12,11 @@ public static partial class ObjectExtensions
         return ToSByteOrDefault(@this, CultureInfo.InvariantCulture, @default);
     }
 
+    public static sbyte? ToSByteOrNullInvariant(this object? @this)
+    {
+        return ToSByteOrNull(@this, CultureInfo.InvariantCulture);
+    }
+
     public static bool TryConvertToSByteInvariant(this object? @this, out sbyte result)
     {
         return TryConvertToSByte(@this, CultureInfo.InvariantCulture, out result);

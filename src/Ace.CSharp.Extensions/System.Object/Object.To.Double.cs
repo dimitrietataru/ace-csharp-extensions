@@ -14,6 +14,18 @@ public static partial class ObjectExtensions
         return isDouble ? result : @default;
     }
 
+    public static double? ToDoubleOrNull(this object? @this, IFormatProvider? provider)
+    {
+        if (@this == null)
+        {
+            return null;
+        }
+
+        bool isDouble = TryConvertToDouble(@this, provider, out double result);
+
+        return isDouble ? result : null;
+    }
+
     public static bool TryConvertToDouble(this object? @this, IFormatProvider? provider, out double result)
     {
         try

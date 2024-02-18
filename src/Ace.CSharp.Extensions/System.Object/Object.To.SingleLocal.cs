@@ -12,6 +12,11 @@ public static partial class ObjectExtensions
         return ToSingleOrDefault(@this, CultureInfo.CurrentCulture, @default);
     }
 
+    public static float? ToSingleOrNullLocal(this object? @this)
+    {
+        return ToSingleOrNull(@this, CultureInfo.CurrentCulture);
+    }
+
     public static bool TryConvertToSingleLocal(this object? @this, out float result)
     {
         return TryConvertToSingle(@this, CultureInfo.CurrentCulture, out result);
@@ -25,6 +30,11 @@ public static partial class ObjectExtensions
     public static float ToFloatOrDefaultLocal(this object? @this, float @default = default)
     {
         return ToSingleOrDefaultLocal(@this, @default);
+    }
+
+    public static float? ToFloatOrNullLocal(this object? @this)
+    {
+        return ToSingleOrNull(@this, CultureInfo.CurrentCulture);
     }
 
     public static bool TryConvertToFloatLocal(this object? @this, out float result)

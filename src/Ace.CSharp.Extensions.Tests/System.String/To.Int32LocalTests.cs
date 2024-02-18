@@ -71,6 +71,46 @@ public sealed class ToInt32LocalTests
     }
 
     [Fact]
+    internal void GivenToInt32OrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = int.MaxValue.ToString(CultureInfo.CurrentCulture);
+        int expected = int.MaxValue;
+
+        // Act
+        int? actual = @this.ToInt32OrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToInt32OrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        int? actual = @this.ToInt32OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToInt32OrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        int? actual = @this.ToInt32OrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToInt32LocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

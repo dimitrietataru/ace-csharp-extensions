@@ -14,6 +14,18 @@ public static partial class StringExtensions
         return isInt32 ? result : @default;
     }
 
+    public static int? ToInt32OrNull(this string? @this, IFormatProvider? provider)
+    {
+        if (string.IsNullOrWhiteSpace(@this))
+        {
+            return null;
+        }
+
+        bool isInt32 = TryConvertToInt32(@this, provider, out int result);
+
+        return isInt32 ? result : null;
+    }
+
     public static bool TryConvertToInt32(this string? @this, IFormatProvider? provider, out int result)
     {
         try
@@ -44,6 +56,11 @@ public static partial class StringExtensions
     public static int ToIntOrDefault(this string? @this, IFormatProvider? provider, int @default = default)
     {
         return ToInt32OrDefault(@this, provider, @default);
+    }
+
+    public static int? ToIntOrNull(this string? @this, IFormatProvider? provider)
+    {
+        return ToInt32OrNull(@this, provider);
     }
 
     public static bool TryConvertToInt(this string? @this, IFormatProvider? provider, out int result)

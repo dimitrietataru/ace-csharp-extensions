@@ -85,6 +85,46 @@ public sealed class ToSingleLocalTests
     }
 
     [Fact]
+    internal void GivenToSingleOrNullLocalWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        object @this = float.MaxValue;
+        float expected = float.MaxValue;
+
+        // Act
+        float? actual = @this.ToSingleOrNullLocal();
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToSingleOrNullLocalWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        object @this = "foo";
+
+        // Act
+        float? actual = @this.ToSingleOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
+    internal void GivenToSingleOrNullLocalWhenInputIsNullThenResultIsNull()
+    {
+        // Arrange
+        object? @this = null;
+
+        // Act
+        float? actual = @this.ToSingleOrNullLocal();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToSingleLocalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

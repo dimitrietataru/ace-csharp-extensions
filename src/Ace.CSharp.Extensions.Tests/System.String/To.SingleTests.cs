@@ -72,6 +72,46 @@ public sealed class ToSingleTests
     }
 
     [Fact]
+    internal void GivenToSingleOrNullWhenInputIsValidThenResultIsExpected()
+    {
+        // Arrange
+        string @this = float.MaxValue.ToString(CultureInfo.CurrentCulture);
+        float expected = float.MaxValue;
+
+        // Act
+        float? actual = @this.ToSingleOrNull(provider: default);
+
+        // Assert
+        actual.Should().Be(expected);
+    }
+
+    [Fact]
+    internal void GivenToSingleOrNullWhenInputIsNotValidThenResultIsNull()
+    {
+        // Arrange
+        string @this = "foo";
+
+        // Act
+        float? actual = @this.ToSingleOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    internal void GivenToSingleOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    {
+        // Act
+        float? actual = @this.ToSingleOrNull(provider: default);
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Fact]
     internal void GivenTryConvertToSingleWhenInputIsValidThenResultIsExpected()
     {
         // Arrange

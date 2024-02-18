@@ -12,6 +12,11 @@ public static partial class ObjectExtensions
         return ToInt32OrDefault(@this, CultureInfo.InvariantCulture, @default);
     }
 
+    public static int? ToInt32OrNullInvariant(this object? @this)
+    {
+        return ToInt32OrNull(@this, CultureInfo.InvariantCulture);
+    }
+
     public static bool TryConvertToInt32Invariant(this object? @this, out int result)
     {
         return TryConvertToInt32(@this, CultureInfo.InvariantCulture, out result);
@@ -25,6 +30,11 @@ public static partial class ObjectExtensions
     public static int ToIntOrDefaultInvariant(this object? @this, int @default = default)
     {
         return ToInt32OrDefaultInvariant(@this, @default);
+    }
+
+    public static int? ToIntOrNullInvariant(this object? @this)
+    {
+        return ToInt32OrNull(@this, CultureInfo.InvariantCulture);
     }
 
     public static bool TryConvertToIntInvariant(this object? @this, out int result)
