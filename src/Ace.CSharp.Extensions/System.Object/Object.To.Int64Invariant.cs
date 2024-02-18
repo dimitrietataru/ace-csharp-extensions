@@ -34,7 +34,7 @@ public static partial class ObjectExtensions
 
     public static long? ToLongOrNullInvariant(this object? @this)
     {
-        return ToInt64OrNull(@this, CultureInfo.InvariantCulture);
+        return ToInt64OrNullInvariant(@this);
     }
 
     public static bool TryConvertToLongInvariant(this object? @this, out long result)

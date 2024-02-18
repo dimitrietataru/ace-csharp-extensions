@@ -12,14 +12,14 @@ public static partial class ObjectExtensions
         return ToInt32OrDefault(@this, CultureInfo.CurrentCulture, @default);
     }
 
-    public static bool TryConvertToInt32Local(this object? @this, out int result)
-    {
-        return TryConvertToInt32(@this, CultureInfo.CurrentCulture, out result);
-    }
-
     public static int? ToInt32OrNullLocal(this object? @this)
     {
         return ToInt32OrNull(@this, CultureInfo.CurrentCulture);
+    }
+
+    public static bool TryConvertToInt32Local(this object? @this, out int result)
+    {
+        return TryConvertToInt32(@this, CultureInfo.CurrentCulture, out result);
     }
 
     public static int ToIntLocal(this object? @this)
@@ -34,7 +34,7 @@ public static partial class ObjectExtensions
 
     public static int? ToIntOrNullLocal(this object? @this)
     {
-        return ToInt32OrNull(@this, CultureInfo.CurrentCulture);
+        return ToInt32OrNullLocal(@this);
     }
 
     public static bool TryConvertToIntLocal(this object? @this, out int result)

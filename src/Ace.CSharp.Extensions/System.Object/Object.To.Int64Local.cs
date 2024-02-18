@@ -34,7 +34,7 @@ public static partial class ObjectExtensions
 
     public static long? ToLongOrNullLocal(this object? @this)
     {
-        return ToInt64OrNull(@this, CultureInfo.CurrentCulture);
+        return ToInt64OrNullLocal(@this);
     }
 
     public static bool TryConvertToLongLocal(this object? @this, out long result)

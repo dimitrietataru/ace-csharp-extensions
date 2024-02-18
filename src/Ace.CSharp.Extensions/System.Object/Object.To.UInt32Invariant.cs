@@ -34,7 +34,7 @@ public static partial class ObjectExtensions
 
     public static uint? ToUIntOrNullInvariant(this object? @this)
     {
-        return ToUInt32OrNull(@this, CultureInfo.InvariantCulture);
+        return ToUInt32OrNullInvariant(@this);
     }
 
     public static bool TryConvertToUIntInvariant(this object? @this, out uint result)

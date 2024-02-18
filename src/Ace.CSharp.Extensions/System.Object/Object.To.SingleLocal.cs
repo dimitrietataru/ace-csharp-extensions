@@ -34,7 +34,7 @@ public static partial class ObjectExtensions
 
     public static float? ToFloatOrNullLocal(this object? @this)
     {
-        return ToSingleOrNull(@this, CultureInfo.CurrentCulture);
+        return ToSingleOrNullLocal(@this);
     }
 
     public static bool TryConvertToFloatLocal(this object? @this, out float result)

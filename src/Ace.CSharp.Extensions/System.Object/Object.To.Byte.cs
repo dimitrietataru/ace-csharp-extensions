@@ -16,7 +16,7 @@ public static partial class ObjectExtensions
 
     public static byte? ToByteOrNull(this object? @this, IFormatProvider? provider)
     {
-        if (@this == null)
+        if (@this is null)
         {
             return null;
         }

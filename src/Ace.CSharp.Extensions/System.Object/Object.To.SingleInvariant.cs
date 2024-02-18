@@ -34,7 +34,7 @@ public static partial class ObjectExtensions
 
     public static float? ToFloatOrNullInvariant(this object? @this)
     {
-        return ToSingleOrNull(@this, CultureInfo.InvariantCulture);
+        return ToSingleOrNullInvariant(@this);
     }
 
     public static bool TryConvertToFloatInvariant(this object? @this, out float result)

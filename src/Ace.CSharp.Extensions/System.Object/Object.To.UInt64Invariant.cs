@@ -34,7 +34,7 @@ public static partial class ObjectExtensions
 
     public static ulong? ToULongOrNullInvariant(this object? @this)
     {
-        return ToUInt64OrNull(@this, CultureInfo.InvariantCulture);
+        return ToUInt64OrNullInvariant(@this);
     }
 
     public static bool TryConvertToULongInvariant(this object? @this, out ulong result)

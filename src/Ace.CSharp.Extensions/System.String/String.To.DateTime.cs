@@ -21,7 +21,7 @@ public static partial class StringExtensions
             return null;
         }
 
-        bool isDateTime = TryConvertToDateTime(@this, provider, out DateTime result);
+        bool isDateTime = TryConvertToDateTime(@this, provider, out var result);
 
         return isDateTime ? result : null;
     }
