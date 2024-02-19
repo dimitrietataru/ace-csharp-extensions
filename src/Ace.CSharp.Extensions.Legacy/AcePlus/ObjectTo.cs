@@ -2,7 +2,6 @@ using System;
 
 namespace Ace.CSharp.Extensions
 {
-#pragma warning disable CA1720 // Identifier contains type name
     public static class ObjectTo
     {
         public static bool Boolean(object value, IFormatProvider provider)
@@ -576,4 +575,3 @@ namespace Ace.CSharp.Extensions
         }
     }
 }
-#pragma warning restore CA1720 // Identifier contains type name

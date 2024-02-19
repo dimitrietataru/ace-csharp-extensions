@@ -33,7 +33,6 @@ public sealed class ToUpperTests
     }
 
     [Theory]
-    [InlineData(null!)]
     [InlineData("")]
     [InlineData(" ")]
     internal void GivenToUpperLocalWhenValueIsNotValidThenReturnsValue(string @this)
@@ -63,10 +62,10 @@ public sealed class ToUpperTests
     }
 
     [Theory]
-    [InlineData(null!)]
+    [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToUpperOrDefaultLocalWhenValueIsNotValidThenReturnsFallbackValue(string @this)
+    internal void GivenToUpperOrDefaultLocalWhenValueIsNotValidThenReturnsFallbackValue(string? @this)
     {
         // Arrange
         string fallbackValue = "foo";

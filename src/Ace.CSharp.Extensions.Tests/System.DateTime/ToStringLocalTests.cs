@@ -13,9 +13,7 @@ public sealed class ToStringLocalTests
         // Act
         Thread.CurrentThread.CurrentCulture = CultureFactory.GetByName(Cultures.RoRO);
         string actualLocal = dateTime.ToStringLocal();
-#pragma warning disable CA1305 // Specify IFormatProvider
         string actualToString = dateTime.ToString();
-#pragma warning restore CA1305 // Specify IFormatProvider
 
         // Assert
         actualLocal.Should().NotBeNullOrEmpty().And.BeEquivalentTo(expectedLocal);
@@ -35,9 +33,7 @@ public sealed class ToStringLocalTests
         // Act
         Thread.CurrentThread.CurrentCulture = CultureFactory.GetByName(Cultures.RoRO);
         string actualLocal = dateTime.ToStringLocal(format);
-#pragma warning disable CA1305 // Specify IFormatProvider
         string actualToString = dateTime.ToString(format);
-#pragma warning restore CA1305 // Specify IFormatProvider
 
         // Assert
         actualLocal.Should().NotBeNullOrEmpty().And.BeEquivalentTo(expectedLocal);

@@ -810,3 +810,13 @@ dotnet_diagnostic.CA2261.severity = warning
 
 # Code Style | Formatting
 dotnet_diagnostic.IDE0055.severity = warning
+
+# Exceptions
+[**ObjectTo.cs]
+dotnet_diagnostic.CA1720.severity = none
+
+[**StringTo.cs]
+dotnet_diagnostic.CA1720.severity = none
+
+[**ToStringLocalTests.cs]
+dotnet_diagnostic.CA1305.severity = none

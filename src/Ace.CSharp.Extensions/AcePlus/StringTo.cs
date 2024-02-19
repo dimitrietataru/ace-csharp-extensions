@@ -1,6 +1,5 @@
 namespace Ace.CSharp.Extensions;
 
-#pragma warning disable CA1720 // Identifier contains type name
 public static class StringTo
 {
     public static bool Boolean(string? value, IFormatProvider? provider)
@@ -573,4 +572,3 @@ public static class StringTo
         return StringExtensions.ToUInt64OrDefaultInvariant(value, @default);
     }
 }
-#pragma warning restore CA1720 // Identifier contains type name

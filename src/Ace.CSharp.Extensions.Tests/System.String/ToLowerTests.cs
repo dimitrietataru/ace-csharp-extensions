@@ -33,7 +33,6 @@ public sealed class ToLowerTests
     }
 
     [Theory]
-    [InlineData(null!)]
     [InlineData("")]
     [InlineData(" ")]
     internal void GivenToLowerLocalWhenValueIsNotValidThenReturnsValue(string @this)
@@ -63,10 +62,10 @@ public sealed class ToLowerTests
     }
 
     [Theory]
-    [InlineData(null!)]
+    [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToLowerOrDefaultLocalWhenValueIsNotValidThenReturnsFallbackValue(string @this)
+    internal void GivenToLowerOrDefaultLocalWhenValueIsNotValidThenReturnsFallbackValue(string? @this)
     {
         // Arrange
         string fallbackValue = "foo";
