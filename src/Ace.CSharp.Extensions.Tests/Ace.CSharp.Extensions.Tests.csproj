@@ -9,7 +9,7 @@
     <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
 
     <PackageId>AceCSharp.Extensions.Tests</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>Dimitrie Tataru</Authors>
     <Company>A C E</Company>
   </PropertyGroup>
