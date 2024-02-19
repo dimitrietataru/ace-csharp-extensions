@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToSByteOrDefault(@this, CultureInfo.InvariantCulture, @default);
         }
 
+        public static sbyte? ToSByteOrNullInvariant(this string @this)
+        {
+            return ToSByteOrNull(@this, CultureInfo.InvariantCulture);
+        }
+
         public static bool TryConvertToSByteInvariant(this string @this, out sbyte result)
         {
             return TryConvertToSByte(@this, CultureInfo.InvariantCulture, out result);

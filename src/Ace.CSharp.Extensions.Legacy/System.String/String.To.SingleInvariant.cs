@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToSingleOrDefault(@this, CultureInfo.InvariantCulture, @default);
         }
 
+        public static float? ToSingleOrNullInvariant(this string @this)
+        {
+            return ToSingleOrNull(@this, CultureInfo.InvariantCulture);
+        }
+
         public static bool TryConvertToSingleInvariant(this string @this, out float result)
         {
             return TryConvertToSingle(@this, CultureInfo.InvariantCulture, out result);
@@ -27,6 +32,11 @@ namespace Ace.CSharp.Extensions
         public static float ToFloatOrDefaultInvariant(this string @this, float @default = default)
         {
             return ToSingleOrDefaultInvariant(@this, @default);
+        }
+
+        public static float? ToFloatOrNullInvariant(this string @this)
+        {
+            return ToSingleOrNullInvariant(@this);
         }
 
         public static bool TryConvertToFloatInvariant(this string @this, out float result)

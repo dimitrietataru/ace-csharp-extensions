@@ -16,6 +16,18 @@ namespace Ace.CSharp.Extensions
             return isInt64 ? result : @default;
         }
 
+        public static long? ToInt64OrNull(this string @this, IFormatProvider provider)
+        {
+            if (string.IsNullOrWhiteSpace(@this))
+            {
+                return null;
+            }
+
+            bool isInt64 = TryConvertToInt64(@this, provider, out long result);
+
+            return isInt64 ? (long?)result : null;
+        }
+
         public static bool TryConvertToInt64(this string @this, IFormatProvider provider, out long result)
         {
             try
@@ -46,6 +58,11 @@ namespace Ace.CSharp.Extensions
         public static long ToLongOrDefault(this string @this, IFormatProvider provider, long @default = default)
         {
             return ToInt64OrDefault(@this, provider, @default);
+        }
+
+        public static long? ToLongOrNull(this string @this, IFormatProvider provider)
+        {
+            return ToInt64OrNull(@this, provider);
         }
 
         public static bool TryConvertToLong(this string @this, IFormatProvider provider, out long result)

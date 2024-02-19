@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToBooleanOrDefault(@this, CultureInfo.CurrentCulture, @default);
         }
 
+        public static bool? ToBooleanOrNullLocal(this string @this)
+        {
+            return ToBooleanOrNull(@this, CultureInfo.CurrentCulture);
+        }
+
         public static bool TryConvertToBooleanLocal(this string @this, out bool result)
         {
             return TryConvertToBoolean(@this, CultureInfo.CurrentCulture, out result);

@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToByteOrDefault(@this, CultureInfo.CurrentCulture, @default);
         }
 
+        public static byte? ToByteOrNullLocal(this string @this)
+        {
+            return ToByteOrNull(@this, CultureInfo.CurrentCulture);
+        }
+
         public static bool TryConvertToByteLocal(this string @this, out byte result)
         {
             return TryConvertToByte(@this, CultureInfo.CurrentCulture, out result);

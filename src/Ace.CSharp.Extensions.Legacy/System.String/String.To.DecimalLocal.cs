@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToDecimalOrDefault(@this, CultureInfo.CurrentCulture, @default);
         }
 
+        public static decimal? ToDecimalOrNullLocal(this string @this)
+        {
+            return ToDecimalOrNull(@this, CultureInfo.CurrentCulture);
+        }
+
         public static bool TryConvertToDecimalLocal(this string @this, out decimal result)
         {
             return TryConvertToDecimal(@this, CultureInfo.CurrentCulture, out result);

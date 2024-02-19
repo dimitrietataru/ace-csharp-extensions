@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToInt32OrDefault(@this, CultureInfo.CurrentCulture, @default);
         }
 
+        public static int? ToInt32OrNullLocal(this string @this)
+        {
+            return ToInt32OrNull(@this, CultureInfo.CurrentCulture);
+        }
+
         public static bool TryConvertToInt32Local(this string @this, out int result)
         {
             return TryConvertToInt32(@this, CultureInfo.CurrentCulture, out result);
@@ -27,6 +32,11 @@ namespace Ace.CSharp.Extensions
         public static int ToIntOrDefaultLocal(this string @this, int @default = default)
         {
             return ToInt32OrDefaultLocal(@this, @default);
+        }
+
+        public static int? ToIntOrNullLocal(this string @this)
+        {
+            return ToInt32OrNullLocal(@this);
         }
 
         public static bool TryConvertToIntLocal(this string @this, out int result)

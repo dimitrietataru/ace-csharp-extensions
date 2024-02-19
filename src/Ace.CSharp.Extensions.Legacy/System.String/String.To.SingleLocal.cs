@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToSingleOrDefault(@this, CultureInfo.CurrentCulture, @default);
         }
 
+        public static float? ToSingleOrNullLocal(this string @this)
+        {
+            return ToSingleOrNull(@this, CultureInfo.CurrentCulture);
+        }
+
         public static bool TryConvertToSingleLocal(this string @this, out float result)
         {
             return TryConvertToSingle(@this, CultureInfo.CurrentCulture, out result);
@@ -27,6 +32,11 @@ namespace Ace.CSharp.Extensions
         public static float ToFloatOrDefaultLocal(this string @this, float @default = default)
         {
             return ToSingleOrDefaultLocal(@this, @default);
+        }
+
+        public static float? ToFloatOrNullLocal(this string @this)
+        {
+            return ToSingleOrNullLocal(@this);
         }
 
         public static bool TryConvertToFloatLocal(this string @this, out float result)

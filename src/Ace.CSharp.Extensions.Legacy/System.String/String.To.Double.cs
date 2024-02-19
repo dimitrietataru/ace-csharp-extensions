@@ -16,6 +16,18 @@ namespace Ace.CSharp.Extensions
             return isDouble ? result : @default;
         }
 
+        public static double? ToDoubleOrNull(this string @this, IFormatProvider provider)
+        {
+            if (string.IsNullOrWhiteSpace(@this))
+            {
+                return null;
+            }
+
+            bool isDouble = TryConvertToDouble(@this, provider, out double result);
+
+            return isDouble ? (double?)result : null;
+        }
+
         public static bool TryConvertToDouble(this string @this, IFormatProvider provider, out double result)
         {
             try

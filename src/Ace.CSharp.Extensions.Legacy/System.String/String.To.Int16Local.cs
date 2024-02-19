@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToInt16OrDefault(@this, CultureInfo.CurrentCulture, @default);
         }
 
+        public static short? ToInt16OrNullLocal(this string @this)
+        {
+            return ToInt16OrNull(@this, CultureInfo.CurrentCulture);
+        }
+
         public static bool TryConvertToInt16Local(this string @this, out short result)
         {
             return TryConvertToInt16(@this, CultureInfo.CurrentCulture, out result);

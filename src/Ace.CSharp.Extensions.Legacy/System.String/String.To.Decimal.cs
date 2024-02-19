@@ -16,6 +16,18 @@ namespace Ace.CSharp.Extensions
             return isDecimal ? result : @default;
         }
 
+        public static decimal? ToDecimalOrNull(this string @this, IFormatProvider provider)
+        {
+            if (string.IsNullOrWhiteSpace(@this))
+            {
+                return null;
+            }
+
+            bool isDecimal = TryConvertToDecimal(@this, provider, out decimal result);
+
+            return isDecimal ? (decimal?)result : null;
+        }
+
         public static bool TryConvertToDecimal(this string @this, IFormatProvider provider, out decimal result)
         {
             try
