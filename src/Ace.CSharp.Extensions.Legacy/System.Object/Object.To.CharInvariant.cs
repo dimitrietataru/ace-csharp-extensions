@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToCharOrDefault(@this, CultureInfo.InvariantCulture, @default);
         }
 
+        public static char? ToCharOrNullInvariant(this object @this)
+        {
+            return ToCharOrNull(@this, CultureInfo.InvariantCulture);
+        }
+
         public static bool TryConvertToCharInvariant(this object @this, out char result)
         {
             return TryConvertToChar(@this, CultureInfo.InvariantCulture, out result);

@@ -16,6 +16,18 @@ namespace Ace.CSharp.Extensions
             return isUInt32 ? result : @default;
         }
 
+        public static uint? ToUInt32OrNull(this object @this, IFormatProvider provider)
+        {
+            if (@this is null)
+            {
+                return null;
+            }
+
+            bool isUInt32 = TryConvertToUInt32(@this, provider, out uint result);
+
+            return isUInt32 ? (uint?)result : null;
+        }
+
         public static bool TryConvertToUInt32(this object @this, IFormatProvider provider, out uint result)
         {
             try
@@ -52,6 +64,11 @@ namespace Ace.CSharp.Extensions
         public static uint ToUIntOrDefault(this object @this, IFormatProvider provider, uint @default = default)
         {
             return ToUInt32OrDefault(@this, provider, @default);
+        }
+
+        public static uint? ToUIntOrNull(this object @this, IFormatProvider provider)
+        {
+            return ToUInt32OrNull(@this, provider);
         }
 
         public static bool TryConvertToUInt(this object @this, IFormatProvider provider, out uint result)

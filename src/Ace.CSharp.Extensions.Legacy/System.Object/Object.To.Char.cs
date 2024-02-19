@@ -16,6 +16,18 @@ namespace Ace.CSharp.Extensions
             return isChar ? result : @default;
         }
 
+        public static char? ToCharOrNull(this object @this, IFormatProvider provider)
+        {
+            if (@this is null)
+            {
+                return null;
+            }
+
+            bool isChar = TryConvertToChar(@this, provider, out char result);
+
+            return isChar ? (char?)result : null;
+        }
+
         public static bool TryConvertToChar(this object @this, IFormatProvider provider, out char result)
         {
             try

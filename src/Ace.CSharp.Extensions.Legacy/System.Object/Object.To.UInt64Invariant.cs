@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToUInt64OrDefault(@this, CultureInfo.InvariantCulture, @default);
         }
 
+        public static ulong? ToUInt64OrNullInvariant(this object @this)
+        {
+            return ToUInt64OrNull(@this, CultureInfo.InvariantCulture);
+        }
+
         public static bool TryConvertToUInt64Invariant(this object @this, out ulong result)
         {
             return TryConvertToUInt64(@this, CultureInfo.InvariantCulture, out result);
@@ -27,6 +32,11 @@ namespace Ace.CSharp.Extensions
         public static ulong ToULongOrDefaultInvariant(this object @this, ulong @default = default)
         {
             return ToUInt64OrDefaultInvariant(@this, @default);
+        }
+
+        public static ulong? ToULongOrNullInvariant(this object @this)
+        {
+            return ToUInt64OrNullInvariant(@this);
         }
 
         public static bool TryConvertToULongInvariant(this object @this, out ulong result)

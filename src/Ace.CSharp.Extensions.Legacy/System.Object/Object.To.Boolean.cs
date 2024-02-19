@@ -16,6 +16,18 @@ namespace Ace.CSharp.Extensions
             return isBoolean ? result : @default;
         }
 
+        public static bool? ToBooleanOrNull(this object @this, IFormatProvider provider)
+        {
+            if (@this is null)
+            {
+                return null;
+            }
+
+            bool isBoolean = TryConvertToBoolean(@this, provider, out bool result);
+
+            return isBoolean ? (bool?)result : null;
+        }
+
         public static bool TryConvertToBoolean(this object @this, IFormatProvider provider, out bool result)
         {
             try

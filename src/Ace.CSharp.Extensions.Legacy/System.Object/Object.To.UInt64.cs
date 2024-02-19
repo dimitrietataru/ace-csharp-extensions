@@ -16,6 +16,18 @@ namespace Ace.CSharp.Extensions
             return isUInt64 ? result : @default;
         }
 
+        public static ulong? ToUInt64OrNull(this object @this, IFormatProvider provider)
+        {
+            if (@this is null)
+            {
+                return null;
+            }
+
+            bool isUInt64 = TryConvertToUInt64(@this, provider, out ulong result);
+
+            return isUInt64 ? (ulong?)result : null;
+        }
+
         public static bool TryConvertToUInt64(this object @this, IFormatProvider provider, out ulong result)
         {
             try
@@ -52,6 +64,11 @@ namespace Ace.CSharp.Extensions
         public static ulong ToULongOrDefault(this object @this, IFormatProvider provider, ulong @default = default)
         {
             return ToUInt64OrDefault(@this, provider, @default);
+        }
+
+        public static ulong? ToULongOrNull(this object @this, IFormatProvider provider)
+        {
+            return ToUInt64OrNull(@this, provider);
         }
 
         public static bool TryConvertToULong(this object @this, IFormatProvider provider, out ulong result)

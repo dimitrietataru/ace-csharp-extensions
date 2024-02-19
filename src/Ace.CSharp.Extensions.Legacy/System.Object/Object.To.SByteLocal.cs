@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToSByteOrDefault(@this, CultureInfo.CurrentCulture, @default);
         }
 
+        public static sbyte? ToSByteOrNullLocal(this object @this)
+        {
+            return ToSByteOrNull(@this, CultureInfo.CurrentCulture);
+        }
+
         public static bool TryConvertToSByteLocal(this object @this, out sbyte result)
         {
             return TryConvertToSByte(@this, CultureInfo.CurrentCulture, out result);

@@ -16,6 +16,18 @@ namespace Ace.CSharp.Extensions
             return isSByte ? result : @default;
         }
 
+        public static sbyte? ToSByteOrNull(this object @this, IFormatProvider provider)
+        {
+            if (@this is null)
+            {
+                return null;
+            }
+
+            bool isSByte = TryConvertToSByte(@this, provider, out sbyte result);
+
+            return isSByte ? (sbyte?)result : null;
+        }
+
         public static bool TryConvertToSByte(this object @this, IFormatProvider provider, out sbyte result)
         {
             try

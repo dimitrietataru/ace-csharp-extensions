@@ -16,6 +16,18 @@ namespace Ace.CSharp.Extensions
             return isByte ? result : @default;
         }
 
+        public static byte? ToByteOrNull(this object @this, IFormatProvider provider)
+        {
+            if (@this is null)
+            {
+                return null;
+            }
+
+            bool isByte = TryConvertToByte(@this, provider, out byte result);
+
+            return isByte ? (byte?)result : null;
+        }
+
         public static bool TryConvertToByte(this object @this, IFormatProvider provider, out byte result)
         {
             try

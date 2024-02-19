@@ -16,6 +16,18 @@ namespace Ace.CSharp.Extensions
             return isInt32 ? result : @default;
         }
 
+        public static int? ToInt32OrNull(this object @this, IFormatProvider provider)
+        {
+            if (@this is null)
+            {
+                return null;
+            }
+
+            bool isInt32 = TryConvertToInt32(@this, provider, out int result);
+
+            return isInt32 ? (int?)result : null;
+        }
+
         public static bool TryConvertToInt32(this object @this, IFormatProvider provider, out int result)
         {
             try
@@ -52,6 +64,11 @@ namespace Ace.CSharp.Extensions
         public static int ToIntOrDefault(this object @this, IFormatProvider provider, int @default = default)
         {
             return ToInt32OrDefault(@this, provider, @default);
+        }
+
+        public static int? ToIntOrNull(this object @this, IFormatProvider provider)
+        {
+            return ToInt32OrNull(@this, provider);
         }
 
         public static bool TryConvertToInt(this object @this, IFormatProvider provider, out int result)

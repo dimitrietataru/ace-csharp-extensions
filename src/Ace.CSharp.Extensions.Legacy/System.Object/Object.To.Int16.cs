@@ -16,6 +16,18 @@ namespace Ace.CSharp.Extensions
             return isInt16 ? result : @default;
         }
 
+        public static short? ToInt16OrNull(this object @this, IFormatProvider provider)
+        {
+            if (@this is null)
+            {
+                return null;
+            }
+
+            bool isInt16 = TryConvertToInt16(@this, provider, out short result);
+
+            return isInt16 ? (short?)result : null;
+        }
+
         public static bool TryConvertToInt16(this object @this, IFormatProvider provider, out short result)
         {
             try

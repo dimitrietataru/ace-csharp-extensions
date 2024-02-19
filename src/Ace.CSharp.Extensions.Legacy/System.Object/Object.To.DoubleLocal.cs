@@ -14,6 +14,11 @@ namespace Ace.CSharp.Extensions
             return ToDoubleOrDefault(@this, CultureInfo.CurrentCulture, @default);
         }
 
+        public static double? ToDoubleOrNullLocal(this object @this)
+        {
+            return ToDoubleOrNull(@this, CultureInfo.CurrentCulture);
+        }
+
         public static bool TryConvertToDoubleLocal(this object @this, out double result)
         {
             return TryConvertToDouble(@this, CultureInfo.CurrentCulture, out result);
