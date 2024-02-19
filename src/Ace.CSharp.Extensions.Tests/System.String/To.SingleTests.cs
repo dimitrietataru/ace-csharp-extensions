@@ -75,7 +75,7 @@ public sealed class ToSingleTests
     internal void GivenToSingleOrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = float.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = float.MaxValue.ToString(provider: default);
         float expected = float.MaxValue;
 
         // Act
@@ -102,8 +102,10 @@ public sealed class ToSingleTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToSingleOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToSingleOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         float? actual = @this.ToSingleOrNull(provider: default);
 

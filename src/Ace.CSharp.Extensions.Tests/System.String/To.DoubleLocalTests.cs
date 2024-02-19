@@ -102,8 +102,10 @@ public sealed class ToDoubleLocalTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToDoubleOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToDoubleOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         double? actual = @this.ToDoubleOrNullLocal();
 

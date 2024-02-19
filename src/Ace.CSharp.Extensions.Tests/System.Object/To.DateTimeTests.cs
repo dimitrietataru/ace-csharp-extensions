@@ -75,10 +75,10 @@ public sealed class ToDateTimeTests
     {
         // Arrange
         object @this = DateTime.UnixEpoch;
-        DateTime expected = DateTime.UnixEpoch;
+        var expected = DateTime.UnixEpoch;
 
         // Act
-        DateTime? actual = @this.ToDateTimeOrNull(provider: default);
+        var actual = @this.ToDateTimeOrNull(provider: default);
 
         // Assert
         actual.Should().Be(expected);
@@ -91,7 +91,7 @@ public sealed class ToDateTimeTests
         object @this = "foo";
 
         // Act
-        DateTime? actual = @this.ToDateTimeOrNull(provider: default);
+        var actual = @this.ToDateTimeOrNull(provider: default);
 
         // Assert
         actual.Should().BeNull();
@@ -104,7 +104,7 @@ public sealed class ToDateTimeTests
         object? @this = null;
 
         // Act
-        DateTime? actual = @this.ToDateTimeOrNull(provider: default);
+        var actual = @this.ToDateTimeOrNull(provider: default);
 
         // Assert
         actual.Should().BeNull();

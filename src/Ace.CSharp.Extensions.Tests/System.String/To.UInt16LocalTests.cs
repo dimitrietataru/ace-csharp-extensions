@@ -101,8 +101,10 @@ public sealed class ToUInt16LocalTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToUInt16OrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToUInt16OrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         ushort? actual = @this.ToUInt16OrNullLocal();
 

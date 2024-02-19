@@ -88,8 +88,10 @@ public sealed class ToBooleanLocalTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToBooleanOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToBooleanOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         bool? actual = @this.ToBooleanOrNullLocal();
 

@@ -6,7 +6,7 @@ public sealed class ToDateTimeTests
     internal void GivenToDateTimeWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = DateTime.UnixEpoch.ToString(CultureInfo.CurrentCulture);
+        string @this = DateTime.UnixEpoch.ToString(provider: default);
         var expected = DateTime.UnixEpoch;
 
         // Act
@@ -33,7 +33,7 @@ public sealed class ToDateTimeTests
     internal void GivenToDateTimeOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = DateTime.UnixEpoch.ToString(CultureInfo.CurrentCulture);
+        string @this = DateTime.UnixEpoch.ToString(provider: default);
         var expected = DateTime.UnixEpoch;
 
         // Act
@@ -61,11 +61,11 @@ public sealed class ToDateTimeTests
     internal void GivenToDateTimeOrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = DateTime.UnixEpoch.ToString(CultureInfo.CurrentCulture);
-        DateTime expected = DateTime.UnixEpoch;
+        string @this = DateTime.UnixEpoch.ToString(provider: default);
+        var expected = DateTime.UnixEpoch;
 
         // Act
-        DateTime? actual = @this.ToDateTimeOrNull(provider: default);
+        var actual = @this.ToDateTimeOrNull(provider: default);
 
         // Assert
         actual.Should().Be(expected);
@@ -78,7 +78,7 @@ public sealed class ToDateTimeTests
         string @this = "foo";
 
         // Act
-        DateTime? actual = @this.ToDateTimeOrNull(provider: default);
+        var actual = @this.ToDateTimeOrNull(provider: default);
 
         // Assert
         actual.Should().BeNull();
@@ -88,10 +88,12 @@ public sealed class ToDateTimeTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToDateTimeOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToDateTimeOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
-        DateTime? actual = @this.ToDateTimeOrNull(provider: default);
+        var actual = @this.ToDateTimeOrNull(provider: default);
 
         // Assert
         actual.Should().BeNull();
@@ -101,7 +103,7 @@ public sealed class ToDateTimeTests
     internal void GivenTryConvertToDateTimeWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = DateTime.UnixEpoch.ToString(CultureInfo.CurrentCulture);
+        string @this = DateTime.UnixEpoch.ToString(provider: default);
         var expected = DateTime.UnixEpoch;
 
         // Act

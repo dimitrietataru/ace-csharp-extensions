@@ -101,8 +101,10 @@ public sealed class ToByteInvariantTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToByteOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToByteOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         byte? actual = @this.ToByteOrNullInvariant();
 

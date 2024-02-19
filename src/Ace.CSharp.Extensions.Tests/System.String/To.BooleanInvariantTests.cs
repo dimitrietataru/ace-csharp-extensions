@@ -88,8 +88,10 @@ public sealed class ToBooleanInvariantTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToBooleanOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToBooleanOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         bool? actual = @this.ToBooleanOrNullInvariant();
 

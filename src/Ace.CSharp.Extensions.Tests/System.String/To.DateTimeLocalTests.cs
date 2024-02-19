@@ -62,10 +62,10 @@ public sealed class ToDateTimeLocalTests
     {
         // Arrange
         string @this = DateTime.UnixEpoch.ToString(CultureInfo.CurrentCulture);
-        DateTime expected = DateTime.UnixEpoch;
+        var expected = DateTime.UnixEpoch;
 
         // Act
-        DateTime? actual = @this.ToDateTimeOrNullLocal();
+        var actual = @this.ToDateTimeOrNullLocal();
 
         // Assert
         actual.Should().Be(expected);
@@ -78,7 +78,7 @@ public sealed class ToDateTimeLocalTests
         string @this = "foo";
 
         // Act
-        DateTime? actual = @this.ToDateTimeOrNullLocal();
+        var actual = @this.ToDateTimeOrNullLocal();
 
         // Assert
         actual.Should().BeNull();
@@ -88,10 +88,12 @@ public sealed class ToDateTimeLocalTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToDateTimeOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToDateTimeOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
-        DateTime? actual = @this.ToDateTimeOrNullLocal();
+        var actual = @this.ToDateTimeOrNullLocal();
 
         // Assert
         actual.Should().BeNull();

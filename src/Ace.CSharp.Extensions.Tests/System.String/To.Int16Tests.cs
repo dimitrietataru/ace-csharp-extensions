@@ -74,7 +74,7 @@ public sealed class ToInt16Tests
     internal void GivenToInt16OrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = short.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = short.MaxValue.ToString(provider: default);
         short expected = short.MaxValue;
 
         // Act
@@ -101,8 +101,10 @@ public sealed class ToInt16Tests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToInt16OrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToInt16OrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         short? actual = @this.ToInt16OrNull(provider: default);
 

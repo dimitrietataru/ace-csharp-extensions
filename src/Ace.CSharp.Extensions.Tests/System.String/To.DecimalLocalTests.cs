@@ -101,8 +101,10 @@ public sealed class ToDecimalLocalTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToDecimalOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToDecimalOrNullLocalWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         decimal? actual = @this.ToDecimalOrNullLocal();
 

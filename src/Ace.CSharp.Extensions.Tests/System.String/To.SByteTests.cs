@@ -87,7 +87,7 @@ public sealed class ToSByteTests
     internal void GivenToSByteOrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = sbyte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = sbyte.MaxValue.ToString(provider: default);
         sbyte expected = sbyte.MaxValue;
 
         // Act
@@ -114,8 +114,10 @@ public sealed class ToSByteTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToSByteOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToSByteOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         sbyte? actual = @this.ToSByteOrNull(provider: default);
 

@@ -101,8 +101,10 @@ public sealed class ToUInt16InvariantTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToUInt16OrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToUInt16OrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         ushort? actual = @this.ToUInt16OrNullInvariant();
 

@@ -101,8 +101,10 @@ public sealed class ToInt16InvariantTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToInt16OrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToInt16OrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         short? actual = @this.ToInt16OrNullInvariant();
 

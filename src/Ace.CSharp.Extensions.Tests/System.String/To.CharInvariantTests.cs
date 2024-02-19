@@ -101,8 +101,10 @@ public sealed class ToCharInvariantTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToCharOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToCharOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         char? actual = @this.ToCharOrNullInvariant();
 

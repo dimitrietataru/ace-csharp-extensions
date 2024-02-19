@@ -6,7 +6,7 @@ public sealed class ToDecimalTests
     internal void GivenToDecimalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = decimal.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = decimal.MaxValue.ToString(provider: default);
         decimal expected = decimal.MaxValue;
 
         // Act
@@ -46,7 +46,7 @@ public sealed class ToDecimalTests
     internal void GivenToDecimalOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = decimal.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = decimal.MaxValue.ToString(provider: default);
         decimal expected = decimal.MaxValue;
 
         // Act
@@ -60,7 +60,7 @@ public sealed class ToDecimalTests
     internal void GivenToDecimalOrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = decimal.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = decimal.MaxValue.ToString(provider: default);
         decimal expected = decimal.MaxValue;
 
         // Act
@@ -87,8 +87,10 @@ public sealed class ToDecimalTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToDecimalOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToDecimalOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         decimal? actual = @this.ToDecimalOrNull(provider: default);
 
@@ -114,7 +116,7 @@ public sealed class ToDecimalTests
     internal void GivenTryConvertToDecimalWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = decimal.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = decimal.MaxValue.ToString(provider: default);
         decimal expected = decimal.MaxValue;
 
         // Act

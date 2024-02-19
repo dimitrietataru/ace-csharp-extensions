@@ -6,7 +6,7 @@ public sealed class ToDoubleTests
     internal void GivenToDoubleWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = double.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = double.MaxValue.ToString(provider: default);
         double expected = double.MaxValue;
 
         // Act
@@ -47,7 +47,7 @@ public sealed class ToDoubleTests
     internal void GivenToDoubleOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = double.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = double.MaxValue.ToString(provider: default);
         double expected = double.MaxValue;
 
         // Act
@@ -75,7 +75,7 @@ public sealed class ToDoubleTests
     internal void GivenToDoubleOrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = double.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = double.MaxValue.ToString(provider: default);
         double expected = double.MaxValue;
 
         // Act
@@ -102,8 +102,10 @@ public sealed class ToDoubleTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToDoubleOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToDoubleOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         double? actual = @this.ToDoubleOrNull(provider: default);
 
@@ -115,7 +117,7 @@ public sealed class ToDoubleTests
     internal void GivenTryConvertToDoubleWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = double.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = double.MaxValue.ToString(provider: default);
         double expected = double.MaxValue;
 
         // Act

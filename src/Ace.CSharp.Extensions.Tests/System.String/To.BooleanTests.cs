@@ -6,7 +6,7 @@ public sealed class ToBooleanTests
     internal void GivenToBooleanWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = true.ToString(CultureInfo.CurrentCulture);
+        string @this = true.ToString(provider: default);
         bool expected = true;
 
         // Act
@@ -33,7 +33,7 @@ public sealed class ToBooleanTests
     internal void GivenToBooleanOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = true.ToString(CultureInfo.CurrentCulture);
+        string @this = true.ToString(provider: default);
         bool expected = true;
 
         // Act
@@ -61,7 +61,7 @@ public sealed class ToBooleanTests
     internal void GivenToBooleanOrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = true.ToString(CultureInfo.CurrentCulture);
+        string @this = true.ToString(provider: default);
         bool expected = true;
 
         // Act
@@ -88,8 +88,10 @@ public sealed class ToBooleanTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToBooleanOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToBooleanOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         bool? actual = @this.ToBooleanOrNull(provider: default);
 
@@ -101,7 +103,7 @@ public sealed class ToBooleanTests
     internal void GivenTryConvertToBooleanWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = true.ToString(CultureInfo.CurrentCulture);
+        string @this = true.ToString(provider: default);
         bool expected = true;
 
         // Act

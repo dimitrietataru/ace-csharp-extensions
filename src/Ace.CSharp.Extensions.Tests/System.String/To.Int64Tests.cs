@@ -74,7 +74,7 @@ public sealed class ToInt64Tests
     internal void GivenToInt64OrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = long.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = long.MaxValue.ToString(provider: default);
         long expected = long.MaxValue;
 
         // Act
@@ -101,8 +101,10 @@ public sealed class ToInt64Tests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToInt64OrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToInt64OrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         long? actual = @this.ToInt64OrNull(provider: default);
 

@@ -74,7 +74,7 @@ public sealed class ToUInt32Tests
     internal void GivenToUInt32OrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = uint.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = uint.MaxValue.ToString(provider: default);
         uint expected = uint.MaxValue;
 
         // Act
@@ -101,8 +101,10 @@ public sealed class ToUInt32Tests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToUInt32OrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToUInt32OrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         uint? actual = @this.ToUInt32OrNull(provider: default);
 

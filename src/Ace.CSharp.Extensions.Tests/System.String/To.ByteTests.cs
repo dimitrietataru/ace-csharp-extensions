@@ -6,7 +6,7 @@ public sealed class ToByteTests
     internal void GivenToByteWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = byte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = byte.MaxValue.ToString(provider: default);
         byte expected = byte.MaxValue;
 
         // Act
@@ -46,7 +46,7 @@ public sealed class ToByteTests
     internal void GivenToByteOrDefaultWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = byte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = byte.MaxValue.ToString(provider: default);
         byte expected = byte.MaxValue;
 
         // Act
@@ -74,7 +74,7 @@ public sealed class ToByteTests
     internal void GivenToByteOrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = byte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = byte.MaxValue.ToString(provider: default);
         byte expected = byte.MaxValue;
 
         // Act
@@ -101,8 +101,10 @@ public sealed class ToByteTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToByteOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToByteOrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         byte? actual = @this.ToByteOrNull(provider: default);
 
@@ -114,7 +116,7 @@ public sealed class ToByteTests
     internal void GivenTryConvertToByteWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = byte.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = byte.MaxValue.ToString(provider: default);
         byte expected = byte.MaxValue;
 
         // Act

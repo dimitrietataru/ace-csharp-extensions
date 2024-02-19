@@ -74,7 +74,7 @@ public sealed class ToUInt64Tests
     internal void GivenToUInt64OrNullWhenInputIsValidThenResultIsExpected()
     {
         // Arrange
-        string @this = ulong.MaxValue.ToString(CultureInfo.CurrentCulture);
+        string @this = ulong.MaxValue.ToString(provider: default);
         ulong expected = ulong.MaxValue;
 
         // Act
@@ -101,8 +101,10 @@ public sealed class ToUInt64Tests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToUInt64OrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToUInt64OrNullWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
         ulong? actual = @this.ToUInt64OrNull(provider: default);
 

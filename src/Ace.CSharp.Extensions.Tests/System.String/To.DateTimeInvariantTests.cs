@@ -62,10 +62,10 @@ public sealed class ToDateTimeInvariantTests
     {
         // Arrange
         string @this = DateTime.UnixEpoch.ToString(CultureInfo.InvariantCulture);
-        DateTime expected = DateTime.UnixEpoch;
+        var expected = DateTime.UnixEpoch;
 
         // Act
-        DateTime? actual = @this.ToDateTimeOrNullInvariant();
+        var actual = @this.ToDateTimeOrNullInvariant();
 
         // Assert
         actual.Should().Be(expected);
@@ -78,7 +78,7 @@ public sealed class ToDateTimeInvariantTests
         string @this = "foo";
 
         // Act
-        DateTime? actual = @this.ToDateTimeOrNullInvariant();
+        var actual = @this.ToDateTimeOrNullInvariant();
 
         // Assert
         actual.Should().BeNull();
@@ -88,10 +88,12 @@ public sealed class ToDateTimeInvariantTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    internal void GivenToDateTimeOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string @this)
+    internal void GivenToDateTimeOrNullInvariantWhenInputIsNullOrWhiteSpaceThenResultIsNull(string? @this)
     {
+        // Arrange
+
         // Act
-        DateTime? actual = @this.ToDateTimeOrNullInvariant();
+        var actual = @this.ToDateTimeOrNullInvariant();
 
         // Assert
         actual.Should().BeNull();
