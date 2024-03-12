@@ -19,7 +19,7 @@ indent_size = 4
 indent_style = space
 tab_width = 4
 
-[*.{csproj,xml,json}]
+[*.{csproj,json,props,xml,yml}]
 indent_size = 2
 indent_style = space
 tab_width = 2
@@ -196,6 +196,9 @@ csharp_space_around_binary_operators = before_and_after
 # Code Style | Formatting | Wrapping
 csharp_preserve_single_line_blocks = true
 csharp_preserve_single_line_statements = false
+
+# Code Style | Formatting
+dotnet_diagnostic.IDE0055.severity = warning
 
 # Advanced | Using directives
 dotnet_sort_system_directives_first = false
@@ -807,9 +810,6 @@ dotnet_diagnostic.CA2258.severity = warning
 dotnet_diagnostic.CA2259.severity = warning
 dotnet_diagnostic.CA2260.severity = warning
 dotnet_diagnostic.CA2261.severity = warning
-
-# Code Style | Formatting
-dotnet_diagnostic.IDE0055.severity = warning
 
 # Exceptions
 [**ObjectTo.cs]
