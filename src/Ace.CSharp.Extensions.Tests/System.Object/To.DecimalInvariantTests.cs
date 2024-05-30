@@ -23,7 +23,7 @@ public sealed class ToDecimalInvariantTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToDecimalInvariant();
+        var action = @this.ToDecimalInvariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToDecimalInvariantTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToDecimalInvariant();
+        var action = @this.ToDecimalInvariant;
 
         // Assert
         action.Should().Throw<InvalidCastException>();
@@ -49,7 +49,7 @@ public sealed class ToDecimalInvariantTests
         object @this = $"{int.MaxValue}{decimal.MaxValue}";
 
         // Act
-        var action = () => @this.ToDecimalInvariant();
+        var action = @this.ToDecimalInvariant;
 
         // Assert
         action.Should().Throw<OverflowException>();

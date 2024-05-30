@@ -23,7 +23,7 @@ public sealed class ToUInt32LocalTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToUInt32Local();
+        var action = @this.ToUInt32Local;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToUInt32LocalTests
         string @this = $"{uint.MaxValue}{uint.MaxValue}";
 
         // Act
-        var action = () => @this.ToUInt32Local();
+        var action = @this.ToUInt32Local;
 
         // Assert
         action.Should().Throw<OverflowException>();

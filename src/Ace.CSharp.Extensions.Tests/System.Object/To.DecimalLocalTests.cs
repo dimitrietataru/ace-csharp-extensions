@@ -23,7 +23,7 @@ public sealed class ToDecimalLocalTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToDecimalLocal();
+        var action = @this.ToDecimalLocal;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToDecimalLocalTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToDecimalLocal();
+        var action = @this.ToDecimalLocal;
 
         // Assert
         action.Should().Throw<InvalidCastException>();
@@ -49,7 +49,7 @@ public sealed class ToDecimalLocalTests
         object @this = $"{int.MaxValue}{decimal.MaxValue}";
 
         // Act
-        var action = () => @this.ToDecimalLocal();
+        var action = @this.ToDecimalLocal;
 
         // Assert
         action.Should().Throw<OverflowException>();

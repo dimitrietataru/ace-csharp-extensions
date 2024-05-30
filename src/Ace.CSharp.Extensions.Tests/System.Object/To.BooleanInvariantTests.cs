@@ -23,7 +23,7 @@ public sealed class ToBooleanInvariantTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToBooleanInvariant();
+        var action = @this.ToBooleanInvariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToBooleanInvariantTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToBooleanInvariant();
+        var action = @this.ToBooleanInvariant;
 
         // Assert
         action.Should().Throw<InvalidCastException>();

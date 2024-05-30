@@ -23,7 +23,7 @@ public sealed class ToCharInvariantTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToCharInvariant();
+        var action = @this.ToCharInvariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToCharInvariantTests
         string @this = null!;
 
         // Act
-        var action = () => @this.ToCharInvariant();
+        var action = @this.ToCharInvariant;
 
         // Assert
         action.Should().Throw<ArgumentNullException>();

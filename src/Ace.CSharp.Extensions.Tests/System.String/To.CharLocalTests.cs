@@ -23,7 +23,7 @@ public sealed class ToCharLocalTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToCharLocal();
+        var action = @this.ToCharLocal;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToCharLocalTests
         string @this = null!;
 
         // Act
-        var action = () => @this.ToCharLocal();
+        var action = @this.ToCharLocal;
 
         // Assert
         action.Should().Throw<ArgumentNullException>();

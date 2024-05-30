@@ -23,7 +23,7 @@ public sealed class ToUInt32InvariantTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToUInt32Invariant();
+        var action = @this.ToUInt32Invariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToUInt32InvariantTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToUInt32Invariant();
+        var action = @this.ToUInt32Invariant;
 
         // Assert
         action.Should().Throw<InvalidCastException>();
@@ -49,7 +49,7 @@ public sealed class ToUInt32InvariantTests
         object @this = $"{uint.MaxValue}{uint.MaxValue}";
 
         // Act
-        var action = () => @this.ToUInt32Invariant();
+        var action = @this.ToUInt32Invariant;
 
         // Assert
         action.Should().Throw<OverflowException>();

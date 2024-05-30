@@ -23,7 +23,7 @@ public sealed class ToCharInvariantTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToCharInvariant();
+        var action = @this.ToCharInvariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToCharInvariantTests
         object @this = null!;
 
         // Act
-        var action = () => @this.ToCharInvariant();
+        var action = @this.ToCharInvariant;
 
         // Assert
         action.Should().NotThrow<ArgumentNullException>();
@@ -49,7 +49,7 @@ public sealed class ToCharInvariantTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToCharInvariant();
+        var action = @this.ToCharInvariant;
 
         // Assert
         action.Should().Throw<InvalidCastException>();
@@ -62,7 +62,7 @@ public sealed class ToCharInvariantTests
         object @this = -1;
 
         // Act
-        var action = () => @this.ToCharInvariant();
+        var action = @this.ToCharInvariant;
 
         // Assert
         action.Should().Throw<OverflowException>();

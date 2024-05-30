@@ -23,7 +23,7 @@ public sealed class ToByteLocalTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToByteLocal();
+        var action = @this.ToByteLocal;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToByteLocalTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToByteLocal();
+        var action = @this.ToByteLocal;
 
         // Assert
         action.Should().Throw<InvalidCastException>();
@@ -49,7 +49,7 @@ public sealed class ToByteLocalTests
         object @this = $"{byte.MaxValue}{byte.MaxValue}";
 
         // Act
-        var action = () => @this.ToByteLocal();
+        var action = @this.ToByteLocal;
 
         // Assert
         action.Should().Throw<OverflowException>();

@@ -23,7 +23,7 @@ public sealed class ToCharLocalTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToCharLocal();
+        var action = @this.ToCharLocal;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToCharLocalTests
         object @this = null!;
 
         // Act
-        var action = () => @this.ToCharLocal();
+        var action = @this.ToCharLocal;
 
         // Assert
         action.Should().NotThrow<ArgumentNullException>();
@@ -49,7 +49,7 @@ public sealed class ToCharLocalTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToCharLocal();
+        var action = @this.ToCharLocal;
 
         // Assert
         action.Should().Throw<InvalidCastException>();
@@ -62,7 +62,7 @@ public sealed class ToCharLocalTests
         object @this = -1;
 
         // Act
-        var action = () => @this.ToCharLocal();
+        var action = @this.ToCharLocal;
 
         // Assert
         action.Should().Throw<OverflowException>();

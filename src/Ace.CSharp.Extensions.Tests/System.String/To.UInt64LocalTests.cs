@@ -23,7 +23,7 @@ public sealed class ToUInt64LocalTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToUInt64Local();
+        var action = @this.ToUInt64Local;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToUInt64LocalTests
         string @this = $"{ulong.MaxValue}{ulong.MaxValue}";
 
         // Act
-        var action = () => @this.ToUInt64Local();
+        var action = @this.ToUInt64Local;
 
         // Assert
         action.Should().Throw<OverflowException>();

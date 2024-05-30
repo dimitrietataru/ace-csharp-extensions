@@ -23,7 +23,7 @@ public sealed class ToDecimalLocalTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToDecimalLocal();
+        var action = @this.ToDecimalLocal;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToDecimalLocalTests
         string @this = $"{int.MaxValue}{decimal.MaxValue}";
 
         // Act
-        var action = () => @this.ToDecimalLocal();
+        var action = @this.ToDecimalLocal;
 
         // Assert
         action.Should().Throw<OverflowException>();

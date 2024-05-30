@@ -23,7 +23,7 @@ public sealed class ToInt32InvariantTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToInt32Invariant();
+        var action = @this.ToInt32Invariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToInt32InvariantTests
         string @this = $"{int.MaxValue}{int.MaxValue}";
 
         // Act
-        var action = () => @this.ToInt32Invariant();
+        var action = @this.ToInt32Invariant;
 
         // Assert
         action.Should().Throw<OverflowException>();

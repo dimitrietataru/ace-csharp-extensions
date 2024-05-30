@@ -23,7 +23,7 @@ public sealed class ToDateTimeLocalTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToDateTimeLocal();
+        var action = @this.ToDateTimeLocal;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToDateTimeLocalTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToDateTimeLocal();
+        var action = @this.ToDateTimeLocal;
 
         // Assert
         action.Should().Throw<InvalidCastException>();

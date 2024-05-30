@@ -23,7 +23,7 @@ public sealed class ToBooleanLocalTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToBooleanLocal();
+        var action = @this.ToBooleanLocal;
 
         // Assert
         action.Should().Throw<FormatException>();

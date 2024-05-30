@@ -23,7 +23,7 @@ public sealed class ToByteLocalTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToByteLocal();
+        var action = @this.ToByteLocal;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToByteLocalTests
         string @this = $"{byte.MaxValue}{byte.MaxValue}";
 
         // Act
-        var action = () => @this.ToByteLocal();
+        var action = @this.ToByteLocal;
 
         // Assert
         action.Should().Throw<OverflowException>();

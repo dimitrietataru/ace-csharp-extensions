@@ -23,7 +23,7 @@ public sealed class ToUInt16InvariantTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToUInt16Invariant();
+        var action = @this.ToUInt16Invariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToUInt16InvariantTests
         string @this = $"{ushort.MaxValue}{ushort.MaxValue}";
 
         // Act
-        var action = () => @this.ToUInt16Invariant();
+        var action = @this.ToUInt16Invariant;
 
         // Assert
         action.Should().Throw<OverflowException>();

@@ -23,7 +23,7 @@ public sealed class ToSingleInvariantTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToSingleInvariant();
+        var action = @this.ToSingleInvariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToSingleInvariantTests
         string @this = $"{int.MaxValue}{float.MaxValue}";
 
         // Act
-        var action = () => @this.ToSingleInvariant();
+        var action = @this.ToSingleInvariant;
 
         // Assert
         action.Should().NotThrow<OverflowException>();

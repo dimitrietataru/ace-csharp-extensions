@@ -23,7 +23,7 @@ public sealed class ToDoubleLocalTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToDoubleLocal();
+        var action = @this.ToDoubleLocal;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToDoubleLocalTests
         string @this = $"{int.MaxValue}{double.MaxValue}";
 
         // Act
-        var action = () => @this.ToDoubleLocal();
+        var action = @this.ToDoubleLocal;
 
         // Assert
         action.Should().NotThrow<OverflowException>();

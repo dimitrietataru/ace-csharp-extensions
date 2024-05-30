@@ -23,7 +23,7 @@ public sealed class ToBooleanLocalTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToBooleanLocal();
+        var action = @this.ToBooleanLocal;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToBooleanLocalTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToBooleanLocal();
+        var action = @this.ToBooleanLocal;
 
         // Assert
         action.Should().Throw<InvalidCastException>();

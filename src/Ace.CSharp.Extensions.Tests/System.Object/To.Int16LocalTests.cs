@@ -23,7 +23,7 @@ public sealed class ToInt16LocalTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToInt16Local();
+        var action = @this.ToInt16Local;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToInt16LocalTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToInt16Local();
+        var action = @this.ToInt16Local;
 
         // Assert
         action.Should().Throw<InvalidCastException>();
@@ -49,7 +49,7 @@ public sealed class ToInt16LocalTests
         object @this = $"{short.MaxValue}{short.MaxValue}";
 
         // Act
-        var action = () => @this.ToInt16Local();
+        var action = @this.ToInt16Local;
 
         // Assert
         action.Should().Throw<OverflowException>();

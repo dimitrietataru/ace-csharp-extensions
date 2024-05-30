@@ -23,7 +23,7 @@ public sealed class ToSingleLocalTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToSingleLocal();
+        var action = @this.ToSingleLocal;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToSingleLocalTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToSingleLocal();
+        var action = @this.ToSingleLocal;
 
         // Assert
         action.Should().Throw<InvalidCastException>();
@@ -49,7 +49,7 @@ public sealed class ToSingleLocalTests
         object @this = $"{int.MaxValue}{float.MaxValue}";
 
         // Act
-        var action = () => @this.ToSingleLocal();
+        var action = @this.ToSingleLocal;
 
         // Assert
         action.Should().NotThrow<OverflowException>();

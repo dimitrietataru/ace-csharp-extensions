@@ -23,7 +23,7 @@ public sealed class ToDateTimeLocalTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToDateTimeLocal();
+        var action = @this.ToDateTimeLocal;
 
         // Assert
         action.Should().Throw<FormatException>();

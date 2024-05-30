@@ -23,7 +23,7 @@ public sealed class ToDoubleInvariantTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToDoubleInvariant();
+        var action = @this.ToDoubleInvariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToDoubleInvariantTests
         string @this = $"{int.MaxValue}{double.MaxValue}";
 
         // Act
-        var action = () => @this.ToDoubleInvariant();
+        var action = @this.ToDoubleInvariant;
 
         // Assert
         action.Should().NotThrow<OverflowException>();

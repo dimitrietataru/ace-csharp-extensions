@@ -23,7 +23,7 @@ public sealed class ToDateTimeInvariantTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToDateTimeInvariant();
+        var action = @this.ToDateTimeInvariant;
 
         // Assert
         action.Should().Throw<FormatException>();

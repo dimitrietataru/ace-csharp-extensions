@@ -23,7 +23,7 @@ public sealed class ToSByteLocalTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToSByteLocal();
+        var action = @this.ToSByteLocal;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToSByteLocalTests
         string @this = null!;
 
         // Act
-        var action = () => @this.ToSByteLocal();
+        var action = @this.ToSByteLocal;
 
         // Assert
         action.Should().Throw<ArgumentNullException>();
@@ -49,7 +49,7 @@ public sealed class ToSByteLocalTests
         string @this = $"{sbyte.MaxValue}{sbyte.MaxValue}";
 
         // Act
-        var action = () => @this.ToSByteLocal();
+        var action = @this.ToSByteLocal;
 
         // Assert
         action.Should().Throw<OverflowException>();

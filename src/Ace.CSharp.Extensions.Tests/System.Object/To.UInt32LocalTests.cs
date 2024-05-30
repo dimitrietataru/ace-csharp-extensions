@@ -23,7 +23,7 @@ public sealed class ToUInt32LocalTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToUInt32Local();
+        var action = @this.ToUInt32Local;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToUInt32LocalTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToUInt32Local();
+        var action = @this.ToUInt32Local;
 
         // Assert
         action.Should().Throw<InvalidCastException>();
@@ -49,7 +49,7 @@ public sealed class ToUInt32LocalTests
         object @this = $"{uint.MaxValue}{uint.MaxValue}";
 
         // Act
-        var action = () => @this.ToUInt32Local();
+        var action = @this.ToUInt32Local;
 
         // Assert
         action.Should().Throw<OverflowException>();

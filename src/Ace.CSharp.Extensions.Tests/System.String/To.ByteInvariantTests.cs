@@ -23,7 +23,7 @@ public sealed class ToByteInvariantTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToByteInvariant();
+        var action = @this.ToByteInvariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToByteInvariantTests
         string @this = $"{byte.MaxValue}{byte.MaxValue}";
 
         // Act
-        var action = () => @this.ToByteInvariant();
+        var action = @this.ToByteInvariant;
 
         // Assert
         action.Should().Throw<OverflowException>();

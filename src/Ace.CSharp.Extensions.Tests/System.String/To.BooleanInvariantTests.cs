@@ -23,7 +23,7 @@ public sealed class ToBooleanInvariantTests
         string @this = "foo";
 
         // Act
-        var action = () => @this.ToBooleanInvariant();
+        var action = @this.ToBooleanInvariant;
 
         // Assert
         action.Should().Throw<FormatException>();

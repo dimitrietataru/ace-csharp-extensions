@@ -23,7 +23,7 @@ public sealed class ToDateTimeInvariantTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToDateTimeInvariant();
+        var action = @this.ToDateTimeInvariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToDateTimeInvariantTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToDateTimeInvariant();
+        var action = @this.ToDateTimeInvariant;
 
         // Assert
         action.Should().Throw<InvalidCastException>();

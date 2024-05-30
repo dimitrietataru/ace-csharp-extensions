@@ -23,7 +23,7 @@ public sealed class ToSByteInvariantTests
         object @this = "foo";
 
         // Act
-        var action = () => @this.ToSByteInvariant();
+        var action = @this.ToSByteInvariant;
 
         // Assert
         action.Should().Throw<FormatException>();
@@ -36,7 +36,7 @@ public sealed class ToSByteInvariantTests
         object @this = new { Foo = "foo" };
 
         // Act
-        var action = () => @this.ToSByteInvariant();
+        var action = @this.ToSByteInvariant;
 
         // Assert
         action.Should().Throw<InvalidCastException>();
@@ -49,7 +49,7 @@ public sealed class ToSByteInvariantTests
         object @this = $"{sbyte.MaxValue}{sbyte.MaxValue}";
 
         // Act
-        var action = () => @this.ToSByteInvariant();
+        var action = @this.ToSByteInvariant;
 
         // Assert
         action.Should().Throw<OverflowException>();
