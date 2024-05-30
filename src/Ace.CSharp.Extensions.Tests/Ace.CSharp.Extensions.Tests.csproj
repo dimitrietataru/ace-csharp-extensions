@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
 
     <Nullable>enable</Nullable>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
     <ImplicitUsings>disable</ImplicitUsings>
-    <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
 
     <PackageId>AceCSharp.Extensions.Tests</PackageId>
     <Version>1.1.1</Version>

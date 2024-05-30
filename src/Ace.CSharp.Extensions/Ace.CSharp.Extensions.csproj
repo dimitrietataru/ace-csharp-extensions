@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <!--<LangVersion>10</LangVersion>-->
 
     <Nullable>enable</Nullable>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
     <ImplicitUsings>disable</ImplicitUsings>
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -13,7 +13,7 @@
     <Authors>Dimitrie Tataru</Authors>
     <Company>A C E</Company>
     <Description>C# extension methods</Description>
-    <PackageTags>extensions;extension methods</PackageTags>
+    <PackageTags>extensions;extension-methods;csharp-extensions</PackageTags>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(Configuration)' == 'Debug'">
