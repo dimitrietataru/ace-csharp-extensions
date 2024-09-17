@@ -820,3 +820,7 @@ dotnet_diagnostic.CA1305.severity = none
 dotnet_diagnostic.CA1720.severity = none
 [**StringTo.cs]
 dotnet_diagnostic.CA1720.severity = none
+
+## IDE0130: Namespace does not match folder structure
+[*.cs]
+dotnet_style_namespace_match_folder = true:none
