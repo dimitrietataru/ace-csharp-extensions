@@ -1,9 +1,13 @@
 name: release-CI
 
 on:
-  create:
+  push:
     branches: 
       - release/**
+    tags-ignore:
+      - '**'
+    paths-ignore:
+      - 'README.md'
 
 jobs:
   build:
