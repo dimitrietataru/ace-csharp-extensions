@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     
     - name: Get build version
       run: |
@@ -32,11 +32,13 @@ jobs:
       shell: pwsh
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: |
           6.0.x
-          9.0.x
+          10.0.x
+        cache: true
+        cache-dependency-path: '**/*.csproj'
 
     - name: dotnet restore
       run: dotnet restore $SOLUTION
