@@ -4,5 +4,8 @@
 [Dd]ebug/
 [Rr]elease/
 
+# Test
+[Tt]est[Rr]esults/
+
 # Visual Studio cache
 .vs/
