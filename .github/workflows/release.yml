@@ -17,6 +17,12 @@ jobs:
       SOLUTION: 'src/Ace.CSharp.Extensions.sln'
       TEST_PROJECT: 'src/Ace.CSharp.Extensions.Tests/Ace.CSharp.Extensions.Tests.csproj'
 
+    permissions:
+      id-token: write
+      contents: read
+
+    environment: release
+
     runs-on: ubuntu-latest
 
     steps:
@@ -43,6 +49,12 @@ jobs:
         cache: true
         cache-dependency-path: '**/*.csproj'
 
+    - name: Setup NuGet OIDC
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: ${{secrets.NUGETUSER}}
+
     - name: dotnet restore
       run: dotnet restore $SOLUTION
 
@@ -57,4 +69,4 @@ jobs:
 
     - name: dotnet nuget push
       if: startsWith(github.ref, 'refs/heads/release')
-      run: dotnet nuget push **\*.nupkg -s 'https://api.nuget.org/v3/index.json' -k ${{secrets.NUGETSECRET}}
+      run: dotnet nuget push **\*.nupkg -s 'https://api.nuget.org/v3/index.json' --api-key ${{steps.login.outputs.NUGET_API_KEY}} --skip-duplicate
